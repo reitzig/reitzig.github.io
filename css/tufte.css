@@ -223,7 +223,7 @@ body {
   font-family: ETBembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   padding-bottom: 400px;
   background-color: #fffff8;
-  color: #111;
+  color: #111111;
   max-width: 1400px; }
 
 @media screen and (min-width: 800px) {
@@ -455,7 +455,7 @@ h6, .smaller, [id^="fn:"] > p, ol > [id^="fn:"] {
 ol > [id^="fn:"] {
   color: #a00000; }
   ol > [id^="fn:"] p {
-    color: #111; }
+    color: #111111; }
 
 h6 {
   font-style: italic; }
@@ -514,15 +514,13 @@ span.newthought {
   text-transform: uppercase; }
 
 .latex sub {
-  vertical-align: -0.5ex;
+  vertical-align: -0.15ex;
   margin-left: -0.1667rem;
-  margin-right: -0.125rem; }
-
-.latex, .latex sub {
-  font-size: 1rem; }
+  margin-right: -0.125rem;
+  font-size: 1.5rem; }
 
 .latex sup {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   vertical-align: 0.15rem;
   margin-left: -0.36rem;
   margin-right: -0.15rem; }
