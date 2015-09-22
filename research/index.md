@@ -2,4 +2,8 @@
 title: My Research
 ---
 
-To be filled.
+Some explanation on what I (try to) do will follow.
+
+### Publications
+
+{% bibliography --file publications %}

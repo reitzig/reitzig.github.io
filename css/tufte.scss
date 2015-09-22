@@ -207,6 +207,10 @@ pre{
 }
 article { position: relative; }
 
+body p {
+  text-align: justify;
+}
+
 p, li{ 
     font-size: 1.4rem;
     line-height: 1.4;
@@ -391,7 +395,13 @@ a.url, .sidenote a { text-decoration: none;
         word-break: break-all;
         font-family: $url-font; }
 
-
+blockquote {
+  margin-left: 2em;
+  width: 50%;
+  text-align: justify;
+  font-size: 1.25rem;
+  color: lighten($text-color,25%);
+}
 
 sup.sidenote-number {      
   color: lighten($contrast-color, 15%);
@@ -480,6 +490,30 @@ img.main-portrait {
     }
 }
 
+/* Styling bibliographies and citations */
+
+p.bibdetailhead {
+  text-align: left;
+  
+  span {
+    font-size: 90%;
+  }
+}
+
+ol.bibliography {
+  margin-left: 2em;
+  
+  li {
+    width: 60%;
+    position: relative;
+  }
+  
+  a.details {
+    position: absolute;
+    left: 15.5cm;
+    top: 0em;
+  }
+}
 
 /* Icomoon exported SVG icons */
 

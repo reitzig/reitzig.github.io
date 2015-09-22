@@ -4,7 +4,8 @@ author: "Raphael Reitzig"
 description: "Computer scientist. Teacher. Programmer. LaTeXer."
 email: reitzig@cs.uni-kl.de
 
-exclude:    [Gemfile, Gemfile.lock, run]
+gems: ['jekyll/scholar']
+exclude:    [Gemfile, Gemfile.lock, run, build]
 timezone:   "Europe/Berlin"
 encoding:   "utf-8"
 
@@ -32,3 +33,14 @@ defaults:
     values:
       layout:   "post"
       mathjax-version:  "TeX-AMS_HTML-full"
+      
+scholar:
+  style:  harvard1
+  locale: en
+
+  bibliography: publications.bib
+  bibliography_template: "{{reference}}"
+
+  details_dir:    publications
+  details_layout: bib_details.html
+  details_link:   Details

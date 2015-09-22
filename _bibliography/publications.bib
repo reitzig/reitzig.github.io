@@ -1,0 +1,147 @@
+@online{RW2015b,
+	author = {Raphael Reitzig and Sebastian Wild},
+	title = {A Practical and Worst-Case Efficient Algorithm for Divisor Methods of Apportionment},
+	journal = {ArXiv e-prints},
+	archivePrefix = {arXiv},
+	eprint = {1504.06475},
+	year = {2015},
+	month = {9},
+  abstract = {Proportional apportionment is the problem of assigning seats to parties according to their relative share of votes. Divisor methods are the de-facto standard solution, used in many countries.<br/>
+
+In recent literature, there are two algorithms that implement divisor methods: one by Cheng and Eppstein (ISAAC, 2014) has worst-case optimal running time but is complex, while the other (Pukelsheim, 2014) is relatively simple and fast in practice but does not offer worst-case guarantees.
+
+We demonstrate that the former algorithm is much slower than the other in practice propose a novel algorithm that avoids the shortcomings of both. We investigate the running-time behavior of the three contenders in order to determine which is most useful in practice.}
+}
+
+@online{RW2015a,
+  author    = {Raphael Reitzig and
+               Sebastian Wild},
+  title     = {Efficient Algorithms for Envy-Free Stick Division With Fewest Cuts},
+  journal = {ArXiv e-prints},
+  archivePrefix = {arXiv},
+  eprint    = {1502.04048},
+  primaryClass = {cs.DS},
+  year      = {2015},
+  month     = {April},
+  version   = {v2},
+  abstract  = {Segal-Halevi, Hassidim, and Aumann (AAMAS, 2015) propose the 
+                problem of cutting sticks so that at least k sticks have equal 
+                length and no other stick is longer. This allows for an envy-free 
+                allocation of sticks to k players, one each. The resulting number 
+                of sticks should also be minimal.
+  
+                We analyze the structure of this problem and devise a linear-time 
+                algorithm for it. }
+}
+
+@INPROCEEDINGS{WNRL2013,
+  author = {Sebastian Wild and Markus E. Nebel and Raphael Reitzig and Ulrich Laube},
+  title = {Engineering Java 7's Dual Pivot Quicksort Using MaLiJan},
+  booktitle = {Meeting on Algorithm Engineering \& Experiments (ALENEX)},
+  organization = {SIAM},
+  year = {2013},
+  month = {January},
+  url = {http://knowledgecenter.siam.org/0238-000024/0238-000024/1},
+  pdf = {http://wwwagak.cs.uni-kl.de/Veroffentlichungen/Papers/dual-pivot-qs-engineering.pdf.html},
+  abstract = {Recent results on Java 7’s dual pivot Quicksort have revealed
+    its highly asymmetric nature. These insights suggest that
+    asymmetric pivot choices are preferable to symmetric ones
+    for this Quicksort variant. From a theoretical point of view,
+    this should allow us to improve on the current implementation
+    in Oracle’s Java 7 runtime library. In this paper, we
+    use our new tool MaLiJAn to confirm this asymptotically
+    for combinatorial cost measures such as the total number of
+    executed instructions. However, the observed running times
+    show converse behavior. With the support of data provided
+    by MaLiJAn we are able to identify the profiling capabilities
+    of Oracle’s just-in-time compiler to be responsible for this
+    unexpected outcome.
+  }
+}
+
+@mastersthesis{Reitzig2012,
+  author = {Raphael Reitzig},
+  title  = {Automated Parallelisation of Dynamic Programming Recursions},
+  school = {University of Kaiserslautern},
+  year   = {2012},
+  month  = {July},
+  pdf    = {https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf},
+  url    = {http://lmazy.verrech.net/pub/mathesis},
+  abstract = {This thesis discusses whether and how dynamic programming recursions can be
+    computed in parallel such that compilers can parallelise them automatically. We 
+    discover that under certain assumptions which permit a rich class of dynamic 
+    programming recursions, two kinds of recursions can be computed in parallel while 
+    others can not. For those which can, we design and analyse efficient parallel algorithms 
+    theoretically. We then implement several prototypes and investigate their performance
+    empirically. Finally, we integrate automatic application of the developed algorithms 
+    into a real-world compiler.
+  }
+}
+
+@ARTICLE{NWH+2010,
+  author = {Markus E. Nebel and Sebastian Wild and Michael Holzhauser and Lars
+  Hüttenberger and Raphael Reitzig and Matthias Sperber and Thorsten
+  Stoeck},
+  title = {JAguc -- a software package for environmental diversity analyses},
+  journal = {Journal of Bioinformatics and Computational Biology},
+  year = {2011},
+  volume = {9},
+  pages = {749--773},
+  number = {6},
+  month = {December},
+  comment = {03-02},
+  doi = {10.1142/S0219720011005781},
+  institution = {University of Kaiserslautern},
+  url = {http://dx.doi.org/10.1142/S0219720011005781},
+  pdf = {http://wwwagak.cs.uni-kl.de/Veroffentlichungen/Papers/JAguc-a-software-package-for-environmental-diversity-analyses.html},
+  abstract = {\textbf{Background} \\
+    The study of microbial diversity and community structures heavily relies on the analyses
+    of sequence data, predominantly taxonomic marker genes like the small subunit of the
+    ribosomal RNA (SSU rRNA) amplified from environmental samples. Until recently, the
+    “gold standard” for this strategy was the cloning and Sanger sequencing of amplified
+    target genes, usually restricted to a few hundred sequences per sample due to relatively
+    high costs and labor intensity. The recent introduction of massive parallel tag sequencing
+    strategies like pyrosequencing (454 sequencing) has opened a new window into microbial
+    biodiversity research. Due to its swift nature and relatively low expense, this strategy
+    produces millions of environmental SSU rDNA sequences granting the opportunity to
+    gain deep insights into the true diversity and complexity of microbial communities. The
+    bottleneck, however, is the computational processing of these massive sequence data,
+    without which, biologists are hardly able to exploit the full information included in
+    these sequence data. \\
+    \textbf{Results} \\
+    The freely available standalone software package JAguc implements a broad regime of
+    different functions, allowing for efficient and convenient processing of a huge number
+    of sequence tags, including importing custom-made reference data bases for basic local
+    alignment searches, user-defined quality and search filters for analyses of specific sets of
+    sequences, pairwise alignment-based sequence similarity calculations and clustering as
+    well as sampling saturation and rank abundance analyses. In initial applications, JAguc
+    successfully analyzed hundreds of thousands of sequence data (eukaryote SSU rRNA
+    genes) from aquatic samples and also was applied for quality assessments of different
+    pyrosequencing platforms. \\
+    \textbf{Conclusions} \\
+    The new program package JAguc is a tool that bridges the gap between computational
+    and biological sciences. It enables biologists to process large sequence data sets in order
+    to infer biological meaning from hundreds of thousands of raw sequence data. JAguc
+    offers advantages over available tools which are further discussed in this manuscript.
+    While providing a highly efficient implementation of its functionality adjusted to typical
+    molecular environmental diversity analyses, JAguc is not restricted to the analyses of
+    environmental pyrosequencing data but is applicable to a broad array of further applications,
+    including motif searches or (meta)transcriptomes.
+  }
+}
+
+@misc{Reitzig2009,
+  author = {Raphael Reitzig},
+  title  = {Ambiguity Analysis of RNA Secondary Structure Prediction Grammars},
+  year   = {2009},
+  month  = {September},
+  howpublished = {Bachelor thesis},
+  school = {University of Kaiserslautern},
+  pdf    = {http://lmazy.verrech.net/wp-content/uploads/2009/10/bachelor_thesis.pdf},
+  abstract = {Dowell and Eddy (2004) presented several context free grammars for 
+    RNA secondary structure prediction. Some of them are claimed to be unambiguous 
+    with respect to secondary structures. Although this property is crucial for the 
+    correctness of prediction algorithms using those grammars, it is only shown 
+    empirically, but not formally proven. This gap is filled in the work at hand.
+  }
+}
