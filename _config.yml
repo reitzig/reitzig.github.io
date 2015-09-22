@@ -1,0 +1,34 @@
+title:  "Raphael Reitzig"
+subtitle: "Thoughts of a computer scientist, teacher, programmer and LaTeXer."
+author: "Raphael Reitzig"
+description: "Computer scientist. Teacher. Programmer. LaTeXer."
+email: reitzig@cs.uni-kl.de
+
+exclude:    [Gemfile, Gemfile.lock, run]
+timezone:   "Europe/Berlin"
+encoding:   "utf-8"
+
+permalink: /ramblings/:year/:title
+mathjax-options: "displayAlign: \"left\", displayIndent: \"2em\", positionToHash: true"
+
+markdown: kramdown
+kramdown:
+    syntax_highlighter: rouge
+    syntax_highlighter_opts: 
+        line_numbers: true
+
+defaults:
+  -
+    scope:
+      path:   ""
+      type:   "pages"
+    values:
+      layout:   "page"
+      mathjax-version:  "TeX-AMS_HTML"
+  -
+    scope:
+      path:   ""
+      type:   "posts"
+    values:
+      layout:   "post"
+      mathjax-version:  "TeX-AMS_HTML-full"

@@ -1,0 +1,14 @@
+- link: mailto:reitzig@cs.uni-kl.de
+  icon: mail
+- link: //scholar.google.com/citations?user=3b2GqG0AAAAJ
+  icon: googlescholar
+- link: //www.researchgate.net/profile/Raphael_Reitzig
+  icon: researchgate
+- link: //www.twitter.com/OmegaPolice 
+  icon: twitter
+- link: //stackexchange.com/users/257842/
+  icon: stackoverflow
+- link: //github.com/reitzig 
+  icon: github
+- link: /feed.xml
+  icon: feed

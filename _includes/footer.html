@@ -1,0 +1,22 @@
+<footer>
+  {% include icons.svg %}
+  <ul class="footer-links group">    
+    {% for entry in site.data.social %}
+      <li>
+        <div class="icon">
+			    <div class="clearfix">
+			      <a href="{{ entry.link }}">
+              <svg class="icon-{{ entry.icon }}">
+                <use xlink:href="#icon-{{ entry.icon }}"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </li>
+    {% endfor %}  
+  </ul>
+<div class="credits">
+<span>&copy; {{ site.time | date: '%Y' }} &nbsp;&nbsp;{{site.author }}</span><br/> 
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for {{site.title}} in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
