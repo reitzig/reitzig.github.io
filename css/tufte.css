@@ -333,6 +333,9 @@ pre {
 article {
   position: relative; }
 
+body p {
+  text-align: justify; }
+
 p, li {
   font-size: 1.4rem;
   line-height: 1.4;
@@ -503,6 +506,13 @@ a.url, .sidenote a {
   word-break: break-all;
   font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace; }
 
+blockquote {
+  margin-left: 2em;
+  width: 50%;
+  text-align: justify;
+  font-size: 1.25rem;
+  color: #515151; }
+
 sup.sidenote-number {
   color: #ed0000; }
 
@@ -578,6 +588,22 @@ img.main-portrait {
 
   body header, body footer {
     display: none; } }
+/* Styling bibliographies and citations */
+p.bibdetailhead {
+  text-align: left; }
+  p.bibdetailhead span {
+    font-size: 90%; }
+
+ol.bibliography {
+  margin-left: 2em; }
+  ol.bibliography li {
+    width: 60%;
+    position: relative; }
+  ol.bibliography a.details {
+    position: absolute;
+    left: 15.5cm;
+    top: 0em; }
+
 /* Icomoon exported SVG icons */
 div.icon {
   font-size: 16px;
