@@ -1,0 +1,7 @@
+_drafts/
+_site/
+*.swp
+.sass-cache
+run
+build
+Gemfile.lock

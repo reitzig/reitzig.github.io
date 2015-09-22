@@ -1,0 +1,604 @@
+/*****************************************************************************/
+/*
+/* Tufte Jekyll blog theme
+/* Based on Tufte CSS by Dave Liepmann ( https://github.com/daveliepmann/tufte-css )
+/* 
+/* The README.md will show you how to set up your site along with other goodies
+/*****************************************************************************/
+@font-face {
+  font-family: ETBembo;
+  src: url("../fonts/ETBembo-RomanLF.ttf"); }
+/* This file contains all the constants for colors and font styles */
+/*-- Global stuff with fonts, background colors,etc --*/
+/**
+ * Syntax highlighting styles
+ */
+div.highlighter-rouge div.highlight {
+  margin-bottom: 15px; }
+
+div.highlighter-rouge {
+  /* margin-left: 2em; */
+  /* obsolete with line numbers */ }
+
+div.highlighter-rouge div.highlight {
+  background: #fffff8;
+  maring: 0; }
+  div.highlighter-rouge div.highlight .lineno {
+    margin-right: 0.5em;
+    margin-left: -0.35em; }
+  div.highlighter-rouge div.highlight .c {
+    color: #998;
+    font-style: italic; }
+  div.highlighter-rouge div.highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2; }
+  div.highlighter-rouge div.highlight .k {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .o {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .cm {
+    color: #998;
+    font-style: italic; }
+  div.highlighter-rouge div.highlight .cp {
+    color: #999;
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .c1 {
+    color: #998;
+    font-style: italic; }
+  div.highlighter-rouge div.highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic; }
+  div.highlighter-rouge div.highlight .gd {
+    color: #000;
+    background-color: #fdd; }
+  div.highlighter-rouge div.highlight .gd .x {
+    color: #000;
+    background-color: #faa; }
+  div.highlighter-rouge div.highlight .ge {
+    font-style: italic; }
+  div.highlighter-rouge div.highlight .gr {
+    color: #a00; }
+  div.highlighter-rouge div.highlight .gh {
+    color: #999; }
+  div.highlighter-rouge div.highlight .gi {
+    color: #000;
+    background-color: #dfd; }
+  div.highlighter-rouge div.highlight .gi .x {
+    color: #000;
+    background-color: #afa; }
+  div.highlighter-rouge div.highlight .go {
+    color: #888; }
+  div.highlighter-rouge div.highlight .gp {
+    color: #555; }
+  div.highlighter-rouge div.highlight .gs {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .gu {
+    color: #aaa; }
+  div.highlighter-rouge div.highlight .gt {
+    color: #a00; }
+  div.highlighter-rouge div.highlight .kc {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .kd {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .kp {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .kr {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .kt {
+    color: #458;
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .m {
+    color: #099; }
+  div.highlighter-rouge div.highlight .s {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .na {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .nb {
+    color: #0086B3; }
+  div.highlighter-rouge div.highlight .nc {
+    color: #458;
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .no {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .ni {
+    color: #800080; }
+  div.highlighter-rouge div.highlight .ne {
+    color: #900;
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .nf {
+    color: #900;
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .nn {
+    color: #555; }
+  div.highlighter-rouge div.highlight .nt {
+    color: #000080; }
+  div.highlighter-rouge div.highlight .nv {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .ow {
+    font-weight: bold; }
+  div.highlighter-rouge div.highlight .w {
+    color: #bbb; }
+  div.highlighter-rouge div.highlight .mf {
+    color: #099; }
+  div.highlighter-rouge div.highlight .mh {
+    color: #099; }
+  div.highlighter-rouge div.highlight .mi {
+    color: #099; }
+  div.highlighter-rouge div.highlight .mo {
+    color: #099; }
+  div.highlighter-rouge div.highlight .sb {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .sc {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .sd {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .s2 {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .se {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .sh {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .si {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .sx {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .sr {
+    color: #009926; }
+  div.highlighter-rouge div.highlight .s1 {
+    color: #d14; }
+  div.highlighter-rouge div.highlight .ss {
+    color: #990073; }
+  div.highlighter-rouge div.highlight .bp {
+    color: #999; }
+  div.highlighter-rouge div.highlight .vc {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .vg {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .vi {
+    color: #008080; }
+  div.highlighter-rouge div.highlight .il {
+    color: #099; }
+
+/* Need to remove table styling */
+.highlight table {
+  width: 55%;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin: 0;
+  border: none; }
+
+.highlight table pre {
+  margin: 0; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+a {
+  text-decoration: none; }
+
+/* clearfix hack after Cederholm (group class name) */
+.group:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+html {
+  text-align: baseline;
+  font-size: 11px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@media screen {
+  .print-footer {
+    display: none; } }
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 12px; } }
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 13px; } }
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 14px; } }
+@media screen and (min-width: 1100px) {
+  html {
+    font-size: 15px; } }
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 16px; } }
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 17px; } }
+body {
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8.4%;
+  font-family: ETBembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  padding-bottom: 400px;
+  background-color: #fffff8;
+  color: #111;
+  max-width: 1400px; }
+
+@media screen and (min-width: 800px) {
+  body {
+    width: 95%; } }
+body > header {
+  padding-top: 1rem;
+  border-bottom: 1px #aaaaaa solid;
+  max-width: 90%;
+  padding-bottom: 0.5rem; }
+
+header > nav.group {
+  height: 4.5rem; }
+
+header > nav a {
+  font-size: 1.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
+  letter-spacing: 0.15em;
+  font-variant: small-caps;
+  color: #a00000;
+  padding-top: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 2rem;
+  margin-left: 1rem;
+  vertical-align: baseline; }
+
+header > nav a img {
+  height: 4rem;
+  position: relative;
+  top: -1.5rem; }
+
+body > footer {
+  padding-bottom: 2rem;
+  border-top: 1px #aaaaaa solid;
+  max-width: 90%;
+  text-align: center; }
+
+body > footer ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 1rem 0 1rem; }
+
+body > footer ul li a {
+  font-size: 1.8rem; }
+
+.credits {
+  font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif; }
+  .credits a {
+    color: #a00000; }
+
+h1.content-listing-header {
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem; }
+
+hr.slender {
+  border: 0;
+  height: 1px;
+  margin-bottom: 2.8rem;
+  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent); }
+
+li.listing hr {
+  width: 100%; }
+
+.listing, .listing h3 {
+  display: inline-block;
+  margin: 0; }
+
+li.listing {
+  margin: 0; }
+
+li.listing p {
+  width: 100%; }
+
+li.listing:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1.4rem; }
+
+li.listing h4.new {
+  font-variant: small-caps;
+  font-style: normal; }
+
+cite {
+  font-style: italic; }
+
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif; }
+
+pre code, pre code p, code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.25; }
+
+pre {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem; }
+
+article {
+  position: relative; }
+
+p, li {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0px;
+  vertical-align: baseline; }
+
+p, article ul li, pre code, pre code p, code {
+  width: 55%; }
+
+@media screen and (max-width: 600px) {
+  p {
+    width: 65%; } }
+@media screen and (max-width: 400px) {
+  p {
+    width: 90%; } }
+a, .marginnote a, .sidenote a {
+  color: #a00000; }
+
+ul.content {
+  list-style: none; }
+
+img {
+  max-width: 100%; }
+
+sup, sub {
+  font-size: 0.9rem;
+  line-height: 0;
+  position: relative;
+  top: -0.2rem; }
+
+sub {
+  top: 0.2rem; }
+
+.fullwidth {
+  max-width: 95%; }
+
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0rem;
+  margin-bottom: 1.96rem;
+  font-size: 1.0rem;
+  line-height: 1.96;
+  vertical-align: baseline;
+  position: relative; }
+
+.sidenote a {
+  font-size: 0.9rem;
+  line-height: 2.177777777778;
+  margin-bottom: 2.177777777778rem; }
+
+@media screen and (max-width: 600px) {
+  .sidenote, .marginnote {
+    width: 25%;
+    margin-right: -35%; } }
+@media screen and (max-width: 400px) {
+  .sidenote, .marginnote {
+    display: none; } }
+h1 {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 5%;
+  margin-bottom: 1.568rem;
+  font-size: 2.5rem;
+  line-height: 0.784; }
+
+h1.title {
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem; }
+
+p.date {
+  font-size: 1rem;
+  margin-top: -0.5cm; }
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.1rem;
+  margin-top: 1.86666666666667rem;
+  margin-bottom: 0rem;
+  line-height: 0.9333333333333; }
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-top: 2.177777777778rem;
+  margin-bottom: 0;
+  line-height: 1.088888888889; }
+
+h4 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-top: 2.45rem;
+  margin-bottom: 0;
+  line-height: 1.225; }
+
+h5 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-top: 2.8rem;
+  margin-bottom: 0rem;
+  line-height: 1.4; }
+
+h6, .smaller, [id^="fn:"] > p, ol > [id^="fn:"] {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 3.266666666667rem;
+  margin-bottom: 0rem;
+  line-height: 1.63333333333; }
+
+ol > [id^="fn:"] {
+  color: #a00000; }
+  ol > [id^="fn:"] p {
+    color: #111; }
+
+h6 {
+  font-style: italic; }
+
+.contrast {
+  color: #a00000; }
+
+div.footnotes {
+  margin-bottom: 1.4rem; }
+
+subtitle {
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 1.088888888889rem;
+  margin-top: 1.088888888889rem;
+  display: block;
+  line-height: 1.088888888889; }
+
+table {
+  width: 53%;
+  text-align: right;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  -webkit-font-feature-settings: 'tnum';
+  /* This is technically redundant */
+  -moz-font-feature-settings: 'tnum';
+  -ms-font-feature-settings: 'tnum'; }
+
+thead th {
+  border-bottom: 1px solid #333333;
+  font-weight: 400;
+  border-collapse: separate;
+  border-spacing: 5px 5px; }
+
+a.url, .sidenote a {
+  text-decoration: none;
+  word-break: break-all;
+  font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace; }
+
+sup.sidenote-number {
+  color: #ed0000; }
+
+span.newthought {
+  font-variant: small-caps; }
+
+/* LaTeX-logo-specific styling */
+.latex sub, .latex sup {
+  text-transform: uppercase; }
+
+.latex sub {
+  vertical-align: -0.5ex;
+  margin-left: -0.1667rem;
+  margin-right: -0.125rem; }
+
+.latex, .latex sub {
+  font-size: 1rem; }
+
+.latex sup {
+  font-size: 0.85rem;
+  vertical-align: 0.15rem;
+  margin-left: -0.36rem;
+  margin-right: -0.15rem; }
+
+img.main-portrait {
+  width: 150px;
+  float: left;
+  margin: 0.25em 1em 0.5em 0;
+  border: 1px solid #a00000; }
+
+/*--- Media query for printing --*/
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  @page {
+    margin: 0.75in 0.5in 0.75in 0.5in;
+    orphans: 4;
+    widows: 2; }
+  body {
+    font-size: 12pt; }
+
+  html body span.print-footer {
+    font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
+    font-size: 9pt;
+    margin-top: 22.4pt;
+    padding-top: 4pt;
+    border-top: 1px solid #000; }
+
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 4;
+    widows: 4; }
+
+  article h2, article h2 h3, article h3, article h3 h4, article h4, article h4 h5 {
+    page-break-after: avoid; }
+
+  body header, body footer {
+    display: none; } }
+/* Icomoon exported SVG icons */
+div.icon {
+  font-size: 16px;
+  width: 2em;
+  margin-right: 0em;
+  float: left;
+  overflow: hidden; }
+
+div.icon div.clearfix:before, div.clearfix:after {
+  content: " ";
+  display: table; }
+
+div.icon div.clearfix:after {
+  clear: both; }
+
+div.icon svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: #a00000; }
+
+/*-- End of Icomoon icon font section --*/
