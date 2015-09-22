@@ -403,15 +403,16 @@ span.newthought {
 }
 
 /* LaTeX-logo-specific styling */
+.latex {  }
+
 .latex sub, .latex sup { text-transform: uppercase; }
 
-.latex sub { vertical-align: -0.5ex;
+.latex sub { vertical-align: -0.15ex;
              margin-left: -0.1667rem;
-             margin-right: -0.125rem; }
+             margin-right: -0.125rem; 
+             font-size: 1.5rem}
 
-.latex, .latex sub { font-size: 1rem; }
-
-.latex sup { font-size: 0.85rem;
+.latex sup { font-size: 0.9rem;
              vertical-align: 0.15rem;
              margin-left: -0.36rem;
              margin-right: -0.15rem; }
