@@ -3,10 +3,10 @@
   <channel>
     <title>Raphael Reitzig</title>
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Sep 2015 01:30:43 +0200</pubDate>
-    <lastBuildDate>Thu, 24 Sep 2015 01:30:43 +0200</lastBuildDate>
+    <link>http://reitzig.github.io/</link>
+    <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 28 Sep 2015 18:44:49 +0200</pubDate>
+    <lastBuildDate>Mon, 28 Sep 2015 18:44:49 +0200</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
   </channel>
