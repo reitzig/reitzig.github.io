@@ -11,7 +11,7 @@
 
 {{ reference page.entry }}
 
-<p>{{ page.entry.abstract }}</p>
+{{ page.entry.abstract }}
 
 {% if page.entry.doi %} -- [doi](//dx.doi.org/{{ page.entry.doi }}){% endif %}{% if page.entry.archiveprefix == "arXiv" %} -- [arXiv](//arxiv.org/abs/{{ page.entry.eprint }}){% endif %}{% if page.entry.url %} -- [website]({{ page.entry.url }}){% endif %}{% if page.entry.pdf %} -- [pdf]({{ page.entry.pdf }}){% endif %} --
 

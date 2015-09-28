@@ -7,11 +7,11 @@ $spacing-unit:     30px;
 }
 
 
-div.highlighter-rouge {
-  /* margin-left: 2em; */ /* obsolete with line numbers */
+div.highlighter-rouge pre.highlight{
+  margin-left: 2em;  /* obsolete with line numbers */
 }
 
-div.highlighter-rouge div.highlight {
+div.highlighter-rouge .highlight {
     background: #fffff8;
     maring: 0;
     @extend %vertical-rhythm;
@@ -80,7 +80,7 @@ div.highlighter-rouge div.highlight {
 }
 
 /* Need to remove table styling */
-.highlight table { 
+.highlighter-rouge table { 
   width: 55%;
   text-align: left;
   font-size: 1.1rem;
@@ -89,6 +89,6 @@ div.highlighter-rouge div.highlight {
   border: none;
 }
 
-.highlight table pre {
+.highlighter-rouge table pre {
   margin: 0;
 }

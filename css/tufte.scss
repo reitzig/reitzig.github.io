@@ -149,6 +149,12 @@ body > footer ul li a{
     }
 }
 
+article hr {
+  width: 55%;
+  border-top: 1px solid lighten($text-color,60%);
+  border-bottom: none;
+}
+
 // Styling of articles listings //
 
 h1.content-listing-header{
@@ -265,16 +271,16 @@ sub { top: 0.2rem; }
   margin-top: 0rem;
   margin-bottom: 1.96rem;
   font-size: 1.0rem;
-  line-height: 1.96;
+  line-height: 1.5;
   vertical-align: baseline;
   position: relative;
 }
 
-.sidenote a {
+/* .sidenote a {
   font-size: 0.9rem;
   line-height: 2.177777777778;
   margin-bottom: 2.177777777778rem;
-} 
+} */
                          
 @media screen and (max-width: 600px){
   .sidenote, .marginnote{
@@ -301,6 +307,16 @@ h1.title{
   font-variant: small-caps;
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
+}
+
+p.below_title {
+  font-size: 1rem;
+  margin-top: -0.5cm;
+  color: lighten($text-color,25%);
+  
+  span.separator {
+    margin: 0 0.5em 0 0.5em;
+  }
 }
 
 p.date {
@@ -360,7 +376,11 @@ h6 {
 }    
 div.footnotes{
   margin-bottom: 1.4rem;
-
+  margin-left: 2em;
+  
+  p {
+    width: 52%;
+  }
 }
 
 subtitle { font-style: italic;
@@ -391,13 +411,16 @@ thead th { border-bottom: 1px solid $border-color;
            border-collapse: separate; 
            border-spacing: 5px 5px;}
 
-a.url, .sidenote a { text-decoration: none;
+a.url { text-decoration: none;
         word-break: break-all;
         font-family: $url-font; }
 
+.sidenote a { text-decoration: none;
+        word-break: break-all; }
+
 blockquote {
   margin-left: 2em;
-  width: 50%;
+  width: 85%;
   text-align: justify;
   font-size: 1.25rem;
   color: lighten($text-color,25%);
@@ -410,6 +433,17 @@ sup.sidenote-number {
 span.newthought { 
   font-variant: small-caps;
   
+}
+
+img.main-portrait {
+  width: 150px; 
+  float: left;
+  margin: 0.25em 1em 0.5em 0;
+  border: 1px solid $contrast-color;
+}
+
+article img {
+  margin-left: 2em;
 }
 
 /* LaTeX-logo-specific styling */
@@ -426,13 +460,6 @@ span.newthought {
              vertical-align: 0.15rem;
              margin-left: -0.36rem;
              margin-right: -0.15rem; }
-
-img.main-portrait {
-  width: 150px; 
-  float: left;
-  margin: 0.25em 1em 0.5em 0;
-  border: 1px solid $contrast-color;
-}
 
 /*--- Media query for printing --*/
 @media print {

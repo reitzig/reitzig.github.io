@@ -8,6 +8,7 @@ gems: ['jekyll/scholar']
 exclude:    [Gemfile, Gemfile.lock, run, build]
 timezone:   "Europe/Berlin"
 encoding:   "utf-8"
+url: "http://reitzig.github.io"
 
 permalink: /ramblings/:year/:title
 mathjax-options: "displayAlign: \"left\", displayIndent: \"2em\", positionToHash: true"
@@ -15,8 +16,8 @@ mathjax-options: "displayAlign: \"left\", displayIndent: \"2em\", positionToHash
 markdown: kramdown
 kramdown:
     syntax_highlighter: rouge
-    syntax_highlighter_opts: 
-        line_numbers: true
+#    syntax_highlighter_opts: 
+#        line_numbers: true
 
 defaults:
   -

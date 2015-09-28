@@ -1,0 +1,7 @@
+<p class="below_title">
+  <span class="date">{{ page.date | date: "%B %-d, %Y" }}</span>
+  {% if page.tags.size > 0 %}
+    <span class="separator">&mdash;</span>
+    <span class="tags">{{ page.tags | sort | join: ", " }}</span>
+  {% endif %}
+</p>
