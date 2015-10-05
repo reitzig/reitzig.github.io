@@ -126,11 +126,16 @@ header > nav a img{
   position: relative;
   top:-1.5rem;
 }
+
 body > footer{
   padding-bottom: 2rem;
   border-top: 1px lighten($text-color, 60%) solid;
   max-width: 90%;
   text-align: center;
+}
+
+body > footer ul {
+  margin-top: 1ex;
 }
 
 body > footer  ul  li{
@@ -141,12 +146,22 @@ body > footer  ul  li{
 body > footer ul li a{
   font-size: 1.8rem;
 }
+
 //change font color for credit links in footer
-.credits{
+footer div.credits {
   font-family: $sans-font;
-    & a{
-      color: $contrast-color;
-    }
+  
+  & a{
+    color: $contrast-color;
+  }
+    
+  div {
+    margin: 1ex 0 1ex 0;
+  }
+}
+
+article li,ul {
+  margin-left: 1em;
 }
 
 article hr {
@@ -220,18 +235,26 @@ body p {
 p, li{ 
     font-size: 1.4rem;
     line-height: 1.4;
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
     //width: 55%;
     padding-right: 0px;
     vertical-align: baseline;
+}
+
+li.listing {
+  width: 55%;
 }
 // Since there is no grid here, lists and pre-formatted code break if they are too long.
 // Necessary to specify that any list within an article is the same width as
 // the paragraphs
 
-p, article  ul li, pre code, pre code p, code{
+p, article  pre code, pre code p, code{
   width: 55%;
+}
+
+article ul {
+  width: 95%;
 }
 
 @media screen and (max-width: 600px){
@@ -327,28 +350,28 @@ p.date {
 
 h2 {  font-style: italic;
       font-weight: 400;
-      font-size: 2.1rem;
+      font-size: 1.7rem;
       margin-top: 1.86666666666667rem;
       margin-bottom: 0rem;
       line-height: 0.9333333333333; }
 
 h3 {  font-style: italic;
       font-weight: 400;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-top: 2.177777777778rem;
       margin-bottom: 0;
       line-height: 1.088888888889; }
 
 h4 {  font-style: italic;
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       margin-top: 2.45rem;
       margin-bottom: 0;
       line-height: 1.225; }
 
 h5 {  font-style: italic;
       font-weight: 400;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       margin-top: 2.8rem;
       margin-bottom: 0rem;
       line-height: 1.4;
@@ -356,7 +379,7 @@ h5 {  font-style: italic;
 
 h6, .smaller, [id^="fn:"] > p, ol > [id^="fn:"] {  
       font-weight: 400;
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-top: 3.266666666667rem;
       margin-bottom: 0rem;
       line-height: 1.63333333333; 
@@ -443,7 +466,18 @@ img.main-portrait {
 }
 
 article img {
-  margin-left: 2em;
+  margin: 1ex 0 0 2em;
+}
+
+article span.tikz {
+  img  {
+    max-width: 120%;
+    height: auto;
+  }
+  
+  sup {
+    margin-left: 3em;
+  }
 }
 
 /* LaTeX-logo-specific styling */
@@ -528,11 +562,33 @@ p.bibdetailhead {
 }
 
 ol.bibliography {
-  margin-left: 2em;
+  margin-left: 1em;
   
   li {
-    width: 60%;
+    width: 55%;
     position: relative;
+    
+    /* Styling for entries created by fixbibliography.rb */
+    p {
+      width: 95%;
+      margin: 0;
+    }
+    
+    table.fixedbib {
+      width: 100%;
+      text-align: left;
+      margin: 0;
+      border: none;
+      
+      td {
+        vertical-align: top;
+        
+        span.bibkey {
+          margin-left: -1rem;
+          margin-right: 1rem;
+        }    
+      }
+    }
   }
   
   a.details {

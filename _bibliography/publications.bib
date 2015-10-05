@@ -10,12 +10,18 @@
 
 In recent literature, there are two algorithms that implement divisor methods: one by Cheng and Eppstein (ISAAC, 2014) has worst-case optimal running time but is complex, while the other (Pukelsheim, 2014) is relatively simple and fast in practice but does not offer worst-case guarantees.
 
-We demonstrate that the former algorithm is much slower than the other in practice propose a novel algorithm that avoids the shortcomings of both. We investigate the running-time behavior of the three contenders in order to determine which is most useful in practice.}
+We demonstrate that the former algorithm is much slower than the other in practice propose a novel algorithm that avoids the shortcomings of both. We investigate the running-time behavior of the three contenders in order to determine which is most useful in practice.},
+  note = {We thank Chao Xu for pointing us towards the [work by Cheng and Eppstein](https://dx.doi.org/10.1007/978-3-319-13075-0_46) and noting that the problem of [envy-free stick-division](RW2015a.html) is related to proportional apportionment as discussed there. He also observed that our approach for cutting sticks -- the core ideas of which turned out to carry over to this article -- could be improved to run in linear 
+time.
+
+Furthermore, we owe thanks to an anonymous reviewer whose constructive feedback
+sparked broad changes which have greatly improved the article over its first 
+incarnation.},
+  code = {https://github.com/reitzig/2015_apportionment}
 }
 
 @online{RW2015a,
-  author    = {Raphael Reitzig and
-               Sebastian Wild},
+  author    = {Raphael Reitzig and Sebastian Wild},
   title     = {Efficient Algorithms for Envy-Free Stick Division With Fewest Cuts},
   journal = {ArXiv e-prints},
   archivePrefix = {arXiv},
@@ -24,14 +30,22 @@ We demonstrate that the former algorithm is much slower than the other in practi
   year      = {2015},
   month     = {April},
   version   = {v2},
-  abstract  = {Segal-Halevi, Hassidim, and Aumann (AAMAS, 2015) propose the 
-                problem of cutting sticks so that at least k sticks have equal 
-                length and no other stick is longer. This allows for an envy-free 
-                allocation of sticks to k players, one each. The resulting number 
-                of sticks should also be minimal.
-  
-                We analyze the structure of this problem and devise a linear-time 
-                algorithm for it. }
+  abstract  = {Segal-Halevi, Hassidim, and Aumann (AAMAS, 2015) propose the problem of cutting sticks so that at least k sticks have equal length and no other stick is longer. This allows for an envy-free allocation of sticks to k players, one each. The resulting number of sticks should also be minimal.
+
+We analyze the structure of this problem and devise a linear-time algorithm for it.},
+  note = {[Erel Segal-Halevi](http://cs.stackexchange.com/users/1342/)
+posed the [original question](http://cs.stackexchange.com/q/30073) on Computer Science Stack Exchange.
+Our approach is based on observations in the answers by
+[Abhishek Bansal](http://cs.stackexchange.com/users/19311/),
+[InstructedA](http://cs.stackexchange.com/users/20169/) and
+[FrankW](http://cs.stackexchange.com/users/13022/).
+Hence, even though the eventual algorithm and its presentation have been developed 
+and refined offline with the use of a blackboard and lots of paper, 
+the result has been the product of a small "crowd" collaboration made possible 
+by the Stack Exchange platform.
+
+We thank Chao Xu for pointing us towards the work by [Cheng and Eppstein](https://dx.doi.org/10.1007/978-3-319-13075-0_46) (which lead to [another article of ours](RW2015b.html)), 
+and for providing the observation we utilize in Section&nbsp;4.1.}
 }
 
 @INPROCEEDINGS{WNRL2013,
@@ -80,8 +94,7 @@ We demonstrate that the former algorithm is much slower than the other in practi
 
 @ARTICLE{NWH+2010,
   author = {Markus E. Nebel and Sebastian Wild and Michael Holzhauser and Lars
-  Hüttenberger and Raphael Reitzig and Matthias Sperber and Thorsten
-  Stoeck},
+  Hüttenberger and Raphael Reitzig and Matthias Sperber and Thorsten Stoeck},
   title = {JAguc -- a software package for environmental diversity analyses},
   journal = {Journal of Bioinformatics and Computational Biology},
   year = {2011},
