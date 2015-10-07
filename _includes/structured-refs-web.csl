@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>Structured References for the Web</title>
+    <id>https://github.com/reitzig/reitzig.github.io</id>
+    <link href="https://github.com/reitzig/reitzig.github.io" rel="self"/>
+    <link href="http://www.zotero.org/styles/new-solutions" rel="template"/>
+    <author>
+      <name>Raphael Reitzig</name>
+      <uri>http://reitzig.github.io</uri>
+      <email>reitzig@cs.uni-kl.de</email>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="science"/>
+    <category field="engineering"/>
+    <category field="math"/>
+    <updated>2015-10-07T20:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+<!-- 
+  __  __                          
+ |  \/  |                         
+ | \  / | __ _  ___ _ __ ___  ___ 
+ | |\/| |/ _` |/ __| '__/ _ \/ __|
+ | |  | | (_| | (__| | | (_) \__ \
+ |_|  |_|\__,_|\___|_|  \___/|___/
+-->
+  <macro name="edition">
+    <choose>
+      <if type="bill book chapter graphic legal_case legislation motion_picture paper-conference report song" match="any">
+        <choose>
+          <if is-numeric="edition">
+            <group delimiter=" ">
+              <number variable="edition" form="ordinal"/>
+              <text term="edition" form="short"/>
+            </group>
+          </if>
+          <else>
+            <text variable="edition" text-case="capitalize-first" suffix="."/>
+          </else>
+        </choose>
+      </if>
+    </choose>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year" form="long"/>
+    </date>
+  </macro>
+  <macro name="author">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper paper-conference" match="any">
+        <names variable="author">
+          <name initialize-with=". " delimiter=", " and="text"/>
+          <label form="short" prefix=", "/>
+          <substitute>
+            <names variable="editor"/>
+            <names variable="translator"/>
+          </substitute>
+        </names>
+      </if>
+      <else>
+        <names variable="author">
+          <name delimiter=", " and="text"/>
+          <label form="short" prefix=", "/>
+          <substitute>
+            <names variable="editor"/>
+            <names variable="translator"/>
+          </substitute>
+        </names>
+      </else>
+    </choose>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <label form="short" suffix=" " strip-periods="true"/>
+      <name delimiter=", " and="text"/>
+    </names>
+  </macro>
+  <macro name="locators">
+    <group>
+      <text macro="edition" suffix=" "/>
+      <number variable="volume" form="numeric"/>
+      <number variable="issue" form="numeric" prefix="(" suffix=") "/>
+    </group>
+  </macro>
+  <macro name="title">
+    <text variable="title" text-case="title" font-style="italic"/>
+  </macro>
+  <macro name="publisher">
+    <choose>
+      <if type=" bill book chapter graphic legal_case legislation motion_picture paper-conference song" match="any">
+        <text variable="publisher-place" suffix=": "/>
+        <text variable="publisher"/>
+      </if>
+      <else>
+        <group delimiter=", ">
+          <text variable="publisher"/>
+          <text variable="publisher-place"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if type="webpage">
+        <choose>
+          <if variable="URL">
+            <group delimiter=". ">
+              <text variable="URL" suffix=" "/>
+              <group prefix="(" suffix=")">
+                <date variable="accessed" prefix="accessed: ">
+                  <date-part name="day" form="numeric-leading-zeros" suffix="-"/>
+                  <date-part name="month" form="short" suffix="-" strip-periods="true"/>
+                  <date-part name="year" form="long"/>
+                </date>
+              </group>
+            </group>
+          </if>
+        </choose>
+      </if>
+    </choose>
+  </macro>
+  <macro name="page">
+    <choose>
+      <if type="book" match="none">
+        <text variable="page"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="doi">
+    <text variable="DOI" prefix="DOI: " suffix=" "/>
+  </macro>
+  <macro name="url">
+    <text variable="URL" prefix="URL: " suffix=" "/>
+  </macro>
+<!--    
+   _____ _ _        _   _             
+  / ____(_) |      | | (_)            
+ | |     _| |_ __ _| |_ _  ___  _ __  
+ | |    | | __/ _` | __| |/ _ \| '_ \ 
+ | |____| | || (_| | |_| | (_) | | | |
+  \_____|_|\__\__,_|\__|_|\___/|_| |_|
+-->
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+<!--
+  ____  _ _     _ _                             _           
+ |  _ \(_) |   | (_)                           | |          
+ | |_) |_| |__ | |_  ___   __ _ _ __ __ _ _ __ | |__  _   _ 
+ |  _ <| | '_ \| | |/ _ \ / _` | '__/ _` | '_ \| '_ \| | | |
+ | |_) | | |_) | | | (_) | (_| | | | (_| | |_) | | | | |_| |
+ |____/|_|_.__/|_|_|\___/ \__, |_|  \__,_| .__/|_| |_|\__, |
+                           __/ |         | |           __/ |
+                          |___/          |_|          |___/ 
+-->
+  <bibliography et-al-min="4" et-al-use-first="1" entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="author" suffix=": "/>
+      <choose>
+        <if type="article-journal article-magazine article-newspaper paper-conference" match="any">
+          <text macro="title" suffix=", "/>
+          <text variable="container-title" suffix=" "/>
+          <text macro="locators" suffix=" "/>
+          <text macro="issued" prefix="(" suffix=")"/>
+          <text macro="page" prefix=": "/>
+          <choose>
+            <if variable="DOI">
+              <text macro="doi" prefix=", "/>
+            </if>
+            <else>
+              <text macro="url" prefix=", "/>
+            </else>
+          </choose>
+        </if>
+        <else-if type="bill book graphic legal_case legislation motion_picture song" match="any">
+          <group delimiter=", ">
+            <text macro="title"/>
+            <text macro="locators"/>
+          </group>
+          <group prefix=" (" delimiter=", " suffix=").">
+            <text macro="publisher"/>
+            <text macro="issued"/>
+          </group>
+          <group prefix=" " delimiter=", ">
+            <text variable="ISBN" prefix="ISBN: "/>
+            <choose>
+              <if variable="DOI">
+                <text macro="doi"/>
+              </if>
+              <else>
+                <text macro="url"/>
+              </else>
+            </choose>
+          </group>
+        </else-if>
+        <else-if type="chapter">
+          <group delimiter=", " suffix=", ">
+            <text macro="title"/>
+            <text variable="container-title" prefix="in " font-style="italic"/>
+            <text macro="locators"/>
+          </group>
+          <text macro="editor" suffix=" "/>
+          <group prefix="(" delimiter=", " suffix=")">
+            <text macro="publisher"/>
+            <text macro="issued"/>
+          </group>
+          <text macro="page" prefix=", "/>
+          <choose>
+            <if variable="DOI">
+              <text macro="doi" prefix=", "/>
+            </if>
+            <else>
+              <text macro="url" prefix=", "/>
+            </else>
+          </choose>
+        </else-if>
+        <else-if type="report">
+          <group delimiter=", ">
+            <text variable="title" font-style="italic"/>
+            <text macro="issued"/>
+          </group>
+          <text macro="access"/>
+        </else-if>
+        <else-if type="webpage">
+          <group delimiter=", " suffix=". ">
+            <text macro="title"/>
+          </group>
+          <text macro="url" prefix=", "/>
+          <text macro="access"/>
+        </else-if>
+        <else-if type="thesis">
+          <group delimiter=", " suffix=".">
+            <text macro="title"/>
+            <text variable="genre"/>
+          </group>
+          <group prefix=" " delimiter=", " suffix=".">
+            <text macro="publisher"/>
+            <text macro="issued"/>
+          </group>
+          <choose>
+            <if variable="DOI">
+              <text macro="doi" prefix=" "/>
+            </if>
+            <else>
+              <text macro="url" prefix=" "/>
+            </else>
+          </choose>
+        </else-if>
+        <else-if type="patent">
+          <text macro="title" suffix=", "/>
+          <text variable="number"/>
+          <text macro="issued"/>
+        </else-if>
+        <else-if type="broadcast interview manuscript map patent personal_communication speech thesis webpage" match="any">
+          <group delimiter=", ">
+            <text macro="title"/>
+            <text variable="container-title" font-style="italic"/>
+            <text macro="locators"/>
+            <text macro="publisher"/>
+            <text macro="page" prefix=": "/>
+            <text macro="issued"/>
+          </group>
+        </else-if>
+        <else>
+          <group delimiter=", " suffix=". ">
+            <text macro="title"/>
+            <text variable="container-title" font-style="italic"/>
+            <text macro="locators"/>
+          </group>
+          <group delimiter=", " suffix=".">
+            <text macro="publisher"/>
+            <text variable="page" prefix=": "/>
+            <text macro="issued"/>
+          </group>
+          <choose>
+            <if variable="DOI">
+              <text macro="doi" prefix=" "/>
+            </if>
+            <else>
+              <text macro="url" prefix=" "/>
+            </else>
+          </choose>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>

@@ -1,5 +1,5 @@
 ---
-title: About Me
+  title: About Me
 ---
 
 University has made me into a computer scientists with mostly theoretical viewpoints
@@ -7,13 +7,14 @@ but an interest in practical problem solving.
 I enjoy teaching, programming and working (or procrastinating) with {% latex %}, and
 I try to make the internet a [better place for computer scientists](http://cs.stackexchange.com/users/98/raphael).
 
-After work, I engage in several nerdisms, {% abbr eg %} reading, music, video and tabletop gaming.
-For a healthy balance, I work out (body-weight strength training, HIIT, running) and pursue a
-changing mix of bouldering, ballroom dancing and team handball.
+After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
+video and tabletop games.
+For a healthy balance, I work out (body-weight strength training, HIIT, running) 
+and pursue a changing mix of bouldering, ballroom dancing and team handball.
 
 I currently hold a doctorand position at the [University of Kaiserslautern](http://wwwagak.cs.uni-kl.de/home/staff/raphael-reitzig).
 
-When you send me an [email](mailto:reitzig@cs.uni-kl.de), please consider signing or even encrypting with PGP.
+When you send me an [email](mailto:{{ site.email }}), please consider signing or even encrypting with PGP.
 You can find my key [here](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x12F79CC14F0B50B9).
 I sign as a matter of principle;
 if you receive an email that seems to be from me but has *not* been signed with this key,
@@ -41,8 +42,9 @@ have been used to create these pages:
     
    and many more components,
    
- * [MathJax](https://www.mathjax.org/) and
- * [Academicons](http://jpswalsh.github.io/academicons/).
+ * [MathJax](https://www.mathjax.org/),
+ * [Academicons](http://jpswalsh.github.io/academicons/) and
+ * [Citation Style Language](http://citationstyles.org/).
 
 Furthermore, I have been using the following services:
 

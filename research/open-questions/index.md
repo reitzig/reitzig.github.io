@@ -51,6 +51,10 @@ at FORMAT 2014 and
   [wrote up some related results](/assets/pdf/avgtreeheight_notes.pdf) 
 that may be of independent interest.
 
+It may be possible to adapt the height analysis for simple 
+varieties&nbsp;{% cite FlajoletOdlyzko1982 -l 200-205 --file references %}
+to more than one non-terminal; I could not tell if and how.
+
 ### Analysis of Top-Level Parallel Recursive Algorithms
 
 {% newthought During %} average-case running-time analysis of recursive algorithms, 

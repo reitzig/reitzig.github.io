@@ -41,7 +41,23 @@ module Jekyll
         res.gsub!(/<a class="details" href=".*?">Details<\/a>/, "")
       end
       
+      # Make DOI into link
+      res.gsub!(/DOI: (\S+)\s+/, "DOI: <a href=\"https://dx.doi.org/\\1\">\\1</a>")
+      
+      # Make URLs into link
+      res.gsub!(/URL: (\S+)\s+/) { |m|
+        "<a href=\"#{$1}\">#{shorten_url($1)}</a>"
+      }
+
+      # Prevent bad line breaks
+      res.gsub!(/et al./, "et&#8239;al.")
+      #res.gsub!(/(DOI:|ISBN:)\s+/, "\\1&nbsp;")
+      
       return res
+    end
+    
+    def shorten_url(url)
+      url.sub(/https?:\/\/([^\/]+)(\/.*|.*\?)$/, "\\1")
     end
   end
 end

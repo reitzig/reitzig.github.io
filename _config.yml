@@ -2,6 +2,7 @@ title:  "Raphael Reitzig"
 subtitle: "Thoughts of a computer scientist, teacher, programmer and LaTeXer."
 author: "Raphael Reitzig"
 description: "Computer scientist. Teacher. Programmer. LaTeXer."
+
 email: reitzig@cs.uni-kl.de
 
 gems: ['jekyll/scholar']
@@ -36,7 +37,7 @@ defaults:
       mathjax-version:  "TeX-AMS_HTML-full"
       
 scholar:
-  style: new-solutions
+  style: _includes/structured-refs-web.csl
   locale: en
 
   bibliography: publications.bib
