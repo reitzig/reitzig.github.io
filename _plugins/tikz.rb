@@ -20,8 +20,7 @@ module Jekyll
     def self.deliver(site, page, text, format = @@config[:format])
       hash = Digest::SHA1.hexdigest(text)
       
-      pageid = page["dir"].sub("/", "").gsub("/", "-") + 
-               "-" + page["name"].sub(/\.\w+$/, "")
+      pageid = page['url'].sub("/", "").gsub("/", "-").sub(/\.\w+$/, "")
       
       # Use context to count TikZ blocks on this page
       if !page.has_key?("tikz-count")
@@ -88,7 +87,7 @@ module Jekyll
     
     def render(context)
       site = context.registers[:site]
-      page = context.registers[:page]
+      page = context['page']
 
       file = TikZUtil.deliver(site, page, super, @format)
 
