@@ -139,8 +139,11 @@ However, after translation it becomes:
     \node[state,right=of b] (c) {\texttt{end\_for}};
     \node[state,right=of c] (d) {\texttt{bar}};
     
+    %\draw[{Stealth[]}-] (a) edge ($(a.west) + (-0.5cm,0)$);
+    \node[inner sep=0pt] (cc) at ($(a.west) + (-0.5cm,0)$) {};
+    %\coordinate (cc) at ($(a.west) + (-0.5cm,0)$);
     \path[draw,black,-{Stealth[]}] 
-      ($(a.west) + (-0.5cm,0)$) edge (a)
+      (cc) edge (a)
       (a) edge node[swap] {$\frac{n-1}{n}$} (b)
       (b) edge node {$1$} (c) 
       (d) edge ($(d.east) + (0.5cm,0)$);
@@ -168,34 +171,56 @@ Why is this a larger problem for the model proposed above?
 Well, if we have *conflicts* aka communication, {% abbr eg %} in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime -- but depends on higher moments! Consider, for instance, this net:
-{% marginnote "Inventing notation here. Say thick edges transport processor tokens (&#9633;) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." %}
+{% marginnote "Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \\dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." %}
 
 {% tikz %}
-  %p%\usepackage{}
+  %p%\usepackage{nicefrac}
   %p%\usetikzlibrary{positioning,arrows.meta,calc}
   \begin{tikzpicture}[auto,
-    place/.style={draw,circle},
-    trans/.style={draw,rectangle},
-    proc/.style={black,semi thick},
-    aux/.style={black,thin}]
-    \def\proc#1{$\square_#1$}
-    \def\aux{\bullet}
+    place/.style={draw,circle,minimum width=0.7cm},
+    trans/.style={draw,rectangle,minimum height=0.7cm},
+    proc/.style={black,thick,-{Stealth[]}},
+    aux/.style={black,thin,-{Stealth[]}}]
     
-    \node[place] (l1) {\proc{1}};
-    \node[trans,below=of l1] (l2) {};
-    \node[place,below right=of l2] (m1) {};
-    \node[trans,above right=of m1] (r2) {};
-    \node[place,above=of r2] (r1) {\proc{2}};
-    \node[trans,below=of m1] (m2) {};
-    \node[place,below=of m2] (m3) {};
-    \node[trans,below=of m3] (m4) {};
+    \node[place] (o1) {$1$};
+    \node[trans,right=of o1] (o2) {};
+    \node[place,below right=0.5 and 1 of o2] (m1) {};
+    \node[trans,below left=0.5 and 1 of m1] (u2) {};
+    \node[place,left=of u2] (u1) {$2$};
+    \node[trans,right=of m1] (m2) {};
+    \node[place,right=of m2] (m3) {};
+    \node[place,above=0.5 of m3] (m5) {\textbullet};
+    \node[trans,right=of m3] (m4) {};
+      \node at ($(m3.south) + (0,-0.2cm)$) {\footnotesize$1$};
+    \node[place,right=of m4] (m6) {};
+    
+    \draw[proc]
+      (o1) edge (o2)
+      (u1) edge (u2)
+      (m1) edge (m2)
+      (m2) edge (m3)
+      (m3) edge (m4)
+      (m4) edge (m6);
+      
+    \draw[proc] ($(u2.east) + (0,0.1cm)$) -- ++(0.5cm,0) |- (m1);
+      \node at  ($(u2.east) + (0.9cm,0.425)$) {$\frac{1}{n-1}$};
+    \draw[proc] ($(u2.east) + (0,-0.1cm)$) -- ++(0.5cm,0) -- ++(0,-0.75cm) -| (u1);
+      \node at  ($(u2.east) + (0.9cm,-0.475)$) {$\frac{n-2}{n-1}$};
+    
+    \draw[proc] ($(o2.east) + (0,-0.1cm)$) -- ++(0.5cm,0) |- (m1);
+      \node at  ($(o2.east) + (0.9cm,-0.425)$) {$\frac{1}{n+1}$};
+    \draw[proc] ($(o2.east) + (0,+0.1cm)$) -- ++(0.5cm,0) -- ++(0,0.75cm) -| (o1);
+      \node at  ($(o2.east) + (0.9cm,0.475)$) {$\frac{n-1}{n+1}$};
+    
+    \draw[aux] (m4) |- (m5);
+    \draw[aux] (m5) -| (m2);
     
   \end{tikzpicture}
 {% endtikz %}
 
 Which kinds of loop are behind this? If both are of the first type I gave above,
-we have *zero* conflicts; note that the two processors enter their respective 
-loops at the same time here. 
+we *never* have a conflict; note that the two processors enter their respective 
+loops at the same time here, and $$p_1$$ leaves the mutex before $$p_2$$ reaches it. 
 If they are of the second kind, however, we have a non-zero probability for conflict.
 
 So, the question remains: is there any hope here? 

@@ -48,7 +48,7 @@ module Jekyll
         
         # Create TikZ file
         File.open("#{target}/#{id}.tikz", "w") { |f|
-          f.write(text.strip)
+          f.write(text)
         }
 
         # Convert to desired target format
