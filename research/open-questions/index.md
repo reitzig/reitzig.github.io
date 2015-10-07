@@ -143,19 +143,17 @@ However, after translation it becomes:
     \node[state,right=of b] (c) {\texttt{end\_for}};
     \node[state,right=of c] (d) {\texttt{bar}};
     
-    %\draw[{Stealth[]}-] (a) edge ($(a.west) + (-0.5cm,0)$);
-    \node[inner sep=0pt] (cc) at ($(a.west) + (-0.5cm,0)$) {};
-    %\coordinate (cc) at ($(a.west) + (-0.5cm,0)$);
     \path[draw,black,-{Stealth[]}] 
-      (cc) edge (a)
+      ($(a.west) + (-0.5cm,0)$) to (a)
       (a) edge node[swap] {$\frac{n-1}{n}$} (b)
       (b) edge node {$1$} (c) 
+      (c) edge[to path={|- ($(c)!0.5!(a) + (0,1cm)$) -| (\tikztotarget)}] (a)
+      (a) edge[to path={|- ($(a)!0.5!(d) + (0,-1cm)$) -| (\tikztotarget)}] (d)
       (d) edge ($(d.east) + (0.5cm,0)$);
       
-    \draw[-{Stealth[]}] (c) |- ($(c)!0.5!(a) + (0,1cm)$) -| (a);
-      \node at ($(c)!0.5!(a) + (0,0.8cm)$) {$1$};
-    \draw[-{Stealth[]}] (a) |- ($(a)!0.5!(d) + (0,-1cm)$) -| (d);
-      \node at ($(a)!0.5!(d) + (0,-0.7cm)$) {$\frac{1}{n}$};
+    % Extra edge labels that can't be drawn because of `to path`
+    \node at ($(c)!0.5!(a) + (0,0.8cm)$) {$1$};
+    \node at ($(a)!0.5!(d) + (0,-0.7cm)$) {$\frac{1}{n}$};
   \end{tikzpicture}
 {% endtikz %}
 
