@@ -135,7 +135,7 @@ A simple example is a plain `for`-loop:
 We *know* that this loop runs for *exactly* $$n$$ iterations, every time.
 However, after translation it becomes:
 
-{% tikz %}
+{% tikz --style "height: 10ex;" %}
   %p%\usetikzlibrary{positioning,automata,arrows.meta,calc}
   \begin{tikzpicture}[auto,state/.append style={rectangle}]
     \node[state] (a) {\texttt{for}};
@@ -175,7 +175,7 @@ mutex, the probability of processors interfering is crucial for the expected
 runtime -- but depends on higher moments! Consider, for instance, this net:
 {% marginnote "Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \\dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." %}
 
-{% tikz %}
+{% tikz --style "height: 20ex;" %}
   %p%\usepackage{nicefrac}
   %p%\usetikzlibrary{positioning,arrows.meta,calc}
   \begin{tikzpicture}[auto,
