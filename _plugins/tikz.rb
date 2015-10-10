@@ -76,7 +76,7 @@ module Jekyll
       end
       
       # Make sure the files are not cleaned up
-      site.keep_files << "#{config[:dir]}/#{id}.tikz"
+      site.keep_files << "#{config[:dir]}/#{id}.tikz" if self.config[:sources]
       site.keep_files << "#{config[:dir]}/#{id}.#{format}"
       
       return id
@@ -90,6 +90,7 @@ module Jekyll
       super
       
       @params = { 
+        :alt    => "A graphic created with TikZ",
         :format => TikZUtil.config[:format],
         :style  => ""
       }
@@ -116,7 +117,8 @@ module Jekyll
       if file != nil
         res += "  <img class=\"tikz #{@params[:format].to_s}\" " + 
                       "style=\"#{@params[:style]}\" " +
-                      "src=\"/#{TikZUtil.config[:dir]}/#{file}.#{@params[:format]}\" />"
+                      "src=\"/#{TikZUtil.config[:dir]}/#{file}.#{@params[:format]}\"  " +
+                      "alt=\"#{@params[:alt]}\" />"
         if ( TikZUtil.config[:sources] )
           res += "<br/>\n"
           res += "  <sup>\n"
