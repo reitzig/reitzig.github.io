@@ -16,7 +16,11 @@ div.highlighter-rouge .highlight {
     maring: 0;
     @extend %vertical-rhythm;
     
-    .lineno { margin-right: 0.5em; margin-left: -0.35em; }
+    .lineno { 
+      margin-right: 0.75em; 
+      margin-left: 0.25em; 
+      opacity: 0.5;
+    }
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error

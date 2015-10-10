@@ -168,6 +168,7 @@ article hr {
   width: 55%;
   border-top: 1px solid lighten($text-color,60%);
   border-bottom: none;
+  margin: 2ex 0 2ex 0;
 }
 
 // Styling of articles listings //
@@ -398,11 +399,15 @@ h6 {
       color: $contrast-color;
 }    
 div.footnotes{
-  margin-bottom: 1.4rem;
-  margin-left: 2em;
+  margin: 1rem 0 1.4rem 2em;
   
   p {
     width: 52%;
+    margin-top: 0;
+  }
+  
+  li {
+    margin-top: 0;
   }
 }
 

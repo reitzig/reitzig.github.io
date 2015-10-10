@@ -16,9 +16,12 @@ mathjax-options: "displayAlign: \"left\", displayIndent: \"2em\", positionToHash
 
 markdown: kramdown
 kramdown:
-    syntax_highlighter: rouge
-#    syntax_highlighter_opts: 
-#        line_numbers: true
+  syntax_highlighter: rouge
+  math_engine_opts:
+    preview: true
+  syntax_highlighter_opts:      
+    block: 
+      line_numbers: true
 
 defaults:
   -
