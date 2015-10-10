@@ -23,7 +23,7 @@ I *am probably not the author*.
 ### License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="float:right;">
-  <img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
 </a>
 Unless stated otherwise, all content created by me is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
 
@@ -62,3 +62,5 @@ You can not prevent others from producing sick things, right?
 I am -- for better or worse -- responsible for these pages here, though.
 Please contact me if you feel that your personal rights or business plans are violated by the content I provide;
 I almost surely do not intend to do so. Thank you.
+
+Any opinions I voice on these pages is solely my own.
