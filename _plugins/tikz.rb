@@ -37,6 +37,15 @@ module Jekyll
       
       target = "#{site.dest.to_s}/#{config[:dir]}/"
       
+      # Verify that format is valid
+      if !TikZUtil.formats.include?(format)
+        Jekyll.logger.warn("\nBuild Warning:", 
+            "Illegal target format #{format.to_s} for TikZ image " +
+            "##{page["tikz-count"]} in #{page["dir"]}/#{page["name"]}. " +
+            "Falling back to #{self.config[:format]}.")
+        format = self.config[:format]
+      end
+      
       if !File.exist?("#{target}/#{id}.#{format}") || @@hashes[id] != hash
         # Make sure that target directory is there
         FileUtils::mkdir_p("#{target}") if !File.exist?("#{target}")
@@ -59,7 +68,7 @@ module Jekyll
         if File.exist?("#{target}/#{id}.#{format}")
           @@hashes[id] = hash
         else
-          Jekyll.logger.warn("Build Warning:", 
+          Jekyll.logger.warn("\nBuild Warning:", 
             "Building TikZ image ##{page["tikz-count"]}" +
             " in #{page["dir"]}/#{page["name"]} failed.")
           return nil
@@ -74,27 +83,40 @@ module Jekyll
     end
   end
 
-  class TikZBlock < Liquid::Block        
+  class TikZBlock < Liquid::Block 
+    require 'shellwords'
+           
     def initialize(tag_name, text, tokens)
       super
       
-      if TikZUtil.formats.include?(text.strip.to_sym)
-        @format = text.strip.to_sym
-      else
-        @format = TikZUtil.config[:format]
-      end
+      @params = { 
+        :format => TikZUtil.config[:format],
+        :style  => ""
+      }
+       
+      param_name = nil
+      text.shellsplit.each { |param|
+        if /--(\w+)/ =~ param 
+          param_name = $1.to_sym
+        elsif param_name != nil
+          @params[param_name] = param
+          param_name = nil
+        end
+      }
+      @params[:format] = @params[:format].to_sym
     end
     
     def render(context)
       site = context.registers[:site]
       page = context['page']
 
-      file = TikZUtil.deliver(site, page, super, @format)
+      file = TikZUtil.deliver(site, page, super, @params[:format])
 
       res = "<span class=\"tikz\">\n"
       if file != nil
-        res += "  <img class=\"tikz #{@format.to_s}\" src=\"/#{TikZUtil.config[:dir]}/#{file}.#{@format}\" />"
-        
+        res += "  <img class=\"tikz #{@params[:format].to_s}\" " + 
+                      "style=\"#{@params[:style]}\" " +
+                      "src=\"/#{TikZUtil.config[:dir]}/#{file}.#{@params[:format]}\" />"
         if ( TikZUtil.config[:sources] )
           res += "<br/>\n"
           res += "  <sup>\n"
