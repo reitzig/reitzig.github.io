@@ -1,0 +1,18 @@
+
+  %p%\usetikzlibrary{arrows.meta}
+  \begin{tikzpicture}[every node/.style={draw,rectangle,inner sep=5pt}]
+    \foreach \m/\i in {m/1,n/3,o/5} {
+      \node (\m) at (\i,0) {\texttt{Main.\m}};
+    }
+    
+    \foreach \c/\i in {A/1,B/3,C/5} {
+      \node (\c) at (\i,-2) {\texttt{\c.m}};
+    }
+    
+    \path[-{Stealth[]}] 
+      \foreach \m in {m,n,o} {
+        \foreach \c in {A,B,C} {
+          (\m) edge (\c)
+        }
+      };
+  \end{tikzpicture}

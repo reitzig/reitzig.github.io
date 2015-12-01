@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig</title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <title>Raphael Reitzig &ndash; Lazy Deserialization in Java</title>
+  <meta name="description" content="While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instrume...">
 
 
   <link rel="stylesheet" href="/css/tufte.css">	
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/publications/Reitzig2012.html">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -32,52 +32,133 @@
 </header>
 
     <article>
-      <h1 class="title"></h1>
-
-
-<p class="bibdetailhead">
-  <em>Reitzig, Raphael</em><br />
-  <strong>Automated Parallelisation of Dynamic Programming Recursions</strong><br />
-  <span>
-    
-    2012
-  </span>
+      <h1 class="title">Lazy Deserialization in Java</h1>
+<p class="below_title">
+  <span class="date">September 29, 2011</span>
+  
+    <span class="separator">&mdash;</span>
+    <span class="tags">Programming</span>
+  
+  
 </p>
 
-<p>This thesis discusses whether and how dynamic programming recursions can be
-    computed in parallel such that compilers can parallelise them automatically. We 
-    discover that under certain assumptions which permit a rich class of dynamic 
-    programming recursions, two kinds of recursions can be computed in parallel while 
-    others can not. For those which can, we design and analyse efficient parallel algorithms 
-    theoretically. We then implement several prototypes and investigate their performance
-    empirically. Finally, we integrate automatic application of the developed algorithms 
-    into a real-world compiler.</p>
 
-<p>– <a href="http://lmazy.verrech.net/pub/mathesis">website</a> – <a href="https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf">pdf</a> –</p>
+<p>While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.</p>
 
-<!-- Not helpful in this form as it reproduces "jekyll-only" fields.
----
+<p>The solution intended by Sun back then is to set up a code repository servers can access and download the necessary code from. We considered this overkill given that the server does not even care about the value<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>: after RMI deserializes the input, we immediately serialize it again and pass it directly to its child process. Dynamically loading all classes from the archive at hand felt messy for the same reasons.</p>
 
-Cite as:
+<p>So we came up with this pattern which I call <em>lazy deserialization</em>:</p>
 
-~~~bibtex
-@mastersthesis{Reitzig2012,
-  author = {Reitzig, Raphael},
-  title = {Automated Parallelisation of Dynamic Programming Recursions},
-  school = {University of Kaiserslautern},
-  year = {2012},
-  month = jul,
-  pdf = {https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf},
-  url = {http://lmazy.verrech.net/pub/mathesis}
-}
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">org.apache.commons.lang.SerializationUtils</span><span class="o">;</span>
 
-~~~
--->
+<span class="kd">class</span> <span class="nc">Value</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Serializable</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">transient</span> <span class="n">T</span> <span class="n">value</span><span class="o">;</span>
+
+  <span class="n">Value</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">SerializationUtils</span><span class="o">.</span><span class="na">serialize</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="n">T</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span><span class="n">SerializationUtils</span><span class="o">.</span><span class="na">deserialize</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>As long as servers do not access the wrapped value, everything is fine; as far as they are concerned, they are passing around dressed-up arrays of bytes. In our case, we added several primitive—and therefore trivially serializable—members of the wrapped value to this class in order to enable the server to be able to report back certain things.</p>
+
+<p>I think this pattern can be of use in any situation that involves passing around serialized objects only some nodes are interested in. After all, you might want to avoid deserializing even if you have access to all necessary class files; after all, (de)serializing can take up quite some time you might want to see better spent.</p>
+
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/09/lazy-deserialization-in-java/">lmazy.verrech.net</a>.</sub></p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Especially so as we have a many-to-many relation between  clients and servers, that means many repositories and many loaded  classes you do not need. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+
+  <div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java";
+      this.page.identifier = "/ramblings/2011/lazy-deserialization-in-java";
+      this.page.title = 'Lazy Deserialization in Java';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
 
 
 
     </article>
-    <span class="print-footer"> - Raphael Reitzig</span>
+    <span class="print-footer">Lazy Deserialization in Java - September 29, 2011 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>

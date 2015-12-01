@@ -5,9 +5,113 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Oct 2015 21:18:45 +0200</pubDate>
-    <lastBuildDate>Wed, 07 Oct 2015 21:18:45 +0200</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Tue, 01 Dec 2015 16:36:27 +0100</pubDate>
+    <lastBuildDate>Tue, 01 Dec 2015 16:36:27 +0100</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>A Researcher&#39;s Jekyll</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;There&lt;/span&gt;  are myriads of ways to build websites.
+When I decided to create a new one for my work, I evaluated my past
+experiences – mostly with Wordpress and 
+Joomla&lt;span class=&quot;marginnote&quot;&gt;I don’t know if there &lt;em&gt;is&lt;/em&gt; a use-case for Joomla.&lt;/span&gt; – 
+and decided to go with something less bloated. That is, something that&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2015/a-researchers-jekyll&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 01 Dec 2015 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2015/a-researchers-jekyll</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2015/a-researchers-jekyll</guid>
+        
+        <category>Website</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Quick Images with TikZ</title>
+        <description>
+          &lt;p&gt;How do you create high-quality technical images for documents, your website
+or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
+and have become frustrated lately. Once you have used &lt;a href=&quot;http://pgf.sourceforge.net/&quot;&gt;TikZ&lt;/a&gt;&lt;span class=&quot;marginnote&quot;&gt;Check out the awesome &lt;a href=&quot;http://www.texample.net/tikz/examples&quot;&gt;gallery of examples&lt;/a&gt; and the comprehensive &lt;a href=&quot;http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf&quot;&gt;manual&lt;/a&gt;&lt;/span&gt; 
+with &lt;span class=&quot;latex&quot;&gt;L&lt;sup&gt;a&lt;/sup&gt;T&lt;sub&gt;e&lt;/sub&gt;X&lt;/span&gt; most other tools feel inferior. 
+The only problem is: TikZ is a &lt;span class=&quot;latex&quot;&gt;L&lt;sup&gt;a&lt;/sup&gt;T&lt;sub&gt;e&lt;/sub&gt;X&lt;/span&gt; package and can not be used on its own. 
+So how to convert TikZ to, say, PNG comfortably?
+&lt;!--more--&gt;&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2012/quick-images-with-tikz&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 29 Mar 2012 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2012/quick-images-with-tikz</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2012/quick-images-with-tikz</guid>
+        
+        <category>LaTeX</category>
+        
+        <category>TikZ</category>
+        
+        <category>Scripting</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>On Planarity of Control Flow Graphs</title>
+        <description>
+          &lt;p&gt;For our master’s project, we include visualisation of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) &lt;a href=&quot;http://en.wikipedia.org/wiki/Planar_graph&quot; title=&quot;Definition of Planar Graphs&quot;&gt;planar&lt;/a&gt;? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 06 Oct 2011 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</guid>
+        
+        <category>Graphs</category>
+        
+        <category>Programming</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Lazy Deserialization in Java</title>
+        <description>
+          &lt;p&gt;While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 29 Sep 2011 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java</guid>
+        
+        <category>Programming</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Barbara Liskov on the Power of Abstraction</title>
+        <description>
+          &lt;p&gt;Last week, Barbara Liskov visited Kaiserslautern and gave her talk &lt;em&gt;On the Power of Abstraction&lt;/em&gt;. I had known her from the &lt;a href=&quot;http://en.wikipedia.org/wiki/Liskov_substitution_principle&quot;&gt;substitution principle&lt;/a&gt; named after her&lt;sup class=&quot;sidenote-number&quot;&gt;a&lt;/sup&gt;&lt;span class=&quot;sidenote&quot;&gt;&lt;sup class=&quot;sidenote-number&quot;&gt;a&lt;/sup&gt; She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community.&lt;/span&gt; and taught to every computer scientist and programmer, but she is far more distinguished than that: 
+Barbara Liskov is an &lt;a href=&quot;http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&quot;&gt;ACM Fellow&lt;/a&gt;, holds the &lt;a href=&quot;http://awards.acm.org/citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&amp;amp;aw=140&amp;amp;ao=AMTURING&amp;amp;yr=2008&quot;&gt;ACM Turing Award&lt;/a&gt;, the &lt;a href=&quot;http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7&quot;&gt;IEEE John von Neumann Medal&lt;/a&gt;, and a couple of other awards, telltale of her influence on the field.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 30 May 2011 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</guid>
+        
+        <category>Programming</category>
+        
+        <category>Talk</category>
+        
+        
+      </item>
     
   </channel>
 </rss>

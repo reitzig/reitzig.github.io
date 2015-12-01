@@ -52,7 +52,7 @@
   <li><a href="#average-case-analysis-of-parallel-algorithms-with-petri-nets">Average-Case Analysis of Parallel Algorithms with Petri Nets</a></li>
 </ul>
 
-<p>I am happy to receive any comments, hints or solutions via <a href="reitzig@cs.uni-kl.de">email</a>!</p>
+<p>I am happy to receive any comments, hints or solutions via <a href="reitzig[at]cs.uni-kl.de">email</a>!</p>
 
 <h3 id="parallel-dynamic-programming-under-numa">Parallel Dynamic Programming under <abbr title="Non-Uniform Memory Access">NUMA</abbr></h3>
 
@@ -66,7 +66,7 @@ have different access cost for different parts of the memory.</p>
 recurrences?</p>
 
 <p><em>Idea:</em> If the <em>dependency radius</em> around each cell is small in a suitable sense,
-  then we have <script type="math/tex">o(N)</script> expensive accesses, <script type="math/tex">N</script> the number of entries.</p>
+  then we have <span class="MathJax_Preview">o(N)</span><script type="math/tex">o(N)</script> expensive accesses, <span class="MathJax_Preview">N</span><script type="math/tex">N</script> the number of entries.</p>
 
 <h3 id="average-height-of-regular-trees">Average Height of Regular Trees</h3>
 
@@ -74,18 +74,18 @@ recurrences?</p>
 context-free grammars;
 for the details, see Comon et al. <a href="#TATA">[1]</a>.
 In particular, all simple varieties of trees <a href="#AC">[2]</a> 
-with finite set of node degrees <script type="math/tex">\Omega</script> are regular.
+with finite set of node degrees <span class="MathJax_Preview">\Omega</span><script type="math/tex">\Omega</script> are regular.
 Conversely, all regular tree languages describable by regular tree grammars with only one non-terminal are simple varieties. 
 It is known that all simple varieties with 
-<script type="math/tex">\Omega \cap \mathbb{N}_{\geq 2} \neq \emptyset</script> have average height in 
-<script type="math/tex">\Theta(\sqrt{n})</script>.</p>
+<span class="MathJax_Preview">\Omega \cap \mathbb{N}_{\geq 2} \neq \emptyset</span><script type="math/tex">\Omega \cap \mathbb{N}_{\geq 2} \neq \emptyset</script> have average height in 
+<span class="MathJax_Preview">\Theta(\sqrt{n})</span><script type="math/tex">\Theta(\sqrt{n})</script>.</p>
 
 <p>There are clearly tree languages with linear average height, <span style="white-space: nowrap;">e. g.</span> the
-one defined by <script type="math/tex">S \to a(S) \mid a</script>.</p>
+one defined by <span class="MathJax_Preview">S \to a(S) \mid a</span><script type="math/tex">S \to a(S) \mid a</script>.</p>
 
-<p>The question is now: 
+<p>The question is now:<span class="marginnote">Originally posted on <a href="http://cs.stackexchange.com/questions/16073/">cs.SE</a>.</span>
 Are there (infinite) regular tree languages with average height
-not in <script type="math/tex">\Theta(n) \cup \Theta(\sqrt{n})</script>?</p>
+not in <span class="MathJax_Preview">\Theta(n) \cup \Theta(\sqrt{n})</span><script type="math/tex">\Theta(n) \cup \Theta(\sqrt{n})</script>?</p>
 
 <p>I gave a 
   <a href="http://www.slideshare.net/rreitzig/sind-regulre-bume-immer-tief-oder-flachwurzler">talk on this</a> 
@@ -102,6 +102,8 @@ to more than one non-terminal; I could not tell if and how.</p>
 <p><span class="newthought">During</span>  average-case running-time analysis of recursive algorithms, 
 we routinely solve recurrences of the form</p>
 
+<div class="MathJax_Preview">\mathbb{E}T_n = \mathbb{E}\bigl[ T_k + T_{n-k} + f(n) \bigr]
+                = \mathbb{E}T_k + \mathbb{E}T_{n-k} + \mathbb{E}f(n);</div>
 <script type="math/tex; mode=display">\mathbb{E}T_n = \mathbb{E}\bigl[ T_k + T_{n-k} + f(n) \bigr]
                 = \mathbb{E}T_k + \mathbb{E}T_{n-k} + \mathbb{E}f(n);</script>
 
@@ -111,6 +113,7 @@ we routinely solve recurrences of the form</p>
 recursive call <em>on the top level only</em>.
 Then, the recurrence becomes</p>
 
+<div class="MathJax_Preview">\mathbb{E}T'_n = \mathbb{E}\bigl[ \max\{ T_k, T_{n-k}\} \bigr] + \mathbb{E}f(n).</div>
 <script type="math/tex; mode=display">\mathbb{E}T'_n = \mathbb{E}\bigl[ \max\{ T_k, T_{n-k}\} \bigr] + \mathbb{E}f(n).</script>
 
 <p>Unfortunately, expectation is <em>not</em> linear in taking the maximum. So what do we do?</p>
@@ -119,18 +122,19 @@ Then, the recurrence becomes</p>
 
 <ul>
   <li>
-    <p>If we know the distribution of <script type="math/tex">T_n</script> really, <em>really</em> well,
+    <p>If we know the distribution of <span class="MathJax_Preview">T_n</span><script type="math/tex">T_n</script> really, <em>really</em> well,
  we may be able to derive decent tail bounds, <span style="white-space: nowrap;">e. g.</span>
  Chernoff bounds. Since we are interested in bounding speedup from below,
- upper bounds on <script type="math/tex">T'_n</script> may already help us.</p>
+ upper bounds on <span class="MathJax_Preview">T'_n</span><script type="math/tex">T'_n</script> may already help us.</p>
   </li>
   <li>
     <p>Can we use that</p>
 
+    <div class="MathJax_Preview">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \bigl( \sum_{i=1}^p |X_i|^p \bigr)^{1/p}?</div>
     <script type="math/tex; mode=display">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \bigl( \sum_{i=1}^p |X_i|^p \bigr)^{1/p}?</script>
 
-    <p>The powers of <script type="math/tex">X_i</script> can be obtained from the moment generating function of the <script type="math/tex">X_i</script> (which are <span style="white-space: nowrap;">i. i. d.</span> up to maybe a size parameter).
- Note that we still have to deal with <script type="math/tex">\mathbb{E} (\_)^{1/p}</script>.</p>
+    <p>The powers of <span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script> can be obtained from the moment generating function of the <span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script> (which are <span style="white-space: nowrap;">i. i. d.</span> up to maybe a size parameter).
+ Note that we still have to deal with <span class="MathJax_Preview">\mathbb{E} (\_)^{1/p}</span><script type="math/tex">\mathbb{E} (\_)^{1/p}</script>.</p>
   </li>
 </ul>
 
@@ -142,9 +146,9 @@ one state per statement, edges from statements to those that can be executed nex
 and probabilities to indicate which edge is taken with which likelihood.
 In this model, we can determine the expected runtime of an algorithm.</p>
 
-<p>Can we transfer this to parallel algorithms? Even if the number processors <script type="math/tex">p</script>
-is small, the size of the automaton explodes with <script type="math/tex">n^p</script> which soon becomes 
-intractable. There is no natural extension that treats <script type="math/tex">p</script> as a parameter <em>and</em>
+<p>Can we transfer this to parallel algorithms? Even if the number processors <span class="MathJax_Preview">p</span><script type="math/tex">p</script>
+is small, the size of the automaton explodes with <span class="MathJax_Preview">n^p</span><script type="math/tex">n^p</script> which soon becomes 
+intractable. There is no natural extension that treats <span class="MathJax_Preview">p</span><script type="math/tex">p</script> as a parameter <em>and</em>
 maintains the method.</p>
 
 <p><span class="newthought">A natural</span>  candidate model for parallel algorithms are 
@@ -172,18 +176,22 @@ Abovementioned method yields only the expected value;
 higher moments are inaccessible. 
 A simple example is a plain <code class="highlighter-rouge">for</code>-loop:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="k">for</span> <span class="o">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>  <span class="k">for</span> <span class="o">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
     <span class="n">foo</span><span class="o">();</span>
   <span class="o">}</span>
   <span class="n">bar</span><span class="o">();</span>
-</code></pre>
+</pre></td></tr></tbody></table>
+</div>
 </div>
 
-<p>We <em>know</em> that this loop runs for <em>exactly</em> <script type="math/tex">n</script> iterations, every time.
+<p>We <em>know</em> that this loop runs for <em>exactly</em> <span class="MathJax_Preview">n</span><script type="math/tex">n</script> iterations, every time.
 However, after translation it becomes:</p>
 
 <p><span class="tikz">
-  <img class="tikz svg" src="/assets/tikz/research-open-questions-index-1.svg" /><br />
+  <img class="tikz svg" style="height: 10ex;" src="/assets/tikz/research-open-questions-index-1.svg" alt="A graphic created with TikZ" /><br />
   <sup>
     [<a href="/assets/tikz/research-open-questions-index-1.tikz">source</a>]
   </sup></span></p>
@@ -191,30 +199,36 @@ However, after translation it becomes:</p>
 <p>This can no longer be distinguished from other loops with the same probabilities,
 <span style="white-space: nowrap;">e. g.</span></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="k">while</span> <span class="o">(</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>  <span class="k">while</span> <span class="o">(</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span> <span class="n">uniformInt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="n">n</span><span class="o">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">)</span> <span class="o">{</span>
       <span class="k">break</span><span class="o">;</span>
     <span class="o">}</span>
   <span class="o">}</span>
   <span class="n">bar</span><span class="o">();</span>
-</code></pre>
+</pre></td></tr></tbody></table>
+</div>
 </div>
 
 <p>Why is this a larger problem for the model proposed above?
 Well, if we have <em>conflicts</em> aka communication, <span style="white-space: nowrap;">e. g.</span> in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime – but depends on higher moments! Consider, for instance, this net:
-<span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<script type="math/tex"> 1,2, \dots </script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit.</span></p>
+<span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<span class="MathJax_Preview">1,2, \dots</span><script type="math/tex">1,2, \dots</script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit.</span></p>
 
 <p><span class="tikz">
-  <img class="tikz svg" src="/assets/tikz/research-open-questions-index-2.svg" /><br />
+  <img class="tikz svg" style="height: 20ex;" src="/assets/tikz/research-open-questions-index-2.svg" alt="A graphic created with TikZ" /><br />
   <sup>
     [<a href="/assets/tikz/research-open-questions-index-2.tikz">source</a>]
   </sup></span></p>
 
 <p>Which kinds of loop are behind this? If both are of the first type I gave above,
 we <em>never</em> have a conflict; note that the two processors enter their respective 
-loops at the same time here, and <script type="math/tex">p_1</script> leaves the mutex before <script type="math/tex">p_2</script> reaches it. 
+loops at the same time here, and <span class="MathJax_Preview">p_1</span><script type="math/tex">p_1</script> leaves the mutex before <span class="MathJax_Preview">p_2</span><script type="math/tex">p_2</script> reaches it. 
 If they are of the second kind, however, we have a non-zero probability for conflict.</p>
 
 <p>So, the question remains: is there any hope here? 
@@ -270,7 +284,7 @@ If yes, what can we get out of a stochastic Petri net model?</p>
       <li>
         <div class="icon">
 			    <div class="clearfix">
-			      <a href="mailto:reitzig@cs.uni-kl.de">
+			      <a href="mailto:reitzig[at]cs.uni-kl.de">
               <svg class="icon-mail">
                 <use xlink:href="#icon-mail"></use>
               </svg>
@@ -354,9 +368,9 @@ If yes, what can we get out of a stochastic Petri net model?</p>
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
-      Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+      Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
     </div>
   </div>  

@@ -1,0 +1,18 @@
+
+  %p%\usetikzlibrary{arrows.meta}
+  \begin{tikzpicture}[every node/.style={draw,rectangle,inner sep=5pt}]
+    \foreach \r/\i in {1/1,2/3.5,3/6} {
+      \node (r\r) at (\i,0) {\texttt{return \#\r}};
+    }
+    
+    \foreach \m/\i in {1/1,2/3.5,3/6} {
+      \node (m\m) at (\i,-2) {\texttt{do\m()}};
+    }
+    
+    \path[-{Stealth[]}] 
+      \foreach \r in {1,2,3} {
+        \foreach \m in {1,2,3} {
+          (r\r) edge (m\m)
+        }
+      };
+  \end{tikzpicture}

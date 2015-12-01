@@ -24,8 +24,9 @@ div.highlighter-rouge .highlight {
   background: #fffff8;
   maring: 0; }
   div.highlighter-rouge .highlight .lineno {
-    margin-right: 0.5em;
-    margin-left: -0.35em; }
+    margin-right: 0.75em;
+    margin-left: 0.25em;
+    opacity: 0.5; }
   div.highlighter-rouge .highlight .c {
     color: #998;
     font-style: italic; }
@@ -263,7 +264,8 @@ body > footer {
   padding-bottom: 2rem;
   border-top: 1px #aaaaaa solid;
   max-width: 90%;
-  text-align: center; }
+  text-align: center;
+  margin-top: 3ex; }
 
 body > footer ul {
   margin-top: 1ex; }
@@ -289,7 +291,8 @@ article li, ul {
 article hr {
   width: 55%;
   border-top: 1px solid #aaaaaa;
-  border-bottom: none; }
+  border-bottom: none;
+  margin: 2ex 0 2ex 0; }
 
 h1.content-listing-header {
   font-style: normal;
@@ -493,10 +496,12 @@ h6 {
   color: #a00000; }
 
 div.footnotes {
-  margin-bottom: 1.4rem;
-  margin-left: 2em; }
+  margin: 1rem 0 1.4rem 2em; }
   div.footnotes p {
-    width: 52%; }
+    width: 52%;
+    margin-top: 0; }
+  div.footnotes li {
+    margin-top: 0; }
 
 subtitle {
   font-style: italic;
@@ -567,6 +572,11 @@ article span.tikz img {
 article span.tikz sup {
   margin-left: 3em; }
 
+span.read-more {
+  font-size: 75%;
+  float: right;
+  margin-top: -1ex; }
+
 /* LaTeX-logo-specific styling */
 .latex sub, .latex sup {
   text-transform: uppercase; }
@@ -630,6 +640,24 @@ article span.tikz sup {
 
   body header, body footer {
     display: none; } }
+/* Styling Disqus comments */
+#disqus_thread {
+  width: 55%;
+  border-top: 1px #aaaaaa solid;
+  margin-top: 2ex;
+  padding-top: 2ex; }
+  #disqus_thread #noscript-note {
+    width: 90%; }
+
+#noscript-note {
+  width: 50%;
+  font-size: 95%;
+  text-align: left; }
+  #noscript-note tt {
+    font-size: 90%; }
+  #noscript-note a:hover {
+    cursor: pointer; }
+
 /* Styling bibliographies and citations */
 p.bibdetailhead {
   text-align: left; }

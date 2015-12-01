@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig</title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <title>Raphael Reitzig &ndash; Quick Images with TikZ</title>
+  <meta name="description" content="How do you create high-quality technical images for documents, your websiteor posts on Stack Exchange? I have used tools in an ad-hoc manner for a while and ...">
 
 
   <link rel="stylesheet" href="/css/tufte.css">	
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/publications/Reitzig2012.html">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2012/quick-images-with-tikz">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -32,52 +32,115 @@
 </header>
 
     <article>
-      <h1 class="title"></h1>
-
-
-<p class="bibdetailhead">
-  <em>Reitzig, Raphael</em><br />
-  <strong>Automated Parallelisation of Dynamic Programming Recursions</strong><br />
-  <span>
-    
-    2012
-  </span>
+      <h1 class="title">Quick Images with TikZ</h1>
+<p class="below_title">
+  <span class="date">March 29, 2012</span>
+  
+    <span class="separator">&mdash;</span>
+    <span class="tags">LaTeX, Scripting, TikZ</span>
+  
+  
 </p>
 
-<p>This thesis discusses whether and how dynamic programming recursions can be
-    computed in parallel such that compilers can parallelise them automatically. We 
-    discover that under certain assumptions which permit a rich class of dynamic 
-    programming recursions, two kinds of recursions can be computed in parallel while 
-    others can not. For those which can, we design and analyse efficient parallel algorithms 
-    theoretically. We then implement several prototypes and investigate their performance
-    empirically. Finally, we integrate automatic application of the developed algorithms 
-    into a real-world compiler.</p>
 
-<p>– <a href="http://lmazy.verrech.net/pub/mathesis">website</a> – <a href="https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf">pdf</a> –</p>
+<p>How do you create high-quality technical images for documents, your website
+or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
+and have become frustrated lately. Once you have used <a href="http://pgf.sourceforge.net/">TikZ</a><span class="marginnote">Check out the awesome <a href="http://www.texample.net/tikz/examples">gallery of examples</a> and the comprehensive <a href="http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf">manual</a></span> 
+with <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> most other tools feel inferior. 
+The only problem is: TikZ is a <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> package and can not be used on its own. 
+So how to convert TikZ to, say, PNG comfortably?
+<!--more--></p>
 
-<!-- Not helpful in this form as it reproduces "jekyll-only" fields.
----
+<p><span class="latex">T<sub>e</sub>X</span>-guru <a href="http://www.scharrer-online.de/">Martin Scharrer</a> comes to the rescue: he wrote the package <a href="http://ctan.org/pkg/standalone"><code class="highlighter-rouge">standalone</code></a> for exactly this use case. Based on his <a href="http://tex.stackexchange.com/a/11880/3213">explanation on tex.SE</a> I built a small bash script that does all the repetitive work for you. With one simple command, this</p>
 
-Cite as:
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="c">%p% \usetikzlibrary{arrows,automata,positioning}</span>
+<span class="nt">\begin{tikzpicture}</span>[shorten &gt;=1pt,node distance=2cm,auto]
+  <span class="k">\node</span><span class="na">[state,initial]</span>    (q<span class="p">_</span>0)                <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">0</span><span class="p">$}</span>;
+  <span class="k">\node</span><span class="na">[state,accepting]</span>  (q<span class="p">_</span>1) [right of=q<span class="p">_</span>0] <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">1</span><span class="p">$}</span>;
 
-~~~bibtex
-@mastersthesis{Reitzig2012,
-  author = {Reitzig, Raphael},
-  title = {Automated Parallelisation of Dynamic Programming Recursions},
-  school = {University of Kaiserslautern},
-  year = {2012},
-  month = jul,
-  pdf = {https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf},
-  url = {http://lmazy.verrech.net/pub/mathesis}
-}
+  <span class="k">\path</span><span class="na">[-&gt;]</span> (q<span class="p">_</span>0) edge [bend left]  node <span class="p">{$</span><span class="nb">a</span><span class="p">$}</span> (q<span class="p">_</span>1)
+            (q<span class="p">_</span>1) edge [bend left]  node <span class="p">{$</span><span class="nb">b</span><span class="p">$}</span> (q<span class="p">_</span>0);
+<span class="nt">\end{tikzpicture}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
-~~~
--->
+<p>becomes this in a matter of seconds:</p>
+
+<p><span class="tikz">
+  <img class="tikz svg" style="" src="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.svg" alt="A graphic created with TikZ" /><br />
+  <sup>
+    [<a href="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.tikz">source</a>]
+  </sup></span></p>
+
+<p>You can find some more examples <a href="http://akerbos.github.io/sesketches/">here</a>.</p>
+
+<p>Get <code>tikz2png</code> <a href="https://github.com/akerbos/scripts/blob/master/tikz2png">on Github</a> and enjoy!</p>
+
+<p><em>Update:</em> There is <a href="https://github.com/akerbos/scripts/blob/master/tikz2svg">tikz2svg</a> now as well.</p>
+
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2012/03/quick-images-with-tikz/">lmazy.verrech.net</a>.<sub></sub></sub></p>
+
+
+
+  <div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2012/quick-images-with-tikz";
+      this.page.identifier = "/ramblings/2012/quick-images-with-tikz";
+      this.page.title = 'Quick Images with TikZ';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
 
 
 
     </article>
-    <span class="print-footer"> - Raphael Reitzig</span>
+    <span class="print-footer">Quick Images with TikZ - March 29, 2012 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>

@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig</title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <title>Raphael Reitzig &ndash; A Researcher's Jekyll</title>
+  <meta name="description" content="There  are myriads of ways to build websites.When I decided to create a new one for my work, I evaluated my pastexperiences – mostly with Wordpress and Jooml...">
 
 
   <link rel="stylesheet" href="/css/tufte.css">	
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/publications/Reitzig2012.html">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2015/a-researchers-jekyll">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -32,52 +32,199 @@
 </header>
 
     <article>
-      <h1 class="title"></h1>
-
-
-<p class="bibdetailhead">
-  <em>Reitzig, Raphael</em><br />
-  <strong>Automated Parallelisation of Dynamic Programming Recursions</strong><br />
-  <span>
-    
-    2012
-  </span>
+      <h1 class="title">A Researcher's Jekyll</h1>
+<p class="below_title">
+  <span class="date">December 1, 2015</span>
+  
+    <span class="separator">&mdash;</span>
+    <span class="tags">Website</span>
+  
+  
 </p>
 
-<p>This thesis discusses whether and how dynamic programming recursions can be
-    computed in parallel such that compilers can parallelise them automatically. We 
-    discover that under certain assumptions which permit a rich class of dynamic 
-    programming recursions, two kinds of recursions can be computed in parallel while 
-    others can not. For those which can, we design and analyse efficient parallel algorithms 
-    theoretically. We then implement several prototypes and investigate their performance
-    empirically. Finally, we integrate automatic application of the developed algorithms 
-    into a real-world compiler.</p>
 
-<p>– <a href="http://lmazy.verrech.net/pub/mathesis">website</a> – <a href="https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf">pdf</a> –</p>
+<p><span class="newthought">There</span>  are myriads of ways to build websites.
+When I decided to create a new one for my work, I evaluated my past
+experiences – mostly with Wordpress and 
+Joomla<span class="marginnote">I don’t know if there <em>is</em> a use-case for Joomla.</span> – 
+and decided to go with something less bloated. That is, something that</p>
 
-<!-- Not helpful in this form as it reproduces "jekyll-only" fields.
----
+<ul>
+  <li>serves fast,</li>
+  <li>is easy to maintain,</li>
+  <li>does not hide my material in a database and</li>
+  <li>is easy to adapt.</li>
+</ul>
 
-Cite as:
+<p><span class="marginnote">There are many such systems, but I knew Ruby already.</span>
+I ended up choosing <a href="http://jekyllrb.com/">Jekyll</a>, a Ruby application that 
+generates static HTML pages from plain text source. 
+There is lots of documentation on Jekyll on the web, so I will just quickly
+relate some adaptions I made that may be relevant to other researchers.</p>
 
-~~~bibtex
-@mastersthesis{Reitzig2012,
-  author = {Reitzig, Raphael},
-  title = {Automated Parallelisation of Dynamic Programming Recursions},
-  school = {University of Kaiserslautern},
-  year = {2012},
-  month = jul,
-  pdf = {https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf},
-  url = {http://lmazy.verrech.net/pub/mathesis}
-}
+<ol>
+  <li>
+    <p>I wanted the site to work as well as possible without Javascript.
+In particular, visitors dropping by with active script blocking – 
+a practice I support fully – should be able to see <em>something</em>,
+and read everything.</p>
 
-~~~
--->
+    <p>In particular, that meant getting rid of icon fonts; a weird practice
+if you ask me.
+Lucky for me, the <a href="https://icomoon.io/">IcoMoon App</a> exports icon sets
+as SVG as well, so that is what I use for the links in the footer.
+Those icons specific to academia I got from <a href="http://jpswalsh.github.io/academicons/">Academicons</a>; thanks, James!</p>
+
+    <p>As a side note, I have not taken any care about old browsers.
+I’ll use recent CSS, SVG and maybe HTML5 down the line.
+If any of that gives you trouble, please do yourself a favor and
+upgrade.</p>
+  </li>
+  <li>
+    <p>That said, I <em>do</em> need mathematics typsetting and thus
+<a href="http://mathjax.org">MathJax</a>.
+<span class="marginnote">MathJax is not the <em>only</em> way to get mathematics on a website, but it is the only one I have found bearable.</span> 
+It is a quite heavy Javascript dependency but I think it is worth it.</p>
+
+    <p>I have taken care to include it only on pages where it <em>may</em> be needed,
+and the full version only where I <em>know</em> it is needed.</p>
+
+    <p>If you want to see rendered mathematics, you need to allow scripts from 
+this domain and <code class="highlighter-rouge">mathjax.org</code>.</p>
+  </li>
+  <li>
+    <p>Comments are one thing that is impossible to implement with a static
+site generator. Since I appreciate comments to my often opinionated 
+posts, I needed a solution.</p>
+
+    <p>As a user, I have found <a href="https://disqus.com">Disqus</a> to be a useful
+service. I have to assume that they track their users, so
+<span class="marginnote">Inspired by the <a href="https://github.com/heiseonline/shariff">efforts of heise.de</a>.</span>
+I have taken care that even with Javascript enabled you have to opt-in
+to the feature.</p>
+
+    <p>If you want to use the commenting feature, you have to allow
+scripts from this domain, <code class="highlighter-rouge">disqus.com</code> and <code class="highlighter-rouge">disquscdn.com</code>, 
+<em>and</em> click on that thing below the post in question.</p>
+  </li>
+  <li>
+    <p>A convenient way to include literature references is an absolute must.
+Of course there is a plugin for that, 
+  <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>.
+It works quite well out of the box.</p>
+
+    <p>However, I elected to tweak both the CSS styling and the 
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_includes/structured-refs-web.csl">citation style</a> 
+I chose a bit, and wrote plugins for
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/textcite.rb">text citations</a>
+and
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/fixbibliography.rb">fixing some issues of the bibliography</a>.
+I am quite satisfied with the result now.</p>
+  </li>
+  <li>
+    <p>I wrote some convenience 
+  <a href="https://github.com/reitzig/reitzig.github.io/tree/sources/_plugins">plugins</a>,
+<span style="white-space: nowrap;">e. g.</span> for properly typeset abbreviations.
+The biggest development effort went into my 
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/tikz.rb">TikZ plugin</a>.
+It allows you to specify TikZ code right in your post files which is then
+converted into SVG behind the scenes. Pretty exciting!</p>
+  </li>
+  <li>
+    <p>I have decided to host on Github Pages for now. 
+This has the advantage that I just have to push my changes to a Git 
+repository and they go live almost immediately.</p>
+
+    <p>However, Github does not allows most plugins for safety reasons
+so I have to compile locally. This results in two branches,
+<span class="marginnote">This is the first time I have used Git branches.</span>
+one for the sources and one for the compiled site.</p>
+
+    <p>This is the basic process of making a change to the site:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre>git checkout sources
+... make changes ...
+git commit -m <span class="s2">"Something new"</span>
+jekyll build -d /tmp/website
+git checkout master
+cp -r /tmp/website/<span class="k">*</span> ./
+git add <span class="o">[</span>new files]
+git commit -a -m <span class="s2">"Something new"</span>
+git push --all
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ol>
+
+<p>So, if you are curious about how I have done something on these pages you
+can just head over to <a href="https://github.com/reitzig/reitzig.github.io/">Github</a>
+and check out the sources yourself.</p>
+
+<p><em>Nota bene:</em> I ported some posts which I thought would fit here from my old blog.
+I hope to post more, new things soon.</p>
+
+
+
+  <div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2015/a-researchers-jekyll";
+      this.page.identifier = "/ramblings/2015/a-researchers-jekyll";
+      this.page.title = 'A Researcher\'s Jekyll';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
 
 
 
     </article>
-    <span class="print-footer"> - Raphael Reitzig</span>
+    <span class="print-footer">A Researcher's Jekyll - December 1, 2015 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>

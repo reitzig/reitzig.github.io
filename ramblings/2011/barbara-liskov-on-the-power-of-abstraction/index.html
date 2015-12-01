@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig</title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <title>Raphael Reitzig &ndash; Barbara Liskov on the Power of Abstraction</title>
+  <meta name="description" content="Last week, Barbara Liskov visited Kaiserslautern and gave her talk On the Power of Abstraction. I had known her from the substitution principle named after h...">
 
 
   <link rel="stylesheet" href="/css/tufte.css">	
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/publications/Reitzig2012.html">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -32,52 +32,117 @@
 </header>
 
     <article>
-      <h1 class="title"></h1>
-
-
-<p class="bibdetailhead">
-  <em>Reitzig, Raphael</em><br />
-  <strong>Automated Parallelisation of Dynamic Programming Recursions</strong><br />
-  <span>
-    
-    2012
-  </span>
+      <h1 class="title">Barbara Liskov on the Power of Abstraction</h1>
+<p class="below_title">
+  <span class="date">May 30, 2011</span>
+  
+    <span class="separator">&mdash;</span>
+    <span class="tags">Programming, Talk</span>
+  
+  
 </p>
 
-<p>This thesis discusses whether and how dynamic programming recursions can be
-    computed in parallel such that compilers can parallelise them automatically. We 
-    discover that under certain assumptions which permit a rich class of dynamic 
-    programming recursions, two kinds of recursions can be computed in parallel while 
-    others can not. For those which can, we design and analyse efficient parallel algorithms 
-    theoretically. We then implement several prototypes and investigate their performance
-    empirically. Finally, we integrate automatic application of the developed algorithms 
-    into a real-world compiler.</p>
 
-<p>– <a href="http://lmazy.verrech.net/pub/mathesis">website</a> – <a href="https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf">pdf</a> –</p>
+<p>Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the <a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle">substitution principle</a> named after her<sup class="sidenote-number">a</sup><span class="sidenote"><sup class="sidenote-number">a</sup> She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community.</span> and taught to every computer scientist and programmer, but she is far more distinguished than that: 
+Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L">ACM Fellow</a>, holds the <a href="http://awards.acm.org/citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L&amp;aw=140&amp;ao=AMTURING&amp;yr=2008">ACM Turing Award</a>, the <a href="http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7">IEEE John von Neumann Medal</a>, and a couple of other awards, telltale of her influence on the field.</p>
 
-<!-- Not helpful in this form as it reproduces "jekyll-only" fields.
----
+<p><img src="/assets/posts_img/2011-05-30-liskov.png" alt="" /></p>
 
-Cite as:
+<p>The talk she gave is actually her Turing lecture, obligatory for Turing awardees. The room was so packed that quite some people had to remain standing, and it was worthwhile to have come. You can watch the lecture—in another instance—in full <a href="http://amturing.acm.org/vp/liskov_1108679.cfm">here</a>. For me as a CS novice, the lecture is a small time travel machine to the seventies: Barbara talks about the history of how abstract datatypes and related concepts came to be. As someone who grew up with languages like Java, it is hard to imagine a world where all programming there is is literally done on assembler level. So, lots of the material presented should feel trivial to the modern mind, but Barbara manages to instill the spirit of the time into her listeners. After her talk, you know why she got awards for things you take for granted today.</p>
 
-~~~bibtex
-@mastersthesis{Reitzig2012,
-  author = {Reitzig, Raphael},
-  title = {Automated Parallelisation of Dynamic Programming Recursions},
-  school = {University of Kaiserslautern},
-  year = {2012},
-  month = jul,
-  pdf = {https://lmazy.verrech.net/wp-content/uploads/2012/07/reitzig_masterthesis_screencolor.pdf},
-  url = {http://lmazy.verrech.net/pub/mathesis}
-}
+<p>Since the lecture itself can be watched online, I just want to share my favorite quotes and anecdotes I wrote down during the talk; I hope I am not misquoting.</p>
 
-~~~
--->
+<blockquote>
+  <p>[Barbara] did not apply at MIT because she did not want to be a nerd.</p>
+</blockquote>
+
+<p>On her finding abstract datatypes:</p>
+
+<blockquote>
+  <p>I have no idea how I got that idea. […] It was ready to be discovered.</p>
+</blockquote>
+
+<p>On overhead caused by abstract programming features:</p>
+
+<blockquote>
+  <p>You never need optimal performance, you need good-enough performance. […] Programmers are far too hung up with performance.</p>
+</blockquote>
+
+<p>On design decisions in CLU:</p>
+
+<blockquote>
+  <p>There were no GOTOs because I believed Dijkstra.</p>
+</blockquote>
+
+<p>On the substitution principle named after her:</p>
+
+<blockquote>
+  <p>It’s really just common sense.</p>
+</blockquote>
+
+<p>Unaccredited critique of Liskov getting the Turing award:</p>
+
+<blockquote>
+  <p>Why did she get this award? Everybody knows this anyway!</p>
+</blockquote>
+
+<p>Especially the last quote demonstrates, if unintentionally, the impact of Liskov’s and others’ work of that time. If something you conceive is considered common sense 30 years later, you really had a brilliant idea.</p>
+
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/05/b-liskov-on-the-power-of-abstraction/">lmazy.verrech.net</a>.</sub></p>
+
+
+
+  <div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
+      this.page.identifier = "/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
+      this.page.title = 'Barbara Liskov on the Power of Abstraction';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
 
 
 
     </article>
-    <span class="print-footer"> - Raphael Reitzig</span>
+    <span class="print-footer">Barbara Liskov on the Power of Abstraction - May 30, 2011 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
