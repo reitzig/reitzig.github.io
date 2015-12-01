@@ -6,3 +6,6 @@
 
 {{ content }}
 
+{% if site.disqus.enable && page.comments %}
+  {% include protected-disqus.html %}
+{% endif %}

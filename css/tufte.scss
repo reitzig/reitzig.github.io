@@ -563,6 +563,33 @@ span.read-more {
     }
 }
 
+/* Styling Disqus comments */
+
+#disqus_thread {
+  width : 55%;
+  border-top : 1px lighten($text-color, 60%) solid;
+  margin-top : 2ex;
+  padding-top : 2ex;
+  
+  #noscript-note {
+    width : 90%;
+  }
+}
+
+#noscript-note {
+  width : 50%;
+  font-size : 95%;
+  text-align: left;
+  
+  tt {
+    font-size : 90%;
+  }
+  
+  a:hover {
+    cursor : pointer;
+  }
+}
+
 /* Styling bibliographies and citations */
 
 p.bibdetailhead {

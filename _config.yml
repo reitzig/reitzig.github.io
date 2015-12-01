@@ -2,8 +2,7 @@ title:  "Raphael Reitzig"
 subtitle: "Thoughts of a computer scientist, teacher, programmer and LaTeXer."
 author: "Raphael Reitzig"
 description: "Computer scientist. Teacher. Programmer. LaTeXer."
-
-email: reitzig@cs.uni-kl.de
+email: reitzig[at]cs.uni-kl.de
 
 gems: ['jekyll/scholar']
 exclude:    [Gemfile, Gemfile.lock, run, build]
@@ -31,6 +30,7 @@ defaults:
     values:
       layout:   "page"
       mathjax-version:  "TeX-AMS_HTML"
+      comments: false
   -
     scope:
       path:   ""
@@ -38,6 +38,7 @@ defaults:
     values:
       layout:   "post"
       mathjax-version:  "TeX-AMS_HTML-full"
+      comments: true
       
 scholar:
   style: _includes/structured-refs-web.csl
@@ -53,3 +54,7 @@ scholar:
 tikz:
   format: svg
   dir: assets/tikz
+  
+disqus:
+  shortname: 'raphaels-ramblings'
+  enable: true

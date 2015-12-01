@@ -7,12 +7,15 @@ but an interest in practical problem solving.
 I enjoy teaching, programming and working (or procrastinating) with {% latex %}, and
 I try to make the internet a [better place for computer scientists](http://cs.stackexchange.com/users/98/raphael).
 
+I currently 
+  [hold](http://www.phdcomics.com/comics/archive.php?comicid=47) 
+a junior researcher position at the 
+  [University of Kaiserslautern](http://wwwagak.cs.uni-kl.de/home/staff/raphael-reitzig).
+
 After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
 video and tabletop games.
 For a healthy balance, I work out (body-weight strength training, HIIT, running) 
 and pursue a changing mix of bouldering, ballroom dancing and team handball.
-
-I currently hold a doctorand position at the [University of Kaiserslautern](http://wwwagak.cs.uni-kl.de/home/staff/raphael-reitzig).
 
 When you send me an [email](mailto:{{ site.email }}), please consider signing or even encrypting with PGP.
 You can find my key [here](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x12F79CC14F0B50B9).

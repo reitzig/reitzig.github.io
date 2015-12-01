@@ -41,7 +41,7 @@ $$\Theta(\sqrt{n})$$.
 There are clearly tree languages with linear average height, {% abbr eg %} the
 one defined by $$S \to a(S) \mid a$$.
 
-The question is now: 
+The question is now:{% marginnote "Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." %}
 Are there (infinite) regular tree languages with average height
 not in $$\Theta(n) \cup \Theta(\sqrt{n})$$?
 
