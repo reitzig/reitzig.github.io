@@ -3,7 +3,7 @@
   tags: Programming Talk
 ---
 
-Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the [substitution principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle) named after her{% sidenote a "She did not name it, of course. Apparently, she received an email in the 90's by somebody asking her whether he got "her" principle right, surprising her. She had not known that the principle had borne her name for years in the community." %} and taught to every computer scientist and programmer, but she is far more distinguished than that: 
+Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the [substitution principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle) named after her{% sidenote "principle" "She did not name it, of course. Apparently, she received an email in the 90's by somebody asking her whether he got "her" principle right, surprising her. She had not known that the principle had borne her name for years in the community." %} and taught to every computer scientist and programmer, but she is far more distinguished than that: 
 Barbara Liskov is an [ACM Fellow](http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L), holds the [ACM Turing Award](http://awards.acm.org/citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L&amp;aw=140&amp;ao=AMTURING&amp;yr=2008), the [IEEE John von Neumann Medal](http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7), and a couple of other awards, telltale of her influence on the field.
 
 ![](/assets/posts_img/2011-05-30-liskov.png)

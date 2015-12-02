@@ -7,7 +7,7 @@ $spacing-unit:     30px;
 }
 
 
-div.highlighter-rouge pre.highlight{
+div.highlighter-rouge pre.highlight {
   margin-left: 1em;  /* obsolete with line numbers */
 }
 
@@ -85,14 +85,25 @@ div.highlighter-rouge .highlight {
 
 /* Need to remove table styling */
 .highlighter-rouge table { 
-  width: 55%;
+  width: 80%;
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.25;
   margin: 0;
   border: none;
+  
+  .gutter {
+    margin-left : 0;
+    margin-right : 0;
+    padding-left : 0;
+    padding-right : 0;
+    width : 3em;
+  }
 }
 
-.highlighter-rouge table pre {
+.highlighter-rouge table pre, .code {
   margin: 0;
+  overflow-x : visible;
+  padding : 0;
+  line-height: 1.25;
 }

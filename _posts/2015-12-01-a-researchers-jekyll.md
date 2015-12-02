@@ -7,7 +7,7 @@
 {% newthought There %} are myriads of ways to build websites.
 When I decided to create a new one for my work, I evaluated my past
 experiences -- mostly with Wordpress and 
-Joomla{% marginnote "I don't know if there *is* a use-case for Joomla." %} -- 
+Joomla{% marginnote "joomla" "I don't know if there *is* a use-case for Joomla." %} -- 
 and decided to go with something less bloated. That is, something that
 
  * serves fast,
@@ -39,7 +39,7 @@ relate some adaptions I made that may be relevant to other researchers.
  
  2. That said, I *do* need mathematics typsetting and thus
     [MathJax](http://mathjax.org).
-    {% marginnote "MathJax is not the *only* way to get mathematics on a website, but it is the only one I have found bearable." %} 
+    {% marginnote "mathjax" "MathJax is not the *only* way to get mathematics on a website, but it is the only one I have found bearable." %} 
     It is a quite heavy Javascript dependency but I think it is worth it.
     
     I have taken care to include it only on pages where it *may* be needed,
@@ -54,7 +54,7 @@ relate some adaptions I made that may be relevant to other researchers.
     
     As a user, I have found [Disqus](https://disqus.com) to be a useful
     service. I have to assume that they track their users, so
-    {% marginnote "Inspired by the [efforts of heise.de](https://github.com/heiseonline/shariff)." %}
+    {% marginnote "heise" "Inspired by the [efforts of heise.de](https://github.com/heiseonline/shariff)." %}
     I have taken care that even with Javascript enabled you have to opt-in
     to the feature.
     
@@ -89,7 +89,7 @@ relate some adaptions I made that may be relevant to other researchers.
     
     However, Github does not allows most plugins for safety reasons
     so I have to compile locally. This results in two branches,
-    {% marginnote "This is the first time I have used Git branches." %}
+    {% marginnote "git" "This is the first time I have used Git branches." %}
     one for the sources and one for the compiled site.
     
     This is the basic process of making a change to the site:

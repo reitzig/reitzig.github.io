@@ -4,12 +4,12 @@
   mathjax: true
 ---
 
-<h1 class="content-listing-header sans">{{ page.title }}</h1>
-<ul class="content">
+<h1 class="title">{{ page.title }}</h1>
+<ul class="content-listing">
   {% for post in site.posts %}
     <li class="listing">
     	<hr class="slender">
-    	<h4 class="contrast"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+    	<h3 class="contrast"><a href="{{ post.url }}">{{ post.title }}</a></h3>
     	<p class="below_title" style="margin-top: 0;">
         <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
         {% if post.tags.size > 0 %}

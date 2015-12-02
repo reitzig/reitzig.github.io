@@ -6,11 +6,12 @@
   <title>{% if page.title %}{{ site.title }} &ndash; {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-
   <link rel="stylesheet" href="{{ "/css/tufte.css" | prepend: site.baseurl }}">	
- 
-  <!-- Google Fonts loaded here -->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  {% if site.data.options.lato_font_load %}
+	<!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  {% endif %}
 
   {% if page.mathjax && page.mathjax-version %}
     {% if site.mathjax-options %}

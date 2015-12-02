@@ -12,6 +12,8 @@ Here are some problems I have encountered but not yet solved.
  
 I am happy to receive any comments, hints or solutions via [email]({{ site.email }})!
 
+<hr class="slender">
+
 ### Parallel Dynamic Programming under NUMA
 
 {% newthought When %} wrapping up my [master's thesis](/publications/Reitzig2012.html), 
@@ -25,6 +27,8 @@ recurrences?
 
 *Idea:* If the *dependency radius* around each cell is small in a suitable sense,
   then we have $$o(N)$$ expensive accesses, $$N$$ the number of entries.
+
+<hr class="slender">
 
 ### Average Height of Regular Trees
 
@@ -55,6 +59,8 @@ It may be possible to adapt the height analysis for simple
 varieties&nbsp;{% cite FlajoletOdlyzko1982 -l 200-205 --file references %}
 to more than one non-terminal; I could not tell if and how.
 
+<hr class="slender">
+
 ### Analysis of Top-Level Parallel Recursive Algorithms
 
 {% newthought During %} average-case running-time analysis of recursive algorithms, 
@@ -82,10 +88,12 @@ Unfortunately, expectation is *not* linear in taking the maximum. So what do we 
     
  * Can we use that
 
-    $$\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \bigl( \sum_{i=1}^p |X_i|^p \bigr)^{1/p}?$$
+    $$\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \Bigl( \sum_{i=1}^p |X_i|^p \Bigr)^{1/p}?$$
 
     The powers of $$X_i$$ can be obtained from the moment generating function of the $$X_i$$ (which are {% abbr iid %} up to maybe a size parameter).
     Note that we still have to deal with $$\mathbb{E} (\_)^{1/p}$$.
+
+<hr class="slender">
 
 ### Average-Case Analysis of Parallel Algorithms with Petri Nets
 
@@ -227,6 +235,8 @@ If they are of the second kind, however, we have a non-zero probability for conf
 
 So, the question remains: is there any hope here? 
 If yes, what can we get out of a stochastic Petri net model?
+
+<hr class="slender">
 
 ### References
 

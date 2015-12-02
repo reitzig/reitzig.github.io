@@ -21,7 +21,7 @@ interesting problems and questions of folklore, both of which abound in the fiel
 
 I have collected some [open questions](open-questions).
 
-## Publications
+### Publications
 
 {% fixbibliography %}
   {% bibliography --file publications %}
