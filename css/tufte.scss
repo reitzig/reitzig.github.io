@@ -278,8 +278,8 @@ li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fac
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
 p, footer, div.table-wrapper, div.mathblock { width: 55%; }
-// Yes, but *not* p's in li's!
-li p { width : 100%; }
+// Yes, but *not* squash p's in li's!
+ul li p { width : 100%; }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
