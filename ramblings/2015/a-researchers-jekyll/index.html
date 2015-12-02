@@ -8,11 +8,9 @@
   <title>Raphael Reitzig &ndash; A Researcher's Jekyll</title>
   <meta name="description" content="There  are myriads of ways to build websites.When I decided to create a new one for my work, I evaluated my pastexperiences – mostly with Wordpress and Jooml...">
 
-
   <link rel="stylesheet" href="/css/tufte.css">	
- 
-  <!-- Google Fonts loaded here -->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
 
   
 
@@ -31,7 +29,7 @@
 	</nav>
 </header>
 
-    <article>
+    <article class="group">
       <h1 class="title">A Researcher's Jekyll</h1>
 <p class="below_title">
   <span class="date">December 1, 2015</span>
@@ -46,7 +44,7 @@
 <p><span class="newthought">There</span>  are myriads of ways to build websites.
 When I decided to create a new one for my work, I evaluated my past
 experiences – mostly with Wordpress and 
-Joomla<span class="marginnote">I don’t know if there <em>is</em> a use-case for Joomla.</span> – 
+Joomla<label for="joomla" class="margin-toggle"> ⊕</label><input type="checkbox" id="joomla" class="margin-toggle" /><span class="marginnote">I don’t know if there <em>is</em> a use-case for Joomla. </span> – 
 and decided to go with something less bloated. That is, something that</p>
 
 <ul>
@@ -56,7 +54,7 @@ and decided to go with something less bloated. That is, something that</p>
   <li>is easy to adapt.</li>
 </ul>
 
-<p><span class="marginnote">There are many such systems, but I knew Ruby already.</span>
+<p><label for="There are many such systems, but I knew Ruby already." class="margin-toggle"> ⊕</label><input type="checkbox" id="There are many such systems, but I knew Ruby already." class="margin-toggle" /><span class="marginnote"> </span>
 I ended up choosing <a href="http://jekyllrb.com/">Jekyll</a>, a Ruby application that 
 generates static HTML pages from plain text source. 
 There is lots of documentation on Jekyll on the web, so I will just quickly
@@ -83,7 +81,7 @@ upgrade.</p>
   <li>
     <p>That said, I <em>do</em> need mathematics typsetting and thus
 <a href="http://mathjax.org">MathJax</a>.
-<span class="marginnote">MathJax is not the <em>only</em> way to get mathematics on a website, but it is the only one I have found bearable.</span> 
+<label for="mathjax" class="margin-toggle"> ⊕</label><input type="checkbox" id="mathjax" class="margin-toggle" /><span class="marginnote">MathJax is not the <em>only</em> way to get mathematics on a website, but it is the only one I have found bearable. </span> 
 It is a quite heavy Javascript dependency but I think it is worth it.</p>
 
     <p>I have taken care to include it only on pages where it <em>may</em> be needed,
@@ -99,7 +97,7 @@ posts, I needed a solution.</p>
 
     <p>As a user, I have found <a href="https://disqus.com">Disqus</a> to be a useful
 service. I have to assume that they track their users, so
-<span class="marginnote">Inspired by the <a href="https://github.com/heiseonline/shariff">efforts of heise.de</a>.</span>
+<label for="heise" class="margin-toggle"> ⊕</label><input type="checkbox" id="heise" class="margin-toggle" /><span class="marginnote">Inspired by the <a href="https://github.com/heiseonline/shariff">efforts of heise.de</a>. </span>
 I have taken care that even with Javascript enabled you have to opt-in
 to the feature.</p>
 
@@ -137,7 +135,7 @@ repository and they go live almost immediately.</p>
 
     <p>However, Github does not allows most plugins for safety reasons
 so I have to compile locally. This results in two branches,
-<span class="marginnote">This is the first time I have used Git branches.</span>
+<label for="git" class="margin-toggle"> ⊕</label><input type="checkbox" id="git" class="margin-toggle" /><span class="marginnote">This is the first time I have used Git branches. </span>
 one for the sources and one for the compiled site.</p>
 
     <p>This is the basic process of making a change to the site:</p>
@@ -174,7 +172,8 @@ I hope to post more, new things soon.</p>
 
 
 
-  <div id="disqus_thread"></div>
+  <hr class="slender">
+<div id="disqus_thread"></div>
 
 <script>
   /* Load Disqus; executed after user confirmation. */

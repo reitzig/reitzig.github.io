@@ -8,11 +8,9 @@
   <title>Raphael Reitzig &ndash; Open Questions</title>
   <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
 
-
   <link rel="stylesheet" href="/css/tufte.css">	
- 
-  <!-- Google Fonts loaded here -->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
 
   
     
@@ -40,7 +38,7 @@
 	</nav>
 </header>
 
-    <article>
+    <article class="group">
       <h1 class="title">Open Questions</h1>
 
 <p>Here are some problems I have encountered but not yet solved.</p>
@@ -53,6 +51,8 @@
 </ul>
 
 <p>I am happy to receive any comments, hints or solutions via <a href="reitzig[at]cs.uni-kl.de">email</a>!</p>
+
+<hr class="slender" />
 
 <h3 id="parallel-dynamic-programming-under-numa">Parallel Dynamic Programming under <abbr title="Non-Uniform Memory Access">NUMA</abbr></h3>
 
@@ -67,6 +67,8 @@ recurrences?</p>
 
 <p><em>Idea:</em> If the <em>dependency radius</em> around each cell is small in a suitable sense,
   then we have <span class="MathJax_Preview">o(N)</span><script type="math/tex">o(N)</script> expensive accesses, <span class="MathJax_Preview">N</span><script type="math/tex">N</script> the number of entries.</p>
+
+<hr class="slender" />
 
 <h3 id="average-height-of-regular-trees">Average Height of Regular Trees</h3>
 
@@ -83,7 +85,7 @@ It is known that all simple varieties with
 <p>There are clearly tree languages with linear average height, <span style="white-space: nowrap;">e. g.</span> the
 one defined by <span class="MathJax_Preview">S \to a(S) \mid a</span><script type="math/tex">S \to a(S) \mid a</script>.</p>
 
-<p>The question is now:<span class="marginnote">Originally posted on <a href="http://cs.stackexchange.com/questions/16073/">cs.SE</a>.</span>
+<p>The question is now:<label for="Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." class="margin-toggle"> ⊕</label><input type="checkbox" id="Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." class="margin-toggle" /><span class="marginnote"> </span>
 Are there (infinite) regular tree languages with average height
 not in <span class="MathJax_Preview">\Theta(n) \cup \Theta(\sqrt{n})</span><script type="math/tex">\Theta(n) \cup \Theta(\sqrt{n})</script>?</p>
 
@@ -96,6 +98,8 @@ that may be of independent interest.</p>
 <p>It may be possible to adapt the height analysis for simple 
 varieties <a href="#FlajoletOdlyzko1982">[3]</a>
 to more than one non-terminal; I could not tell if and how.</p>
+
+<hr class="slender" />
 
 <h3 id="analysis-of-top-level-parallel-recursive-algorithms">Analysis of Top-Level Parallel Recursive Algorithms</h3>
 
@@ -130,13 +134,15 @@ Then, the recurrence becomes</p>
   <li>
     <p>Can we use that</p>
 
-    <div class="MathJax_Preview">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \bigl( \sum_{i=1}^p |X_i|^p \bigr)^{1/p}?</div>
-    <script type="math/tex; mode=display">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \bigl( \sum_{i=1}^p |X_i|^p \bigr)^{1/p}?</script>
+    <div class="MathJax_Preview">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \Bigl( \sum_{i=1}^p |X_i|^p \Bigr)^{1/p}?</div>
+    <script type="math/tex; mode=display">\max \{X_1, \dots, X_p\} = \lim_{p \to \infty} \Bigl( \sum_{i=1}^p |X_i|^p \Bigr)^{1/p}?</script>
 
     <p>The powers of <span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script> can be obtained from the moment generating function of the <span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script> (which are <span style="white-space: nowrap;">i. i. d.</span> up to maybe a size parameter).
  Note that we still have to deal with <span class="MathJax_Preview">\mathbb{E} (\_)^{1/p}</span><script type="math/tex">\mathbb{E} (\_)^{1/p}</script>.</p>
   </li>
 </ul>
+
+<hr class="slender" />
 
 <h3 id="average-case-analysis-of-parallel-algorithms-with-petri-nets">Average-Case Analysis of Parallel Algorithms with Petri Nets</h3>
 
@@ -167,7 +173,7 @@ we would want to have transitions move the input marker to different places
 with certain probabilities.
 We would also require all enabled transitions to fire in each time step; otherwise,
 we would study concurrency but not parallelism.
-<span class="marginnote">Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically.</span>
+<label for="Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." class="margin-toggle"> ⊕</label><input type="checkbox" id="Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." class="margin-toggle" /><span class="marginnote"> </span>
 If this works out, the expected runtime of the parallel algorithm would be
 given by the expected number of steps until all processor markers reach a sink place.</p>
 
@@ -218,7 +224,7 @@ However, after translation it becomes:</p>
 Well, if we have <em>conflicts</em> aka communication, <span style="white-space: nowrap;">e. g.</span> in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime – but depends on higher moments! Consider, for instance, this net:
-<span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<span class="MathJax_Preview">1,2, \dots</span><script type="math/tex">1,2, \dots</script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit.</span></p>
+<label for="Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." class="margin-toggle"> ⊕</label><input type="checkbox" id="Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." class="margin-toggle" /><span class="marginnote"> </span></p>
 
 <p><span class="tikz">
   <img class="tikz svg" style="height: 20ex;" src="/assets/tikz/research-open-questions-index-2.svg" alt="A graphic created with TikZ" /><br />
@@ -233,6 +239,8 @@ If they are of the second kind, however, we have a non-zero probability for conf
 
 <p>So, the question remains: is there any hope here? 
 If yes, what can we get out of a stochastic Petri net model?</p>
+
+<hr class="slender" />
 
 <h3 id="references">References</h3>
 
