@@ -384,6 +384,7 @@ body > footer{
   max-width: 90%;
   text-align: center;
   margin-top: 3ex;
+  opacity: 0.75;
 }
 
 body > footer ul {
@@ -403,6 +404,7 @@ body > footer ul li a{
 //change font color for credit links in footer
 footer div.credits {
   font-family: $sans-font;
+  font-size: 0.6rem;
   
   & a{
     color: $contrast-color;
