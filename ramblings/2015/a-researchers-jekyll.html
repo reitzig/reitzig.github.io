@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig &ndash; Barbara Liskov on the Power of Abstraction</title>
-  <meta name="description" content="Last week, Barbara Liskov visited Kaiserslautern and gave her talk On the Power of Abstraction. I had known her from the substitution principle named after h...">
+  <title>Raphael Reitzig &ndash; A Researcher's Jekyll</title>
+  <meta name="description" content="There  are myriads of ways to build websites.When I decided to create a new one for my work, I evaluated my pastexperiences – mostly with Wordpress and Jooml...">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -14,7 +14,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2015/a-researchers-jekyll">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -30,63 +30,145 @@
 </header>
 
     <article class="group">
-      <h1 class="title">Barbara Liskov on the Power of Abstraction</h1>
+      <h1 class="title">A Researcher's Jekyll</h1>
 <p class="below_title">
-  <span class="date">May 30, 2011</span>
+  <span class="date">December 1, 2015</span>
   
     <span class="separator">&mdash;</span>
-    <span class="tags">Programming, Talk</span>
+    <span class="tags">Website</span>
   
   
 </p>
 
 
-<p>Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the <a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle">substitution principle</a> named after her<label for="principle" class="margin-toggle sidenote-number"></label><input type="checkbox" id="principle" class="margin-toggle" /><span class="sidenote">She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community. </span> and taught to every computer scientist and programmer, but she is far more distinguished than that: 
-Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L">ACM Fellow</a>, holds the <a href="http://awards.acm.org/citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L&amp;aw=140&amp;ao=AMTURING&amp;yr=2008">ACM Turing Award</a>, the <a href="http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7">IEEE John von Neumann Medal</a>, and a couple of other awards, telltale of her influence on the field.</p>
+<p><span class="newthought">There</span>  are myriads of ways to build websites.
+When I decided to create a new one for my work, I evaluated my past
+experiences – mostly with Wordpress and 
+Joomla<label for="joomla" class="margin-toggle"> ⊕</label><input type="checkbox" id="joomla" class="margin-toggle" /><span class="marginnote">I don’t know if there <em>is</em> a use-case for Joomla. </span> – 
+and decided to go with something less bloated. That is, something that</p>
 
-<p><img src="/assets/posts_img/2011-05-30-liskov.png" alt="" /></p>
+<ul>
+  <li>serves fast,</li>
+  <li>is easy to maintain,</li>
+  <li>does not hide my material in a database and</li>
+  <li>is easy to adapt.</li>
+</ul>
 
-<p>The talk she gave is actually her Turing lecture, obligatory for Turing awardees. The room was so packed that quite some people had to remain standing, and it was worthwhile to have come. You can watch the lecture—in another instance—in full <a href="http://amturing.acm.org/vp/liskov_1108679.cfm">here</a>. For me as a CS novice, the lecture is a small time travel machine to the seventies: Barbara talks about the history of how abstract datatypes and related concepts came to be. As someone who grew up with languages like Java, it is hard to imagine a world where all programming there is is literally done on assembler level. So, lots of the material presented should feel trivial to the modern mind, but Barbara manages to instill the spirit of the time into her listeners. After her talk, you know why she got awards for things you take for granted today.</p>
+<p><label for="There are many such systems, but I knew Ruby already." class="margin-toggle"> ⊕</label><input type="checkbox" id="There are many such systems, but I knew Ruby already." class="margin-toggle" /><span class="marginnote"> </span>
+I ended up choosing <a href="http://jekyllrb.com/">Jekyll</a>, a Ruby application that 
+generates static HTML pages from plain text source. 
+There is lots of documentation on Jekyll on the web, so I will just quickly
+relate some adaptions I made that may be relevant to other researchers.</p>
 
-<p>Since the lecture itself can be watched online, I just want to share my favorite quotes and anecdotes I wrote down during the talk; I hope I am not misquoting.</p>
+<ol>
+  <li>
+    <p>I wanted the site to work as well as possible without Javascript.
+In particular, visitors dropping by with active script blocking – 
+a practice I support fully – should be able to see <em>something</em>,
+and read everything.</p>
 
-<blockquote>
-  <p>[Barbara] did not apply at MIT because she did not want to be a nerd.</p>
-</blockquote>
+    <p>In particular, that meant getting rid of icon fonts; a weird practice
+if you ask me.
+Lucky for me, the <a href="https://icomoon.io/">IcoMoon App</a> exports icon sets
+as SVG as well, so that is what I use for the links in the footer.
+Those icons specific to academia I got from <a href="http://jpswalsh.github.io/academicons/">Academicons</a>; thanks, James!</p>
 
-<p>On her finding abstract datatypes:</p>
+    <p>As a side note, I have not taken any care about old browsers.
+I’ll use recent CSS, SVG and maybe HTML5 down the line.
+If any of that gives you trouble, please do yourself a favor and
+upgrade.</p>
+  </li>
+  <li>
+    <p>That said, I <em>do</em> need mathematics typsetting and thus
+<a href="http://mathjax.org">MathJax</a>.
+<label for="mathjax" class="margin-toggle"> ⊕</label><input type="checkbox" id="mathjax" class="margin-toggle" /><span class="marginnote">MathJax is not the <em>only</em> way to get mathematics on a website, but it is the only one I have found bearable. </span> 
+It is a quite heavy Javascript dependency but I think it is worth it.</p>
 
-<blockquote>
-  <p>I have no idea how I got that idea. […] It was ready to be discovered.</p>
-</blockquote>
+    <p>I have taken care to include it only on pages where it <em>may</em> be needed,
+and the full version only where I <em>know</em> it is needed.</p>
 
-<p>On overhead caused by abstract programming features:</p>
+    <p>If you want to see rendered mathematics, you need to allow scripts from 
+this domain and <code class="highlighter-rouge">mathjax.org</code>.</p>
+  </li>
+  <li>
+    <p>Comments are one thing that is impossible to implement with a static
+site generator. Since I appreciate comments to my often opinionated 
+posts, I needed a solution.</p>
 
-<blockquote>
-  <p>You never need optimal performance, you need good-enough performance. […] Programmers are far too hung up with performance.</p>
-</blockquote>
+    <p>As a user, I have found <a href="https://disqus.com">Disqus</a> to be a useful
+service. I have to assume that they track their users, so
+<label for="heise" class="margin-toggle"> ⊕</label><input type="checkbox" id="heise" class="margin-toggle" /><span class="marginnote">Inspired by the <a href="https://github.com/heiseonline/shariff">efforts of heise.de</a>. </span>
+I have taken care that even with Javascript enabled you have to opt-in
+to the feature.</p>
 
-<p>On design decisions in CLU:</p>
+    <p>If you want to use the commenting feature, you have to allow
+scripts from this domain, <code class="highlighter-rouge">disqus.com</code> and <code class="highlighter-rouge">disquscdn.com</code>, 
+<em>and</em> click on that thing below the post in question.</p>
+  </li>
+  <li>
+    <p>A convenient way to include literature references is an absolute must.
+Of course there is a plugin for that, 
+  <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>.
+It works quite well out of the box.</p>
 
-<blockquote>
-  <p>There were no GOTOs because I believed Dijkstra.</p>
-</blockquote>
+    <p>However, I elected to tweak both the CSS styling and the 
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_includes/structured-refs-web.csl">citation style</a> 
+I chose a bit, and wrote plugins for
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/textcite.rb">text citations</a>
+and
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/fixbibliography.rb">fixing some issues of the bibliography</a>.
+I am quite satisfied with the result now.</p>
+  </li>
+  <li>
+    <p>I wrote some convenience 
+  <a href="https://github.com/reitzig/reitzig.github.io/tree/sources/_plugins">plugins</a>,
+<span style="white-space: nowrap;">e. g.</span> for properly typeset abbreviations.
+The biggest development effort went into my 
+  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/tikz.rb">TikZ plugin</a>.
+It allows you to specify TikZ code right in your post files which is then
+converted into SVG behind the scenes. Pretty exciting!</p>
+  </li>
+  <li>
+    <p>I have decided to host on Github Pages for now. 
+This has the advantage that I just have to push my changes to a Git 
+repository and they go live almost immediately.</p>
 
-<p>On the substitution principle named after her:</p>
+    <p>However, Github does not allows most plugins for safety reasons
+so I have to compile locally. This results in two branches,
+<label for="git" class="margin-toggle"> ⊕</label><input type="checkbox" id="git" class="margin-toggle" /><span class="marginnote">This is the first time I have used Git branches. </span>
+one for the sources and one for the compiled site.</p>
 
-<blockquote>
-  <p>It’s really just common sense.</p>
-</blockquote>
+    <p>This is the basic process of making a change to the site:</p>
 
-<p>Unaccredited critique of Liskov getting the Turing award:</p>
+    <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre>git checkout sources
+... make changes ...
+git commit -m <span class="s2">"Something new"</span>
+jekyll build -d /tmp/website
+git checkout master
+cp -r /tmp/website/<span class="k">*</span> ./
+git add <span class="o">[</span>new files]
+git commit -a -m <span class="s2">"Something new"</span>
+git push --all
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ol>
 
-<blockquote>
-  <p>Why did she get this award? Everybody knows this anyway!</p>
-</blockquote>
+<p>So, if you are curious about how I have done something on these pages you
+can just head over to <a href="https://github.com/reitzig/reitzig.github.io/">Github</a>
+and check out the sources yourself.</p>
 
-<p>Especially the last quote demonstrates, if unintentionally, the impact of Liskov’s and others’ work of that time. If something you conceive is considered common sense 30 years later, you really had a brilliant idea.</p>
-
-<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/05/b-liskov-on-the-power-of-abstraction/">lmazy.verrech.net</a>.</sub></p>
+<p><em>Nota bene:</em> I ported some posts which I thought would fit here from my old blog.
+I hope to post more, new things soon.</p>
 
 
 
@@ -101,9 +183,9 @@ Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108
     
     /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
     var disqus_config = function () {
-      this.page.url = "http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
-      this.page.identifier = "/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
-      this.page.title = 'Barbara Liskov on the Power of Abstraction';
+      this.page.url = "http://reitzig.github.io/ramblings/2015/a-researchers-jekyll";
+      this.page.identifier = "/ramblings/2015/a-researchers-jekyll";
+      this.page.title = 'A Researcher\'s Jekyll';
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -141,7 +223,7 @@ Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108
 
 
     </article>
-    <span class="print-footer">Barbara Liskov on the Power of Abstraction - May 30, 2011 - Raphael Reitzig</span>
+    <span class="print-footer">A Researcher's Jekyll - December 1, 2015 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -265,7 +347,8 @@ Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2015/a-researchers-jekyll.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>

@@ -103,6 +103,8 @@ So how to convert TikZ to, say, PNG comfortably?
 	<div>
 	  <p>For our master’s project, we include visualisation of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) <a href="http://en.wikipedia.org/wiki/Planar_graph" title="Definition of Planar Graphs">planar</a>? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.</p>
 
+<p>Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as <code class="highlighter-rouge">goto</code> is generally to be <a href="http://dl.acm.org/citation.cfm?doid=362947">considered harmful</a>. We agreed, however, that we should rather consider <a href="http://en.wikipedia.org/wiki/Basic_block">basic blocks</a> of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labelled <code class="highlighter-rouge">break</code> just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.</p>
+
 
 	  <span class="read-more"><a href="/ramblings/2011/on-planarity-of-control-flow-graphs">Continue reading...</a></span>
 	</div>
@@ -275,7 +277,8 @@ Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/index.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>

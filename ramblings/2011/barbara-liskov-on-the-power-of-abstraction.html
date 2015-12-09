@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig &ndash; Lazy Deserialization in Java</title>
-  <meta name="description" content="While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instrume...">
+  <title>Raphael Reitzig &ndash; Barbara Liskov on the Power of Abstraction</title>
+  <meta name="description" content="Last week, Barbara Liskov visited Kaiserslautern and gave her talk On the Power of Abstraction. I had known her from the substitution principle named after h...">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -14,7 +14,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -30,79 +30,63 @@
 </header>
 
     <article class="group">
-      <h1 class="title">Lazy Deserialization in Java</h1>
+      <h1 class="title">Barbara Liskov on the Power of Abstraction</h1>
 <p class="below_title">
-  <span class="date">September 29, 2011</span>
+  <span class="date">May 30, 2011</span>
   
     <span class="separator">&mdash;</span>
-    <span class="tags">Programming</span>
+    <span class="tags">Programming, Talk</span>
   
   
 </p>
 
 
-<p>While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.</p>
+<p>Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the <a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle">substitution principle</a> named after her<label for="principle" class="margin-toggle sidenote-number"></label><input type="checkbox" id="principle" class="margin-toggle" /><span class="sidenote">She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community. </span> and taught to every computer scientist and programmer, but she is far more distinguished than that: 
+Barbara Liskov is an <a href="http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L">ACM Fellow</a>, holds the <a href="http://awards.acm.org/citation.cfm?id=1108679&amp;srt=alpha&amp;alpha=L&amp;aw=140&amp;ao=AMTURING&amp;yr=2008">ACM Turing Award</a>, the <a href="http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7">IEEE John von Neumann Medal</a>, and a couple of other awards, telltale of her influence on the field.</p>
 
-<p>The solution intended by Sun back then is to set up a code repository servers can access and download the necessary code from. We considered this overkill given that the server does not even care about the value<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>: after RMI deserializes the input, we immediately serialize it again and pass it directly to its child process. Dynamically loading all classes from the archive at hand felt messy for the same reasons.</p>
+<p><img src="/assets/posts_img/2011-05-30-liskov.png" alt="" /></p>
 
-<p>So we came up with this pattern which I call <em>lazy deserialization</em>:</p>
+<p>The talk she gave is actually her Turing lecture, obligatory for Turing awardees. The room was so packed that quite some people had to remain standing, and it was worthwhile to have come. You can watch the lecture—in another instance—in full <a href="http://amturing.acm.org/vp/liskov_1108679.cfm">here</a>. For me as a CS novice, the lecture is a small time travel machine to the seventies: Barbara talks about the history of how abstract datatypes and related concepts came to be. As someone who grew up with languages like Java, it is hard to imagine a world where all programming there is is literally done on assembler level. So, lots of the material presented should feel trivial to the modern mind, but Barbara manages to instill the spirit of the time into her listeners. After her talk, you know why she got awards for things you take for granted today.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">org.apache.commons.lang.SerializationUtils</span><span class="o">;</span>
+<p>Since the lecture itself can be watched online, I just want to share my favorite quotes and anecdotes I wrote down during the talk; I hope I am not misquoting.</p>
 
-<span class="kd">class</span> <span class="nc">Value</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Serializable</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">transient</span> <span class="n">T</span> <span class="n">value</span><span class="o">;</span>
+<blockquote>
+  <p>[Barbara] did not apply at MIT because she did not want to be a nerd.</p>
+</blockquote>
 
-  <span class="n">Value</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">SerializationUtils</span><span class="o">.</span><span class="na">serialize</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-  <span class="o">}</span>
+<p>On her finding abstract datatypes:</p>
 
-  <span class="n">T</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span><span class="n">SerializationUtils</span><span class="o">.</span><span class="na">deserialize</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
-    <span class="o">}</span>
+<blockquote>
+  <p>I have no idea how I got that idea. […] It was ready to be discovered.</p>
+</blockquote>
 
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<p>On overhead caused by abstract programming features:</p>
 
-<p>As long as servers do not access the wrapped value, everything is fine; as far as they are concerned, they are passing around dressed-up arrays of bytes. In our case, we added several primitive—and therefore trivially serializable—members of the wrapped value to this class in order to enable the server to be able to report back certain things.</p>
+<blockquote>
+  <p>You never need optimal performance, you need good-enough performance. […] Programmers are far too hung up with performance.</p>
+</blockquote>
 
-<p>I think this pattern can be of use in any situation that involves passing around serialized objects only some nodes are interested in. After all, you might want to avoid deserializing even if you have access to all necessary class files; after all, (de)serializing can take up quite some time you might want to see better spent.</p>
+<p>On design decisions in CLU:</p>
 
-<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/09/lazy-deserialization-in-java/">lmazy.verrech.net</a>.</sub></p>
+<blockquote>
+  <p>There were no GOTOs because I believed Dijkstra.</p>
+</blockquote>
 
-<hr />
+<p>On the substitution principle named after her:</p>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Especially so as we have a many-to-many relation between  clients and servers, that means many repositories and many loaded  classes you do not need. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<blockquote>
+  <p>It’s really just common sense.</p>
+</blockquote>
+
+<p>Unaccredited critique of Liskov getting the Turing award:</p>
+
+<blockquote>
+  <p>Why did she get this award? Everybody knows this anyway!</p>
+</blockquote>
+
+<p>Especially the last quote demonstrates, if unintentionally, the impact of Liskov’s and others’ work of that time. If something you conceive is considered common sense 30 years later, you really had a brilliant idea.</p>
+
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/05/b-liskov-on-the-power-of-abstraction/">lmazy.verrech.net</a>.</sub></p>
 
 
 
@@ -117,9 +101,9 @@
     
     /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
     var disqus_config = function () {
-      this.page.url = "http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java";
-      this.page.identifier = "/ramblings/2011/lazy-deserialization-in-java";
-      this.page.title = 'Lazy Deserialization in Java';
+      this.page.url = "http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
+      this.page.identifier = "/ramblings/2011/barbara-liskov-on-the-power-of-abstraction";
+      this.page.title = 'Barbara Liskov on the Power of Abstraction';
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -157,7 +141,7 @@
 
 
     </article>
-    <span class="print-footer">Lazy Deserialization in Java - September 29, 2011 - Raphael Reitzig</span>
+    <span class="print-footer">Barbara Liskov on the Power of Abstraction - May 30, 2011 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -281,7 +265,8 @@
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2011/barbara-liskov-on-the-power-of-abstraction.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>

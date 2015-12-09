@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig &ndash; Quick Images with TikZ</title>
-  <meta name="description" content="How do you create high-quality technical images for documents, your websiteor posts on Stack Exchange? I have used tools in an ad-hoc manner for a while and ...">
+  <title>Raphael Reitzig &ndash; Lazy Deserialization in Java</title>
+  <meta name="description" content="While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instrume...">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -14,7 +14,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/ramblings/2012/quick-images-with-tikz">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -30,26 +30,22 @@
 </header>
 
     <article class="group">
-      <h1 class="title">Quick Images with TikZ</h1>
+      <h1 class="title">Lazy Deserialization in Java</h1>
 <p class="below_title">
-  <span class="date">March 29, 2012</span>
+  <span class="date">September 29, 2011</span>
   
     <span class="separator">&mdash;</span>
-    <span class="tags">LaTeX, Scripting, TikZ</span>
+    <span class="tags">Programming</span>
   
   
 </p>
 
 
-<p>How do you create high-quality technical images for documents, your website
-or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
-and have become frustrated lately. Once you have used <a href="http://pgf.sourceforge.net/">TikZ</a><label for="Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)" class="margin-toggle"> ⊕</label><input type="checkbox" id="Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)" class="margin-toggle" /><span class="marginnote"> </span> 
-with <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> most other tools feel inferior. 
-The only problem is: TikZ is a <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> package and can not be used on its own. 
-So how to convert TikZ to, say, PNG comfortably?
-<!--more--></p>
+<p>While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.</p>
 
-<p><span class="latex">T<sub>e</sub>X</span>-guru <a href="http://www.scharrer-online.de/">Martin Scharrer</a> comes to the rescue: he wrote the package <a href="http://ctan.org/pkg/standalone"><code class="highlighter-rouge">standalone</code></a> for exactly this use case. Based on his <a href="http://tex.stackexchange.com/a/11880/3213">explanation on tex.SE</a> I built a small bash script that does all the repetitive work for you. With one simple command, this</p>
+<p>The solution intended by Sun back then is to set up a code repository servers can access and download the necessary code from. We considered this overkill given that the server does not even care about the value<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>: after RMI deserializes the input, we immediately serialize it again and pass it directly to its child process. Dynamically loading all classes from the archive at hand felt messy for the same reasons.</p>
+
+<p>So we came up with this pattern which I call <em>lazy deserialization</em>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -58,33 +54,55 @@ So how to convert TikZ to, say, PNG comfortably?
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c">%p% \usetikzlibrary{arrows,automata,positioning}</span>
-<span class="nt">\begin{tikzpicture}</span>[shorten &gt;=1pt,node distance=2cm,auto]
-  <span class="k">\node</span><span class="na">[state,initial]</span>    (q<span class="p">_</span>0)                <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">0</span><span class="p">$}</span>;
-  <span class="k">\node</span><span class="na">[state,accepting]</span>  (q<span class="p">_</span>1) [right of=q<span class="p">_</span>0] <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">1</span><span class="p">$}</span>;
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">org.apache.commons.lang.SerializationUtils</span><span class="o">;</span>
 
-  <span class="k">\path</span><span class="na">[-&gt;]</span> (q<span class="p">_</span>0) edge [bend left]  node <span class="p">{$</span><span class="nb">a</span><span class="p">$}</span> (q<span class="p">_</span>1)
-            (q<span class="p">_</span>1) edge [bend left]  node <span class="p">{$</span><span class="nb">b</span><span class="p">$}</span> (q<span class="p">_</span>0);
-<span class="nt">\end{tikzpicture}</span>
+<span class="kd">class</span> <span class="nc">Value</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Serializable</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">transient</span> <span class="n">T</span> <span class="n">value</span><span class="o">;</span>
+
+  <span class="n">Value</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">SerializationUtils</span><span class="o">.</span><span class="na">serialize</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="n">T</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span><span class="n">SerializationUtils</span><span class="o">.</span><span class="na">deserialize</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<p>becomes this in a matter of seconds:</p>
+<p>As long as servers do not access the wrapped value, everything is fine; as far as they are concerned, they are passing around dressed-up arrays of bytes. In our case, we added several primitive—and therefore trivially serializable—members of the wrapped value to this class in order to enable the server to be able to report back certain things.</p>
 
-<p><span class="tikz">
-  <img class="tikz svg" style="" src="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.svg" alt="A graphic created with TikZ" /><br />
-  <sup>
-    [<a href="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.tikz">source</a>]
-  </sup></span></p>
+<p>I think this pattern can be of use in any situation that involves passing around serialized objects only some nodes are interested in. After all, you might want to avoid deserializing even if you have access to all necessary class files; after all, (de)serializing can take up quite some time you might want to see better spent.</p>
 
-<p>You can find some more examples <a href="http://akerbos.github.io/sesketches/">here</a>.</p>
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/09/lazy-deserialization-in-java/">lmazy.verrech.net</a>.</sub></p>
 
-<p>Get <code>tikz2png</code> <a href="https://github.com/akerbos/scripts/blob/master/tikz2png">on Github</a> and enjoy!</p>
+<hr />
 
-<p><em>Update:</em> There is <a href="https://github.com/akerbos/scripts/blob/master/tikz2svg">tikz2svg</a> now as well.</p>
-
-<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2012/03/quick-images-with-tikz/">lmazy.verrech.net</a>.<sub></sub></sub></p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Especially so as we have a many-to-many relation between  clients and servers, that means many repositories and many loaded  classes you do not need. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 
 
@@ -99,9 +117,9 @@ So how to convert TikZ to, say, PNG comfortably?
     
     /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
     var disqus_config = function () {
-      this.page.url = "http://reitzig.github.io/ramblings/2012/quick-images-with-tikz";
-      this.page.identifier = "/ramblings/2012/quick-images-with-tikz";
-      this.page.title = 'Quick Images with TikZ';
+      this.page.url = "http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java";
+      this.page.identifier = "/ramblings/2011/lazy-deserialization-in-java";
+      this.page.title = 'Lazy Deserialization in Java';
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -139,7 +157,7 @@ So how to convert TikZ to, say, PNG comfortably?
 
 
     </article>
-    <span class="print-footer">Quick Images with TikZ - March 29, 2012 - Raphael Reitzig</span>
+    <span class="print-footer">Lazy Deserialization in Java - September 29, 2011 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -263,7 +281,8 @@ So how to convert TikZ to, say, PNG comfortably?
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2011/lazy-deserialization-in-java.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>

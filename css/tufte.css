@@ -868,7 +868,8 @@ ol.bibliography {
       margin: 0;
       border: none; }
       ol.bibliography li table.fixedbib td {
-        vertical-align: top; }
+        vertical-align: top;
+        font-size: 95%; }
         ol.bibliography li table.fixedbib td span.bibkey {
           margin-left: -1rem;
           margin-right: 1rem; }
@@ -876,6 +877,10 @@ ol.bibliography {
     position: absolute;
     left: 100%;
     top: 0em; }
+
+/* Styling PGP signature stuff */
+table.signatures {
+  margin: 3ex; }
 
 /* Icomoon exported SVG icons */
 div.icon {

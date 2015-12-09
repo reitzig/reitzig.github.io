@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raphael Reitzig &ndash; A Researcher's Jekyll</title>
-  <meta name="description" content="There  are myriads of ways to build websites.When I decided to create a new one for my work, I evaluated my pastexperiences – mostly with Wordpress and Jooml...">
+  <title>Raphael Reitzig &ndash; Quick Images with TikZ</title>
+  <meta name="description" content="How do you create high-quality technical images for documents, your websiteor posts on Stack Exchange? I have used tools in an ad-hoc manner for a while and ...">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -14,7 +14,7 @@
 
   
 
-  <link rel="canonical" href="http://reitzig.github.io/ramblings/2015/a-researchers-jekyll">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2012/quick-images-with-tikz">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -30,145 +30,61 @@
 </header>
 
     <article class="group">
-      <h1 class="title">A Researcher's Jekyll</h1>
+      <h1 class="title">Quick Images with TikZ</h1>
 <p class="below_title">
-  <span class="date">December 1, 2015</span>
+  <span class="date">March 29, 2012</span>
   
     <span class="separator">&mdash;</span>
-    <span class="tags">Website</span>
+    <span class="tags">LaTeX, Scripting, TikZ</span>
   
   
 </p>
 
 
-<p><span class="newthought">There</span>  are myriads of ways to build websites.
-When I decided to create a new one for my work, I evaluated my past
-experiences – mostly with Wordpress and 
-Joomla<label for="joomla" class="margin-toggle"> ⊕</label><input type="checkbox" id="joomla" class="margin-toggle" /><span class="marginnote">I don’t know if there <em>is</em> a use-case for Joomla. </span> – 
-and decided to go with something less bloated. That is, something that</p>
+<p>How do you create high-quality technical images for documents, your website
+or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
+and have become frustrated lately. Once you have used <a href="http://pgf.sourceforge.net/">TikZ</a><label for="Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)" class="margin-toggle"> ⊕</label><input type="checkbox" id="Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)" class="margin-toggle" /><span class="marginnote"> </span> 
+with <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> most other tools feel inferior. 
+The only problem is: TikZ is a <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> package and can not be used on its own. 
+So how to convert TikZ to, say, PNG comfortably?
+<!--more--></p>
 
-<ul>
-  <li>serves fast,</li>
-  <li>is easy to maintain,</li>
-  <li>does not hide my material in a database and</li>
-  <li>is easy to adapt.</li>
-</ul>
+<p><span class="latex">T<sub>e</sub>X</span>-guru <a href="http://www.scharrer-online.de/">Martin Scharrer</a> comes to the rescue: he wrote the package <a href="http://ctan.org/pkg/standalone"><code class="highlighter-rouge">standalone</code></a> for exactly this use case. Based on his <a href="http://tex.stackexchange.com/a/11880/3213">explanation on tex.SE</a> I built a small bash script that does all the repetitive work for you. With one simple command, this</p>
 
-<p><label for="There are many such systems, but I knew Ruby already." class="margin-toggle"> ⊕</label><input type="checkbox" id="There are many such systems, but I knew Ruby already." class="margin-toggle" /><span class="marginnote"> </span>
-I ended up choosing <a href="http://jekyllrb.com/">Jekyll</a>, a Ruby application that 
-generates static HTML pages from plain text source. 
-There is lots of documentation on Jekyll on the web, so I will just quickly
-relate some adaptions I made that may be relevant to other researchers.</p>
-
-<ol>
-  <li>
-    <p>I wanted the site to work as well as possible without Javascript.
-In particular, visitors dropping by with active script blocking – 
-a practice I support fully – should be able to see <em>something</em>,
-and read everything.</p>
-
-    <p>In particular, that meant getting rid of icon fonts; a weird practice
-if you ask me.
-Lucky for me, the <a href="https://icomoon.io/">IcoMoon App</a> exports icon sets
-as SVG as well, so that is what I use for the links in the footer.
-Those icons specific to academia I got from <a href="http://jpswalsh.github.io/academicons/">Academicons</a>; thanks, James!</p>
-
-    <p>As a side note, I have not taken any care about old browsers.
-I’ll use recent CSS, SVG and maybe HTML5 down the line.
-If any of that gives you trouble, please do yourself a favor and
-upgrade.</p>
-  </li>
-  <li>
-    <p>That said, I <em>do</em> need mathematics typsetting and thus
-<a href="http://mathjax.org">MathJax</a>.
-<label for="mathjax" class="margin-toggle"> ⊕</label><input type="checkbox" id="mathjax" class="margin-toggle" /><span class="marginnote">MathJax is not the <em>only</em> way to get mathematics on a website, but it is the only one I have found bearable. </span> 
-It is a quite heavy Javascript dependency but I think it is worth it.</p>
-
-    <p>I have taken care to include it only on pages where it <em>may</em> be needed,
-and the full version only where I <em>know</em> it is needed.</p>
-
-    <p>If you want to see rendered mathematics, you need to allow scripts from 
-this domain and <code class="highlighter-rouge">mathjax.org</code>.</p>
-  </li>
-  <li>
-    <p>Comments are one thing that is impossible to implement with a static
-site generator. Since I appreciate comments to my often opinionated 
-posts, I needed a solution.</p>
-
-    <p>As a user, I have found <a href="https://disqus.com">Disqus</a> to be a useful
-service. I have to assume that they track their users, so
-<label for="heise" class="margin-toggle"> ⊕</label><input type="checkbox" id="heise" class="margin-toggle" /><span class="marginnote">Inspired by the <a href="https://github.com/heiseonline/shariff">efforts of heise.de</a>. </span>
-I have taken care that even with Javascript enabled you have to opt-in
-to the feature.</p>
-
-    <p>If you want to use the commenting feature, you have to allow
-scripts from this domain, <code class="highlighter-rouge">disqus.com</code> and <code class="highlighter-rouge">disquscdn.com</code>, 
-<em>and</em> click on that thing below the post in question.</p>
-  </li>
-  <li>
-    <p>A convenient way to include literature references is an absolute must.
-Of course there is a plugin for that, 
-  <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>.
-It works quite well out of the box.</p>
-
-    <p>However, I elected to tweak both the CSS styling and the 
-  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_includes/structured-refs-web.csl">citation style</a> 
-I chose a bit, and wrote plugins for
-  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/textcite.rb">text citations</a>
-and
-  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/fixbibliography.rb">fixing some issues of the bibliography</a>.
-I am quite satisfied with the result now.</p>
-  </li>
-  <li>
-    <p>I wrote some convenience 
-  <a href="https://github.com/reitzig/reitzig.github.io/tree/sources/_plugins">plugins</a>,
-<span style="white-space: nowrap;">e. g.</span> for properly typeset abbreviations.
-The biggest development effort went into my 
-  <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/tikz.rb">TikZ plugin</a>.
-It allows you to specify TikZ code right in your post files which is then
-converted into SVG behind the scenes. Pretty exciting!</p>
-  </li>
-  <li>
-    <p>I have decided to host on Github Pages for now. 
-This has the advantage that I just have to push my changes to a Git 
-repository and they go live almost immediately.</p>
-
-    <p>However, Github does not allows most plugins for safety reasons
-so I have to compile locally. This results in two branches,
-<label for="git" class="margin-toggle"> ⊕</label><input type="checkbox" id="git" class="margin-toggle" /><span class="marginnote">This is the first time I have used Git branches. </span>
-one for the sources and one for the compiled site.</p>
-
-    <p>This is the basic process of making a change to the site:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8
-9</pre></td><td class="code"><pre>git checkout sources
-... make changes ...
-git commit -m <span class="s2">"Something new"</span>
-jekyll build -d /tmp/website
-git checkout master
-cp -r /tmp/website/<span class="k">*</span> ./
-git add <span class="o">[</span>new files]
-git commit -a -m <span class="s2">"Something new"</span>
-git push --all
+8</pre></td><td class="code"><pre><span class="c">%p% \usetikzlibrary{arrows,automata,positioning}</span>
+<span class="nt">\begin{tikzpicture}</span>[shorten &gt;=1pt,node distance=2cm,auto]
+  <span class="k">\node</span><span class="na">[state,initial]</span>    (q<span class="p">_</span>0)                <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">0</span><span class="p">$}</span>;
+  <span class="k">\node</span><span class="na">[state,accepting]</span>  (q<span class="p">_</span>1) [right of=q<span class="p">_</span>0] <span class="p">{$</span><span class="nb">q</span><span class="p">_</span><span class="m">1</span><span class="p">$}</span>;
+
+  <span class="k">\path</span><span class="na">[-&gt;]</span> (q<span class="p">_</span>0) edge [bend left]  node <span class="p">{$</span><span class="nb">a</span><span class="p">$}</span> (q<span class="p">_</span>1)
+            (q<span class="p">_</span>1) edge [bend left]  node <span class="p">{$</span><span class="nb">b</span><span class="p">$}</span> (q<span class="p">_</span>0);
+<span class="nt">\end{tikzpicture}</span>
 </pre></td></tr></tbody></table>
 </div>
-    </div>
-  </li>
-</ol>
+</div>
 
-<p>So, if you are curious about how I have done something on these pages you
-can just head over to <a href="https://github.com/reitzig/reitzig.github.io/">Github</a>
-and check out the sources yourself.</p>
+<p>becomes this in a matter of seconds:</p>
 
-<p><em>Nota bene:</em> I ported some posts which I thought would fit here from my old blog.
-I hope to post more, new things soon.</p>
+<p><span class="tikz">
+  <img class="tikz svg" style="" src="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.svg" alt="A graphic created with TikZ" /><br />
+  <sup>
+    [<a href="/assets/tikz/ramblings-2012-quick-images-with-tikz-1.tikz">source</a>]
+  </sup></span></p>
+
+<p>You can find some more examples <a href="http://akerbos.github.io/sesketches/">here</a>.</p>
+
+<p>Get <code>tikz2png</code> <a href="https://github.com/akerbos/scripts/blob/master/tikz2png">on Github</a> and enjoy!</p>
+
+<p><em>Update:</em> There is <a href="https://github.com/akerbos/scripts/blob/master/tikz2svg">tikz2svg</a> now as well.</p>
+
+<p><sub>Originally posted on <a href="http://lmazy.verrech.net/2012/03/quick-images-with-tikz/">lmazy.verrech.net</a>.<sub></sub></sub></p>
 
 
 
@@ -183,9 +99,9 @@ I hope to post more, new things soon.</p>
     
     /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
     var disqus_config = function () {
-      this.page.url = "http://reitzig.github.io/ramblings/2015/a-researchers-jekyll";
-      this.page.identifier = "/ramblings/2015/a-researchers-jekyll";
-      this.page.title = 'A Researcher\'s Jekyll';
+      this.page.url = "http://reitzig.github.io/ramblings/2012/quick-images-with-tikz";
+      this.page.identifier = "/ramblings/2012/quick-images-with-tikz";
+      this.page.title = 'Quick Images with TikZ';
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -223,7 +139,7 @@ I hope to post more, new things soon.</p>
 
 
     </article>
-    <span class="print-footer">A Researcher's Jekyll - December 1, 2015 - Raphael Reitzig</span>
+    <span class="print-footer">Quick Images with TikZ - March 29, 2012 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -347,7 +263,8 @@ I hope to post more, new things soon.</p>
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2012/quick-images-with-tikz.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>

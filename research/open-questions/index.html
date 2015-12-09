@@ -50,7 +50,7 @@
   <li><a href="#average-case-analysis-of-parallel-algorithms-with-petri-nets">Average-Case Analysis of Parallel Algorithms with Petri Nets</a></li>
 </ul>
 
-<p>I am happy to receive any comments, hints or solutions via <a href="reitzig[at]cs.uni-kl.de">email</a>!</p>
+<p>I am happy to receive any comments, hints or solutions via <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#114;&#101;&#105;&#116;&#122;&#105;&#103;&#091;&#097;&#116;&#093;&#099;&#115;&#046;&#117;&#110;&#105;&#045;&#107;&#108;&#046;&#100;&#101;">email</a>!</p>
 
 <hr class="slender" />
 
@@ -85,7 +85,7 @@ It is known that all simple varieties with
 <p>There are clearly tree languages with linear average height, <span style="white-space: nowrap;">e. g.</span> the
 one defined by <span class="MathJax_Preview">S \to a(S) \mid a</span><script type="math/tex">S \to a(S) \mid a</script>.</p>
 
-<p>The question is now:<label for="Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." class="margin-toggle"> ⊕</label><input type="checkbox" id="Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." class="margin-toggle" /><span class="marginnote"> </span>
+<p>The question is now:<label for="cs.SE ref" class="margin-toggle"> ⊕</label><input type="checkbox" id="cs.SE ref" class="margin-toggle" /><span class="marginnote">Originally posted on <a href="http://cs.stackexchange.com/questions/16073/">cs.SE</a>. </span>
 Are there (infinite) regular tree languages with average height
 not in <span class="MathJax_Preview">\Theta(n) \cup \Theta(\sqrt{n})</span><script type="math/tex">\Theta(n) \cup \Theta(\sqrt{n})</script>?</p>
 
@@ -173,7 +173,7 @@ we would want to have transitions move the input marker to different places
 with certain probabilities.
 We would also require all enabled transitions to fire in each time step; otherwise,
 we would study concurrency but not parallelism.
-<label for="Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." class="margin-toggle"> ⊕</label><input type="checkbox" id="Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." class="margin-toggle" /><span class="marginnote"> </span>
+<label for="tie-resolving" class="margin-toggle"> ⊕</label><input type="checkbox" id="tie-resolving" class="margin-toggle" /><span class="marginnote">Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically. </span>
 If this works out, the expected runtime of the parallel algorithm would be
 given by the expected number of steps until all processor markers reach a sink place.</p>
 
@@ -197,9 +197,9 @@ A simple example is a plain <code class="highlighter-rouge">for</code>-loop:</p>
 However, after translation it becomes:</p>
 
 <p><span class="tikz">
-  <img class="tikz svg" style="height: 10ex;" src="/assets/tikz/research-open-questions-index-1.svg" alt="A graphic created with TikZ" /><br />
+  <img class="tikz svg" style="height: 10ex;" src="/assets/tikz/research-open-questions-1.svg" alt="A graphic created with TikZ" /><br />
   <sup>
-    [<a href="/assets/tikz/research-open-questions-index-1.tikz">source</a>]
+    [<a href="/assets/tikz/research-open-questions-1.tikz">source</a>]
   </sup></span></p>
 
 <p>This can no longer be distinguished from other loops with the same probabilities,
@@ -224,12 +224,12 @@ However, after translation it becomes:</p>
 Well, if we have <em>conflicts</em> aka communication, <span style="white-space: nowrap;">e. g.</span> in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime – but depends on higher moments! Consider, for instance, this net:
-<label for="Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." class="margin-toggle"> ⊕</label><input type="checkbox" id="Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." class="margin-toggle" /><span class="marginnote"> </span></p>
+<label for="notation" class="margin-toggle"> ⊕</label><input type="checkbox" id="notation" class="margin-toggle" /><span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<span class="MathJax_Preview">1,2, \dots</span><script type="math/tex">1,2, \dots</script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit. </span></p>
 
 <p><span class="tikz">
-  <img class="tikz svg" style="height: 20ex;" src="/assets/tikz/research-open-questions-index-2.svg" alt="A graphic created with TikZ" /><br />
+  <img class="tikz svg" style="height: 20ex;" src="/assets/tikz/research-open-questions-2.svg" alt="A graphic created with TikZ" /><br />
   <sup>
-    [<a href="/assets/tikz/research-open-questions-index-2.tikz">source</a>]
+    [<a href="/assets/tikz/research-open-questions-2.tikz">source</a>]
   </sup></span></p>
 
 <p>Which kinds of loop are behind this? If both are of the first type I gave above,
@@ -376,7 +376,8 @@ If yes, what can we get out of a stochastic Petri net model?</p>
   </ul>
   <div class="credits">
     <span>&copy; 2015 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span>This site has been created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
+    <span class='pgp-sign-note'>This page has been <a href="/research/open-questions/index.sig.html">signed with PGP</a>.</span><br/>
+    <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for Raphael Reitzig in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
