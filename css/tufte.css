@@ -879,8 +879,12 @@ ol.bibliography {
     top: 0em; }
 
 /* Styling PGP signature stuff */
-table.signatures {
+div.signatures p {
+  width: 35%; }
+div.signatures table {
   margin: 3ex; }
+  div.signatures table th, div.signatures table td {
+    font-size: 90%; }
 
 /* Icomoon exported SVG icons */
 div.icon {
