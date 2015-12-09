@@ -39,7 +39,7 @@ module Jekyll
       if !File.file?(target) || new_hash != @@signed[url]
         Jekyll.logger.info("Signing #{url}")
         FileUtils.rm(target) if File.exist?(target)
-        `gpg --local-user #{pgp['key']} --detach-sign --output #{target} #{source}`
+        `gpg --local-user #{pgp['key-id']} --detach-sign --output #{target} #{source}`
       end
       
       if File.file?(target)
@@ -61,14 +61,18 @@ module Jekyll
         if pgp.has_key?('css')
           f.write("  <link rel=\"stylesheet\" href=\"#{pgp['css']}\">\n")
         end
-        f.write("</head>\n<body>\n")
+        f.write("</head>\n<body><div class=\"signatures\">\n")
         f.write("<h3>Signatures for <a href=\"#{url}\">#{url}</a></h3>\n")
-        f.write("<table class=\"signatures\">\n<tr><th>File</th><th>Signature</th></tr>\n")
+        f.write("<p>Used key: <a href=\"#{pgp['key-url']}\">#{pgp['key-id']}</a><br/>\n")
+        f.write("<b>Note:</b> There is no real security unless you verify that the" +
+                            " public key you have matches the private key the site" +
+                            " owner uses!</p>\n")
+        f.write("<table>\n<tr><th>File</th><th>Signature</th></tr>\n")
         files.each { |file|
           f.write("  <tr><td><a href=\"#{file}\">#{file}</a></td>" +
                   "<td><a href=\"/#{pgp['target']}#{sigfile(file)}\">_.sig</a></td></tr>\n")
         }
-        f.write("</table>\n</body>\n</html>")
+        f.write("</table>\n</div></body>\n</html>")
       }
       site.keep_files << "#{site.dest.to_s}/#{siglist(url)}"
     end

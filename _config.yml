@@ -61,5 +61,6 @@ disqus:
   
 pgp:
   target: 'assets/signatures'
-  key: '4F0B50B9'
+  key-id: '4F0B50B9'
+  key-url: 'http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x12F79CC14F0B50B9'
   css: '/css/tufte.css'

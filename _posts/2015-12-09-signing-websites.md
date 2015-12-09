@@ -29,9 +29,10 @@ lends itself very well to fully integrating the signing of the generated website
 A quickly coded 
   [proof-of-concept implementation](https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/pgp-sign.rb)
 provides a fair user experience already; no user interaction is necessary at all.
-Now, every (local) file used on this website has been signed with PGP; the
-footer links to the relevant files. For instance, find the signatures of this
-post
+Now, every (local) file used on this website has been signed with PGP;
+{% marginnote "limits" "The signatures do not tell you anything unless you trust the used public key, of course." %} 
+the footer links to the relevant files. For instance, find the signatures of 
+this post
   [here]({% post_url 2015-12-01-a-researchers-jekyll %}.sig.html).
 
 {% newthought "Of course" %}, I am 
