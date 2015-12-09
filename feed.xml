@@ -5,9 +5,34 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Dec 2015 20:59:36 +0100</pubDate>
-    <lastBuildDate>Wed, 09 Dec 2015 20:59:36 +0100</lastBuildDate>
+    <pubDate>Wed, 09 Dec 2015 21:47:58 +0100</pubDate>
+    <lastBuildDate>Wed, 09 Dec 2015 21:47:58 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Signing Websites</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Today&lt;/span&gt;  I reread some 
+  &lt;a href=&quot;http://worldbuilding.stackexchange.com/a/27379/3657&quot;&gt;thoughts of mine&lt;/a&gt;
+on how super-computers may engage in battle.
+What I wrote got me thinking in another direction:
+how can we, even today, be sure that what we read on the internet is what
+the alleged author intends us to see? Especially if our connection to the
+webserver is not encrypted, man-in-the-middle attacks are a very real possibility.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2015/signing-websites&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Wed, 09 Dec 2015 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2015/signing-websites</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2015/signing-websites</guid>
+        
+        <category>Website,</category>
+        
+        <category>Security</category>
+        
+        
+      </item>
     
       <item>
         <title>A Researcher&#39;s Jekyll</title>
