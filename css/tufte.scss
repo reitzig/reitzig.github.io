@@ -715,6 +715,7 @@ ol.bibliography {
       
       td {
         vertical-align: top;
+        font-size: 95%;
         
         span.bibkey {
           margin-left: -1rem;
@@ -729,6 +730,12 @@ ol.bibliography {
     left: 100%;
     top: 0em;
   }
+}
+
+/* Styling PGP signature stuff */
+
+table.signatures {
+  margin: 3ex;
 }
 
 /* Icomoon exported SVG icons */

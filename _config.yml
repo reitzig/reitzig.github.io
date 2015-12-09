@@ -58,3 +58,8 @@ tikz:
 disqus:
   shortname: 'raphaels-ramblings'
   enable: true
+  
+pgp:
+  target: 'assets/signatures'
+  key: '4F0B50B9'
+  css: '/css/tufte.css'

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 #gem 'github-pages'
 # Copy dependencies so we can use newer versions:
-gem 'jekyll', '>=2.4.0'
+gem 'jekyll', '>=3.0.0'
 gem 'jekyll-coffeescript', '>=1.0.1'
 gem 'jekyll-sass-converter', '>=1.3.0'
 gem 'kramdown', '>=1.8.0'

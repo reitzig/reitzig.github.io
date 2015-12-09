@@ -10,7 +10,7 @@ Here are some problems I have encountered but not yet solved.
  * [Analysis of Top-Level Parallel Recursive Algorithms](#analysis-of-top-level-parallel-recursive-algorithms)
  * [Average-Case Analysis of Parallel Algorithms with Petri Nets](#average-case-analysis-of-parallel-algorithms-with-petri-nets)
  
-I am happy to receive any comments, hints or solutions via [email]({{ site.email }})!
+I am happy to receive any comments, hints or solutions via [email](mailto:{{ site.email }})!
 
 <hr class="slender">
 
@@ -45,7 +45,7 @@ $$\Theta(\sqrt{n})$$.
 There are clearly tree languages with linear average height, {% abbr eg %} the
 one defined by $$S \to a(S) \mid a$$.
 
-The question is now:{% marginnote "Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." %}
+The question is now:{% marginnote "cs.SE ref" "Originally posted on [cs.SE](http://cs.stackexchange.com/questions/16073/)." %}
 Are there (infinite) regular tree languages with average height
 not in $$\Theta(n) \cup \Theta(\sqrt{n})$$?
 
@@ -124,7 +124,7 @@ we would want to have transitions move the input marker to different places
 with certain probabilities.
 We would also require all enabled transitions to fire in each time step; otherwise,
 we would study concurrency but not parallelism.
-{% marginnote "Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." %}
+{% marginnote "tie-resolving" "Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically." %}
 If this works out, the expected runtime of the parallel algorithm would be
 given by the expected number of steps until all processor markers reach a sink place.
 
@@ -181,7 +181,7 @@ Why is this a larger problem for the model proposed above?
 Well, if we have *conflicts* aka communication, {% abbr eg %} in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime -- but depends on higher moments! Consider, for instance, this net:
-{% marginnote "Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \\dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." %}
+{% marginnote "notation" "Inventing notation here. Say thick edges transport processor tokens ($$ 1,2, \\dots $$) and thin edges helper tokens (&#9679;). Small numbers next to places indicate a capacity limit." %}
 
 {% tikz --style "height: 20ex;" %}
   %p%\usepackage{nicefrac}
