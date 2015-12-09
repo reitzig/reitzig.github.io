@@ -20,7 +20,7 @@ module Jekyll
     def self.deliver(site, page, text, format = @@config[:format])
       hash = Digest::SHA1.hexdigest(text)
       
-      pageid = page['url'].sub("/", "").gsub("/", "-").sub(/\.\w+$/, "")
+      pageid = page['url'].gsub(/^\/|\/$/, "").gsub("/", "-").sub(/\.\w+$/, "")
       
       # Use context to count TikZ blocks on this page
       if !page.has_key?("tikz-count")
