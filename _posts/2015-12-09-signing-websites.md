@@ -1,6 +1,6 @@
 ---
   title: Signing Websites
-  tags: Website, Security
+  tags: Website Security
   mathjax: false
 ---
 
@@ -35,7 +35,7 @@ the footer links to the relevant files. For instance, find the signatures of
 this post
   [here]({% post_url 2015-12-01-a-researchers-jekyll %}.sig.html).
 
-{% newthought "Of course" %}, I am 
+{% newthought "Of course," %} I am 
   [not the first person to have this idea](http://www.sanface.com/pgphtml.html).
 There has even been 
   [a proposal for integrating signatures into HTML](http://www.w3.org/2007/11/h6n/),

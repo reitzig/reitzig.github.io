@@ -11,6 +11,7 @@ module Jekyll
       { :format => :svg, :dir => 'assets/tikz', :sources => true }
     end
     # TODO check if site config overwrites this
+    # TODO add defaults for style, alt attributes
    
     @@hashes = {}
 

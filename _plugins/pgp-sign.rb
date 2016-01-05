@@ -102,6 +102,7 @@ module Jekyll
           
           File.open("#{find_file(site, url)}", "r") { |f|
             html = f.readlines.join("\n")
+            # TODO extend and/or make configurable
             linked = html.scan(/(href|src)=["'](\/(fonts|assets|css)\/.*?)["']/)\
                          .map { |m| m[1] }
           }
