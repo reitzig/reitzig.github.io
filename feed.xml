@@ -5,8 +5,8 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Dec 2015 22:08:44 +0100</pubDate>
-    <lastBuildDate>Wed, 09 Dec 2015 22:08:44 +0100</lastBuildDate>
+    <pubDate>Mon, 11 Jan 2016 18:39:47 +0100</pubDate>
+    <lastBuildDate>Mon, 11 Jan 2016 18:39:47 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -27,7 +27,7 @@ webserver is not encrypted, man-in-the-middle attacks are a very real possibilit
         <link>http://reitzig.github.io/ramblings/2015/signing-websites</link>
         <guid isPermaLink="true">http://reitzig.github.io/ramblings/2015/signing-websites</guid>
         
-        <category>Website,</category>
+        <category>Website</category>
         
         <category>Security</category>
         

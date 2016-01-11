@@ -286,6 +286,12 @@ h3 {
   margin-bottom: 0;
   line-height: 1.08888888888889; }
 
+h4 {
+  font-weight: 600;
+  margin-top: 2.1777777777777778rem;
+  margin-bottom: 0;
+  line-height: 1.08888888888889; }
+
 p .subtitle {
   font-style: italic;
   margin-top: 2.1777777777777778rem;
@@ -344,7 +350,8 @@ table, table.booktabs {
   text-align: center; }
 
 th, td {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  /* No, we want normal font size */
   line-height: 1.71428571; }
 
 .booktabs th.cmid, th {
@@ -580,6 +587,9 @@ header > nav.group, body footer {
   width: 95%;
   padding-top: 2rem; }
 
+footer ul.footer-links {
+  width: 95%; }
+
 nav.group a.active:before {
   content: "\0003c\000a0"; }
 
@@ -750,6 +760,9 @@ img.main-portrait {
   width: 150px;
   float: left;
   margin: 0.25em 1em 0.5em 0;
+  border: 1px solid #a00000; }
+
+img.framed {
   border: 1px solid #a00000; }
 
 article img {
