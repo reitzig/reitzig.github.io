@@ -109,8 +109,11 @@ h3 { font-style: italic;
      margin-top: 2.1777777777777778rem;
      margin-bottom: 0;
      line-height: 1.08888888888889; }
-
-// ET says a need for more than 3 levels of headings is the sign of a diseased mind
+     
+h4 { font-weight: 600;
+     margin-top: 2.1777777777777778rem;
+     margin-bottom: 0;
+     line-height: 1.08888888888889; }
 
 p .subtitle { font-style: italic;
              margin-top: 2.1777777777777778rem;
@@ -166,7 +169,7 @@ table, table.booktabs { width: auto;  //making booktabs style tables the unstyle
                font-weight: normal;
                text-align: center; }
 
-th, td{ font-size: 1.2rem;
+th, td{ /* font-size: 1.2rem; */ /* No, we want normal font size */
         line-height: 1.71428571;  }
 
 .booktabs th.cmid, th { border-bottom: 1px solid lighten($border-color, 25%); }
@@ -568,6 +571,10 @@ img.main-portrait {
   width: 150px; 
   float: left;
   margin: 0.25em 1em 0.5em 0;
+  border: 1px solid $contrast-color;
+}
+
+img.framed {
   border: 1px solid $contrast-color;
 }
 

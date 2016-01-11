@@ -3,7 +3,8 @@
   <strong>{{ page.entry.title }}</strong><br/>
   <span>
     {% if page.entry.journal %}{{ page.entry.journal }}, 
-    {% elsif page.entry.booktitle %}{{ page.entry.booktitle }}, 
+    {% elsif page.entry.booktitle %}{{ page.entry.booktitle }},
+    {% elsif page.entry.howpublished %}{{ page.entry.howpublished }}, 
     {% endif %}
     {{ page.entry.year }}
   </span>
@@ -37,7 +38,7 @@
 
 {% if page.entry.note %}---
 
-  {{ page.entry.note }}
+  {{ page.entry.note || markdownify }}
 {% endif %}
 
 <!-- Not helpful in this form as it reproduces "jekyll-only" fields.

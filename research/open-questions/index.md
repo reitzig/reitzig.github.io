@@ -57,7 +57,7 @@ that may be of independent interest.
 
 It may be possible to adapt the height analysis for simple 
 varieties&nbsp;{% cite FlajoletOdlyzko1982 -l 200-205 --file references %}
-to more than one non-terminal; I could not tell if and how.
+to more than one non-terminal; I was not able to figure out if and how.
 
 <hr class="slender">
 

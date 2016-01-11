@@ -36,15 +36,18 @@ module Jekyll
       FileUtils.mkdir(target_dir) if !File.exist?(target_dir)
       
       new_hash = Digest::SHA1.file(source).to_s.strip
+      
       if !File.file?(target) || new_hash != @@signed[url]
         Jekyll.logger.info("Signing #{url}")
         FileUtils.rm(target) if File.exist?(target)
         `gpg --local-user #{pgp['key-id']} --detach-sign --output #{target} #{source}`
       end
       
-      if File.file?(target)
-        site.keep_files << target
-        @@signed[url] = new_hash
+      if File.file?(target) 
+        if !site.keep_files.include?(target)
+          site.keep_files << target
+          @@signed[url] = new_hash
+        end
         return true
       else
         @@signed[url] = nil
@@ -113,8 +116,8 @@ module Jekyll
           }
           
           # Create signature page
-          pairs = [url] + linked
-          create_siglist(site, url, pgp, pairs)
+          files = [url] + linked
+          create_siglist(site, url, pgp, files)
         end
       }
     end

@@ -1,5 +1,5 @@
 ---
-  title: Collected Thoughts
+  title: Ramblings
   layout: default
   mathjax: true
 ---
@@ -19,7 +19,7 @@
       </p>
 	<div>
 	  {{ post.excerpt }}
-	  <span class="read-more"><a href="{{ post.url }}">Continue reading...</a></span>
+	  <span class="read-more"><a href="{{ post.url }}">Continue reading&hellip;</a></span>
 	</div>
 	
     </li>
