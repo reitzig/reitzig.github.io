@@ -5,9 +5,36 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jan 2016 18:39:47 +0100</pubDate>
-    <lastBuildDate>Mon, 11 Jan 2016 18:39:47 +0100</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 19:52:53 +0100</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 19:52:53 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>How useful is Landau notation?</title>
+        <description>
+          &lt;p&gt;In the context of a new answer to 
+  &lt;a href=&quot;//cs.stackexchange.com/q/3523/98&quot;&gt;an old question on Computer Science SE&lt;/a&gt;
+and a subsequent
+  &lt;a href=&quot;//chat.stackexchange.com/rooms/33862/discussion-between-raphael-and-kaveh&quot;&gt;chat&lt;/a&gt;,
+I started thinking about how useful Landau notation (also “Big-Oh”) really is.
+Since I am quite opinionated about the whole thing I thought a blog post
+would be a better place than Stack Exchange for collecting these thoughts.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 12 Jan 2016 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation</guid>
+        
+        <category>Algorithm Analysis</category>
+        
+        <category>Discussion</category>
+        
+        <category>Notation</category>
+        
+        
+      </item>
     
       <item>
         <title>Signing Websites</title>
