@@ -22,7 +22,7 @@ Unfortunately, true shared memory platforms are rare in practice;
 most machines have non-uniform memory access (NUMA), {% abbr ie %} processors 
 have different access cost for different parts of the memory.
 
-Is it still possible to classify the set of parallelisable dynamic programming 
+Is it still possible to classify the set of parallelizable dynamic programming 
 recurrences?
 
 *Idea:* If the *dependency radius* around each cell is small in a suitable sense,
@@ -97,7 +97,7 @@ Unfortunately, expectation is *not* linear in taking the maximum. So what do we 
 
 ### Average-Case Analysis of Parallel Algorithms with Petri Nets
 
-{% newthought Sequential %} programs can be modelled as something akin to 
+{% newthought Sequential %} programs can be modeled as something akin to 
 (finite, discrete) Markov chains {% cite LaubeNebel2010 --file references %}: 
 one state per statement, edges from statements to those that can be executed next, 
 and probabilities to indicate which edge is taken with which likelihood.
@@ -110,7 +110,7 @@ maintains the method.
 
 {% newthought "A natural" %} candidate model for parallel algorithms are 
   [*Petri nets*](https://en.wikipedia.org/wiki/Petri_net).
-Statements become transitions and places contain a (labelled) token for each
+Statements become transitions and places contain a (labeled) token for each
 processor that currently waits to execute the next transition. More places and
 other tokens can be used to model, say, 
   [mutexes](https://en.wikipedia.org/wiki/Mutual_exclusion);

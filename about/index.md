@@ -18,12 +18,15 @@ a junior researcher position at the
 
 After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
 video and tabletop games. And some more [programming](https://github.com/akerbos).
-For a healthy balance, I usually cook my own meals, work out (body-weight HIIT, running) 
+For a healthy balance, I usually cook my own meals, 
+work out (body-weight strength training, HIIT, running) 
 and pursue a changing mix of bouldering, ultimate frisbee, ballroom dancing and 
 team handball.
 
-When you send me an [email](mailto:{{ site.email }}), please consider signing or even encrypting with PGP.
-You can find my key [here](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x12F79CC14F0B50B9).
+When you send me an [email](mailto:{{ site.email }}), 
+please consider signing or even encrypting with PGP.
+You can find my key 
+  [here](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x12F79CC14F0B50B9).
 I sign as a matter of principle;
 if you receive an email that seems to be from me but has *not* been signed with this key,
 I *am probably not the author*.
