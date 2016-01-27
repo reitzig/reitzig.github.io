@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Raphael Reitzig &ndash; On Planarity of Control Flow Graphs</title>
-  <meta name="description" content="For our master’s project, we include visualisation of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a questi...">
+  <meta name="description" content="For our master’s project, we include visualization of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a questi...">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -50,9 +50,9 @@
 </p>
 
 
-<p>For our master’s project, we include visualisation of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) <a href="http://en.wikipedia.org/wiki/Planar_graph" title="Definition of Planar Graphs">planar</a>? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.</p>
+<p>For our master’s project, we include visualization of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) <a href="http://en.wikipedia.org/wiki/Planar_graph" title="Definition of Planar Graphs">planar</a>? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.</p>
 
-<p>Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as <code class="highlighter-rouge">goto</code> is generally to be <a href="http://dl.acm.org/citation.cfm?doid=362947">considered harmful</a>. We agreed, however, that we should rather consider <a href="http://en.wikipedia.org/wiki/Basic_block">basic blocks</a> of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labelled <code class="highlighter-rouge">break</code> just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.
+<p>Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as <code class="highlighter-rouge">goto</code> is generally to be <a href="http://dl.acm.org/citation.cfm?doid=362947">considered harmful</a>. We agreed, however, that we should rather consider <a href="http://en.wikipedia.org/wiki/Basic_block">basic blocks</a> of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labeled <code class="highlighter-rouge">break</code> just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.
 <!--more--></p>
 
 <h3 id="dynamic-binding">Dynamic Binding</h3>
@@ -152,7 +152,7 @@
 <p>By the same reasoning as above, when this pattern occurs in a program its CFG can not be planar. As having only one <code class="highlighter-rouge">return</code> per method is not a wide-spread practice, this should be the usual case.</p>
 
 <h3 id="open-questions">Open Questions</h3>
-<p>Above examples show that features common to typical state of the art programming languages render CFGs of many programs non-planar. What are other features that have this effect? Can we characterise language features that can safely be allowed? Are there combinations of features that together break planarity while subsets are safe? Does non-planarity imply complex programs, <span style="white-space: nowrap;">i. e.</span> can the degree of planarity of a program’s CFG be used as a meaningful quality measure?</p>
+<p>Above examples show that features common to typical state of the art programming languages render CFGs of many programs non-planar. What are other features that have this effect? Can we characterize language features that can safely be allowed? Are there combinations of features that together break planarity while subsets are safe? Does non-planarity imply complex programs, <span style="white-space: nowrap;">i. e.</span> can the degree of planarity of a program’s CFG be used as a meaningful quality measure?</p>
 
 <p><sub>Originally posted on <a href="http://lmazy.verrech.net/2011/10/on-planarity-of-control-flow-graphs/">lmazy.verrech.net</a>.</sub></p>
 

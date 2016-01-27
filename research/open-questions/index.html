@@ -62,7 +62,7 @@ Unfortunately, true shared memory platforms are rare in practice;
 most machines have non-uniform memory access (<abbr title="Non-Uniform Memory Access">NUMA</abbr>), <span style="white-space: nowrap;">i. e.</span> processors 
 have different access cost for different parts of the memory.</p>
 
-<p>Is it still possible to classify the set of parallelisable dynamic programming 
+<p>Is it still possible to classify the set of parallelizable dynamic programming 
 recurrences?</p>
 
 <p><em>Idea:</em> If the <em>dependency radius</em> around each cell is small in a suitable sense,
@@ -146,7 +146,7 @@ Then, the recurrence becomes</p>
 
 <h3 id="average-case-analysis-of-parallel-algorithms-with-petri-nets">Average-Case Analysis of Parallel Algorithms with Petri Nets</h3>
 
-<p><span class="newthought">Sequential</span>  programs can be modelled as something akin to 
+<p><span class="newthought">Sequential</span>  programs can be modeled as something akin to 
 (finite, discrete) Markov chains <a href="#LaubeNebel2010">[4]</a>: 
 one state per statement, edges from statements to those that can be executed next, 
 and probabilities to indicate which edge is taken with which likelihood.
@@ -159,7 +159,7 @@ maintains the method.</p>
 
 <p><span class="newthought">A natural</span>  candidate model for parallel algorithms are 
   <a href="https://en.wikipedia.org/wiki/Petri_net"><em>Petri nets</em></a>.
-Statements become transitions and places contain a (labelled) token for each
+Statements become transitions and places contain a (labeled) token for each
 processor that currently waits to execute the next transition. More places and
 other tokens can be used to model, say, 
   <a href="https://en.wikipedia.org/wiki/Mutual_exclusion">mutexes</a>;

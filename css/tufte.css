@@ -749,7 +749,8 @@ div.footnotes {
   margin: 1rem 0 1.4rem 2em; }
   div.footnotes p {
     width: 52%;
-    margin-top: 0; }
+    margin-top: 0;
+    font-size: 85%; }
   div.footnotes li {
     margin-top: 0; }
 
