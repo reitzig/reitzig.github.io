@@ -5,7 +5,9 @@
 
 How do you create high-quality technical images for documents, your website
 or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
-and have become frustrated lately. Once you have used [TikZ](http://pgf.sourceforge.net/){% marginnote "Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)" %} 
+and have become frustrated lately. Once you have used 
+  [TikZ](http://pgf.sourceforge.net/)
+  {% marginnote "tikz_refs" "Check out the awesome [gallery of examples](http://www.texample.net/tikz/examples) and the comprehensive [manual](http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf)." %} 
 with {% latex %} most other tools feel inferior. 
 The only problem is: TikZ is a {%latex %} package and can not be used on its own. 
 So how to convert TikZ to, say, PNG comfortably?

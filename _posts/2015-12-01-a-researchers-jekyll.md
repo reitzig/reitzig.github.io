@@ -37,7 +37,7 @@ relate some adaptions I made that may be relevant to other researchers.
     If any of that gives you trouble, please do yourself a favor and
     upgrade.
  
- 2. That said, I *do* need mathematics typsetting and thus
+ 2. That said, I *do* need mathematics typesetting and thus
     [MathJax](http://mathjax.org).
     {% marginnote "mathjax" "MathJax is not the *only* way to get mathematics on a website, but it is the only one I have found bearable." %} 
     It is a quite heavy Javascript dependency but I think it is worth it.

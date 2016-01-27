@@ -5,9 +5,9 @@
   excerpt_separator: <!--more-->
 ---
 
-For our master's project, we include visualisation of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) [planar](http://en.wikipedia.org/wiki/Planar_graph "Definition of Planar Graphs")? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.
+For our master's project, we include visualization of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) [planar](http://en.wikipedia.org/wiki/Planar_graph "Definition of Planar Graphs")? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.
 
-Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as `goto` is generally to be [considered harmful](http://dl.acm.org/citation.cfm?doid=362947). We agreed, however, that we should rather consider [basic blocks](http://en.wikipedia.org/wiki/Basic_block) of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labelled `break` just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.
+Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as `goto` is generally to be [considered harmful](http://dl.acm.org/citation.cfm?doid=362947). We agreed, however, that we should rather consider [basic blocks](http://en.wikipedia.org/wiki/Basic_block) of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labeled `break` just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.
 <!--more-->
 
 ### Dynamic Binding
@@ -110,6 +110,6 @@ Any program that calls `n` at least once with each of `0`, `1` and another numbe
 By the same reasoning as above, when this pattern occurs in a program its CFG can not be planar. As having only one `return` per method is not a wide-spread practice, this should be the usual case.
 
 ### Open Questions
-Above examples show that features common to typical state of the art programming languages render CFGs of many programs non-planar. What are other features that have this effect? Can we characterise language features that can safely be allowed? Are there combinations of features that together break planarity while subsets are safe? Does non-planarity imply complex programs, {% abbr ie %} can the degree of planarity of a program's CFG be used as a meaningful quality measure?
+Above examples show that features common to typical state of the art programming languages render CFGs of many programs non-planar. What are other features that have this effect? Can we characterize language features that can safely be allowed? Are there combinations of features that together break planarity while subsets are safe? Does non-planarity imply complex programs, {% abbr ie %} can the degree of planarity of a program's CFG be used as a meaningful quality measure?
 
 <sub>Originally posted on [lmazy.verrech.net](http://lmazy.verrech.net/2011/10/on-planarity-of-control-flow-graphs/).</sub>
