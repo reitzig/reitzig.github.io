@@ -7,11 +7,11 @@
 {% newthought "Last week," %} a colleague and I participated in
 [Google's Hash Code](https://hashcode.withgoogle.com/).
 The idea of the event is simple: give small teams of programmers a hard task
-and given them too little time to solve it. See what they can come up with.
+and give them too little time to solve it. See what they can come up with.
 
 {% newthought "The problem" %} we received -- serving many orders from few
 warehouses using a couple of drones -- was clearly (NP-)hard, so clever *and*
-fast to code heuristics were asked for.
+quickly coded heuristics were asked for.
 The data were given in an ad-hoc-formatted text file,
 {% marginnote "inputformat" "Do code golfers like such inputs?" %}
 the output was required to be another text file with commands for the drones.
@@ -42,11 +42,11 @@ Some quick observations.
 The concept of hubs is nice.
 We got to connect with several other teams from the university and talked about
 our respective strategies afterwards.
-Despite Google's photo context there was
+Despite Google's photo contest there was
   [not much activity on Twitter](https://twitter.com/hashtag/hashcodeTUKL)
 et&thinsp;al. -- apparently everybody fell in a coding frenzy!
-You can see some of the contents of the swag box in action there.
-I have a new stress ball, too.
+You can see some of the contents of the swag box our hub got in action there.
+I have a new stress ball now, too.
 
 ### Lessons learned
 
@@ -63,8 +63,8 @@ I have a new stress ball, too.
    * How much does randomization help?
    * Are there any (fast) solutions that exploit (parts of the) total knowledge?
 
- * Are there languages and/or frameworks that are per se more suited for
-   tasks like this than others?
+ * Are there languages and/or frameworks that are per se more suited than others
+   for tasks like this?
 
     For instance, using Java forced us to write some boilerplate code, but
     it also allowed us to use rich features of our IDE and get all the
@@ -83,3 +83,7 @@ I have a new stress ball, too.
  * Input could be given in CSV format. Not only would that enable the use of
    off-the-shelf parsers, but also quick data inspection with tools like
    R or Mathematica.
+   
+<hr class="slender">
+
+What are your observations? Which lessons did you learn?
