@@ -38,6 +38,7 @@ module Jekyll
       new_hash = Digest::SHA1.file(source).to_s.strip
       
       if !File.file?(target) || new_hash != @@signed[url]
+        # TODO only print stuff in debug mode
         Jekyll.logger.info("Signing #{url}")
         FileUtils.rm(target) if File.exist?(target)
         `gpg --local-user #{pgp['key-id']} --detach-sign --output #{target} #{source}`
