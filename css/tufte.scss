@@ -583,6 +583,16 @@ article img {
   margin: 1ex 0 0 2em;
 }
 
+article p.flairimg {
+  text-align: center;
+  
+  img {
+    margin: 1ex auto 0 auto;
+    max-width: 60%;
+    border: 1px solid $contrast-color;
+  }
+}
+
 article span.tikz {
   img  {
     max-width: 120%;
