@@ -769,6 +769,13 @@ img.framed {
 article img {
   margin: 1ex 0 0 2em; }
 
+article p.flairimg {
+  text-align: center; }
+  article p.flairimg img {
+    margin: 1ex auto 0 auto;
+    max-width: 60%;
+    border: 1px solid #a00000; }
+
 article span.tikz img {
   max-width: 120%;
   height: auto; }
