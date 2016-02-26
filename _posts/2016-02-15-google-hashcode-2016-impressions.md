@@ -57,8 +57,8 @@ I have a new stress ball now, too.
 
 ### Questions
 
- * Our approach was deterministic and basically online.
-   {% marginnote "moresoon" "I plan to post more soon." %}
+ * [Our approach](google-hashcode-2016-our-approach) was deterministic and 
+   basically online.
 
    * How much does randomization help?
    * Are there any (fast) solutions that exploit (parts of the) total knowledge?
@@ -66,6 +66,7 @@ I have a new stress ball now, too.
  * Are there languages and/or frameworks that are per se more suited than others
    for tasks like this?
 
+    {% marginnote "kotlin" "I know [Kotlin](http://kotlinlang.org/) now. Too late." %}
     For instance, using Java forced us to write some boilerplate code, but
     it also allowed us to use rich features of our IDE and get all the
     help from static typing.
