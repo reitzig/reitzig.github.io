@@ -217,7 +217,7 @@ section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
 
-ul { width: 55%;
+ul, ol { width: 55%;
      -webkit-padding-start: 5%;
      -webkit-padding-end: 5%;
      // list-style-type: none; // Nope?!
@@ -290,7 +290,7 @@ div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' 
 
 @media screen and (max-width: 760px) { p, footer,div.mathblock { width: 90%; }
                                        pre code { width: 87.5%; }
-                                       ul { width: 85%; }
+                                       ul, ol { width: 85%; }
                                        figure { max-width: 90%; }
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
                                                                                  max-width: none; }
@@ -438,7 +438,7 @@ div.excerpt {
   }
 }
 
-article li,ul {
+article li,ul,ol {
   margin-left: 1em;
 }
 
@@ -726,6 +726,7 @@ p.bibdetailhead {
 
 ol.bibliography {
   margin-left: 1em;
+  width: 85%;
   
   li {
     width: 55%;
