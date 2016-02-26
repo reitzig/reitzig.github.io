@@ -19,11 +19,10 @@
           <span class="tags">{{ post.tags | sort | join: ", " }}</span>
         {% endif %}
       </p>
-	<div>
-	  {{ post.excerpt }}
-	  <span class="read-more"><a href="{{ post.url }}">Continue reading&hellip;</a></span>
-	</div>
-	
+	    <div class="excerpt">
+	      {{ post.excerpt }}
+	      <span class="read-more"><a href="{{ post.url }}">Continue reading&hellip;</a></span>
+	    </div>
     </li>
   {% endfor %}
 </ul>
