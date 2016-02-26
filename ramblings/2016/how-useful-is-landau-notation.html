@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="jekyll">
 
   <title>Raphael Reitzig &ndash; How useful is Landau notation?</title>
   <meta name="description" content="In the context of a new answer to   an old question on Computer Science SEand a subsequent  chat,I started thinking about how useful Landau notation (also “B...">
+  <meta name="author" content="Raphael Reitzig">
+  <meta name="keywords" content="algorithm analysis,discussion,notation">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -41,7 +44,9 @@
     <article class="group">
       <h1 class="title">How useful is Landau notation?</h1>
 <p class="below_title">
-  <span class="date">January 12, 2016</span>
+  <time class="post-date" datetime="2016-01-12">
+    January 12, 2016
+  </time>
   
     <span class="separator">&mdash;</span>
     <span class="tags">Algorithm Analysis, Discussion, Notation</span>
@@ -88,7 +93,7 @@ undergrad education.</p>
     <p>Consider, for example, divide-and-conquer recurrences; do you know how to solve
 them more precisely than with the commonly taught 
  <a href="http://cs.stackexchange.com/a/2823/98">Master theorem</a>?
- <label for="disclaimMT" class="margin-toggle"> ⊕</label><input type="checkbox" id="disclaimMT" class="margin-toggle" /><span class="marginnote">I saw a more precise analysis of Mergesort in class once. It was quite involved, and the technique did not stay with me. </span>
+ <label for="disclaimMT" class="margin-toggle"> ⊕</label><input type="checkbox" id="disclaimMT" class="margin-toggle" /><span class="marginnote">I saw a more precise analysis of Mergesort in class once. It was quite involved, and the technique did not stay with me.</span>
 I for one do not.</p>
 
     <p>As it turns out, there <em>is</em> the continuous Master theorem by 
@@ -179,7 +184,7 @@ but continues to things which
   <li>
     <p>Laypeople use it without knowing what it means.</p>
 
-    <p><label for="landau-vs-cases" class="margin-toggle"> ⊕</label><input type="checkbox" id="landau-vs-cases" class="margin-toggle" /><span class="marginnote"><a href="http://cs.stackexchange.com/q/23068/98">No. Nonono. No!</a> </span>
+    <p><label for="landau-vs-cases" class="margin-toggle"> ⊕</label><input type="checkbox" id="landau-vs-cases" class="margin-toggle" /><span class="marginnote"><a href="http://cs.stackexchange.com/q/23068/98">No. Nonono. No!</a></span>
 The amount of programmer-types you encounter on the internet who think
 <span class="MathJax_Preview">O</span><script type="math/tex">O</script> means worst-case, <span class="MathJax_Preview">\Theta</span><script type="math/tex">\Theta</script> average-case and <span class="MathJax_Preview">\Omega</span><script type="math/tex">\Omega</script> best case is …
 appalling.
@@ -190,7 +195,7 @@ But then, apparently even
 of algorithms that leave gaps in important places.</li>
   <li>Focus on Landau-bounds alone encourages sloppy, hand-wavy analysis of 
 algorithms and use of mathematics. 
-<label for="sloppyproofs" class="margin-toggle"> ⊕</label><input type="checkbox" id="sloppyproofs" class="margin-toggle" /><span class="marginnote">You should never have to say “this usually works” when doing proofs. </span></li>
+<label for="sloppyproofs" class="margin-toggle"> ⊕</label><input type="checkbox" id="sloppyproofs" class="margin-toggle" /><span class="marginnote">You should never have to say “this usually works” when doing proofs.</span></li>
 </ul>
 
 <h3 id="alternatives">Alternatives</h3>
@@ -209,14 +214,14 @@ for most people in most situations.</p>
 Note how a statement like</p>
 
     <p><span class="MathJax_Preview">T(n) = 2n\log n - n \pm O(\log n)</span><script type="math/tex">T(n) = 2n\log n - n \pm O(\log n)</script>
-<label for="disclaimer-equality" class="margin-toggle"> ⊕</label><input type="checkbox" id="disclaimer-equality" class="margin-toggle" /><span class="marginnote">We still have to be careful to agree on what “<span class="MathJax_Preview">=</span><script type="math/tex">=</script>” and “<span class="MathJax_Preview">\pm</span><script type="math/tex">\pm</script>” mean here! </span></p>
+<label for="disclaimer-equality" class="margin-toggle"> ⊕</label><input type="checkbox" id="disclaimer-equality" class="margin-toggle" /><span class="marginnote">We still have to be careful to agree on what “<span class="MathJax_Preview">=</span><script type="math/tex">=</script>” and “<span class="MathJax_Preview">\pm</span><script type="math/tex">\pm</script>” mean here!</span></p>
 
     <p>is way more informative (and useful) than a bland <span class="MathJax_Preview">T(n) \in \Theta(n \log n)</span><script type="math/tex">T(n) \in \Theta(n \log n)</script>! 
 In fact, this use of Landau-bounds as “error terms” is pretty much the only 
 one I can condone without hesitation. 
 For many purposes, we still need an absolute bound on the hidden terms, though.</p>
 
-    <p><label for="sedgewick-coursera" class="margin-toggle"> ⊕</label><input type="checkbox" id="sedgewick-coursera" class="margin-toggle" /><span class="marginnote">Sedgewick’s <a href="https://www.coursera.org/course/aofa">Coursera course</a> is pretty well done as well. </span>
+    <p><label for="sedgewick-coursera" class="margin-toggle"> ⊕</label><input type="checkbox" id="sedgewick-coursera" class="margin-toggle" /><span class="marginnote">Sedgewick’s <a href="https://www.coursera.org/course/aofa">Coursera course</a> is pretty well done as well.</span>
 You are not alone, by the way:
 Knuth <a href="#ConcreteMathematics">[2,3]</a> as well as 
 Sedgewick and Flajolet <a href="#SedgewickFlajolet2013">[4]</a>

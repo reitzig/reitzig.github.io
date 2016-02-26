@@ -6,18 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="jekyll">
 
-  <title>Raphael Reitzig</title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <title>Raphael Reitzig &ndash; Google Hashcode 2016: Our approach</title>
+  <meta name="description" content="In this post,  I briefly discuss the approach we developed for Google Hashcode 2016.">
   <meta name="author" content="Raphael Reitzig">
-  
+  <meta name="keywords" content="programming,algorithms">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
   
 
   
+    
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          displayAlign: "left", displayIndent: "2em", positionToHash: true
+        })
+      </script>
+    
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+  
 
-  <link rel="canonical" href="http://reitzig.github.io/publications/WNRL2013">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2016/google-hashcode-2016-our-approach">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
 </head>
 
@@ -33,58 +42,195 @@
 </header>
 
     <article class="group">
-      
-<p class="bibdetailhead">
-  <em>Wild, Sebastian and Nebel, Markus E. and Reitzig, Raphael and Laube, Ulrich</em><br />
-  <strong>Engineering Java 7’s Dual Pivot Quicksort Using MaLiJan</strong><br />
-  <span>
-    Meeting on Algorithm Engineering &amp; Experiments (ALENEX),
-    
-    2013
-  </span>
+      <h1 class="title">Google Hashcode 2016: Our approach</h1>
+<p class="below_title">
+  <time class="post-date" datetime="2016-02-26">
+    February 26, 2016
+  </time>
+  
+    <span class="separator">&mdash;</span>
+    <span class="tags">Algorithms, Programming</span>
+  
+  
 </p>
 
-<p>Recent results on Java 7’s dual pivot Quicksort have revealed
-    its highly asymmetric nature. These insights suggest that
-    asymmetric pivot choices are preferable to symmetric ones
-    for this Quicksort variant. From a theoretical point of view,
-    this should allow us to improve on the current implementation
-    in Oracle’s Java 7 runtime library. In this paper, we
-    use our new tool MaLiJAn to confirm this asymptotically
-    for combinatorial cost measures such as the total number of
-    executed instructions. However, the observed running times
-    show converse behavior. With the support of data provided
-    by MaLiJAn we are able to identify the profiling capabilities
-    of Oracle’s just-in-time compiler to be responsible for this
-    unexpected outcome.</p>
 
-<p>– <a href="//dx.doi.org/10.1137/1.9781611972931.5">doi</a> – <a href="http://knowledgecenter.siam.org/0238-000024/0238-000024/1">website</a> – <a href="http://wwwagak.cs.uni-kl.de/Veroffentlichungen/Papers/dual-pivot-qs-engineering.pdf.html">pdf</a> – <a href="http://www.slideshare.net/sebawild/engineering-java-7s-dual-pivot-quicksort-using-malijan">talk</a> –</p>
+<p><span class="newthought">In this post,</span>  I briefly discuss the approach we developed 
+for <a href="google-hashcode-2016-impressions">Google Hashcode 2016</a>.</p>
 
-<!-- Not helpful in this form as it reproduces "jekyll-only" fields.
----
+<h3 id="design">Design</h3>
 
-Cite as:
+<p>We make two fundamental decisions:</p>
 
-~~~bibtex
-@inproceedings{WNRL2013,
-  author = {Wild, Sebastian and Nebel, Markus E. and Reitzig, Raphael and Laube, Ulrich},
-  title = {Engineering Java 7's Dual Pivot Quicksort Using MaLiJan},
-  booktitle = {Meeting on Algorithm Engineering \& Experiments (ALENEX)},
-  organization = {SIAM},
-  year = {2013},
-  month = jan,
-  url = {http://knowledgecenter.siam.org/0238-000024/0238-000024/1},
-  pdf = {http://wwwagak.cs.uni-kl.de/Veroffentlichungen/Papers/dual-pivot-qs-engineering.pdf.html},
-  doi = {10.1137/1.9781611972931.5},
-  talk = {http://www.slideshare.net/sebawild/engineering-java-7s-dual-pivot-quicksort-using-malijan}
-}
+<ul>
+  <li>There will be no delivery network or prefetching; every order is served 
+directly from warehouses that have the necessary products.<br />
+<small>This is a judgement call; we have not looked at the data.</small></li>
+  <li>Drones never serve more than one order at the same time.<br />
+<small>This is supported by data; we observe that most orders require 
+more than one drone load.</small></li>
+</ul>
 
-~~~
--->
+<p>The main algorithmic idea is, in the interest of time, <em>greedy</em>.
+We schedule orders by a earliest-completion-first (ECF) heuristic.</p>
+
+<p><span class="newthought">In every step,</span>  determine the order that can be completed 
+the soonest using the following strategy:
+<label for="fastestSolution" class="margin-toggle"> ⊕</label><input type="checkbox" id="fastestSolution" class="margin-toggle" /><span class="marginnote"><a href="http://github.com/reitzig/2016_hashcode/blob/master/src/drones/EarliestCompletionFirst.java#L53">Details on Github</a></span></p>
+
+<ol>
+  <li>Fix an order <span class="MathJax_Preview">o</span><script type="math/tex">o</script>.</li>
+  <li>Order warehouses by distance from the order target.</li>
+  <li>Pick as many items as possible from the closest, then second-closest, etc.</li>
+  <li>Separate the sub-orders into drone-load portions.</li>
+  <li>
+    <p>Assign portions to drones by greedily preferring drone-warehouse
+ pairs <span class="MathJax_Preview">(d,w)</span><script type="math/tex">(d,w)</script> that minimize</p>
+
+    <div class="MathJax_Preview">t_{\mathrm{idle}}(d) + \operatorname{dist}(d,w) + \operatorname{dist}(w,o).</div>
+    <script type="math/tex; mode=display">t_{\mathrm{idle}}(d) + \operatorname{dist}(d,w) + \operatorname{dist}(w,o).</script>
+  </li>
+  <li>The completion time of the order is the largest such value of all drones 
+ we actually use. Note that some drones may be used multiple times on the 
+ same order.</li>
+</ol>
+
+<p>All we need as global state (in addition to the set of unfulfilled orders) are 
+the current state of the warehouses (with already scheduled orders removed
+preemptively), and for each drone the time <span class="MathJax_Preview">t_{\mathrm{idle}}</span><script type="math/tex">t_{\mathrm{idle}}</script> and 
+position at which it will be idle for the next time. This is not too much.</p>
+
+<p>You can find our code on 
+  <a href="http://github.com/reitzig/2016_hashcode/">Github</a>; 
+the revision from Hashcode night is
+  <a href="https://github.com/reitzig/2016_hashcode/tree/e38ad3d230d7f207acabf0ab64561a4edf5cc9ef">this one</a>.</p>
+
+<h3 id="code-complexity">Code complexity</h3>
+
+<p>The algorithm is simple enough to code in about two hours, using an object-oriented
+design and modularized code.
+<label for="codequality" class="margin-toggle"> ⊕</label><input type="checkbox" id="codequality" class="margin-toggle" /><span class="marginnote">Thank god there was no beauty contest as well!</span>
+We had a couple of (rather dumb) programming bugs; the logic was sound from
+the beginning. That is, we never created conceptually wrong outputs.
+Also, our first run scored reasonably high (top 40, had we finished in time).</p>
+
+<p>So I daresay we did not overthink. Had we been better programmers, able to
+split the work (rather than pair-program) and/or had experienced programmers
+on board – in particular for the input parsing part – I think we could have 
+finished with this approach in time.</p>
+
+<h3 id="running-time">Running time</h3>
+
+<p>We did not perform a full analysis. Just from looking at the rough outline
+of the algorithm, we observe that it runs in time 
+<span class="MathJax_Preview">\Theta(O^2 \cdot f(W,D) )</span><script type="math/tex">\Theta(O^2 \cdot f(W,D) )</script> with <span class="MathJax_Preview">O</span><script type="math/tex">O</script> the number of orders,
+preprocessing aside. 
+The function <span class="MathJax_Preview">f</span><script type="math/tex">f</script> depends only on the number of warehouses <span class="MathJax_Preview">W</span><script type="math/tex">W</script> and
+drones <span class="MathJax_Preview">D</span><script type="math/tex">D</script>; since these two quantities are smaller than the number of 
+orders by several orders of magnitudes (in the given data sets), 
+we did not care too much about it.</p>
+
+<h3 id="memory-usage">Memory usage</h3>
+
+<p>The amount of memory our program uses is non-trivial but not an issue. 
+We copy parts of the global state in the inner-most loop in order to virtually 
+execute orders – for <em>every order under consideration</em>. 
+That create quite some temporary data but the GC can remove it quickly. 
+Nevertheless, there is some potential for improvement here.</p>
+
+<h3 id="performance">Performance</h3>
+
+<p>We managed to implement the logic soundly almost in time. 
+After fixing programming bugs, the code ran in under 11 minutes on a 
+five-year-old laptop and reached a score of over 275k points.</p>
+
+<p>I am satisfied with that turnout. Our algorithmic expertise clearly helped us
+coming up with a reasonable approach – and our lack of programming routine
+prevented us from handing in on time. Next time, then!</p>
+
+<hr class="slender" />
+
+<h3 id="post-mortem">Post mortem</h3>
+
+<p>For the fun of it, I implemented a 
+  <a href="http://github.com/reitzig/2016_hashcode/blob/master/src/drones/ParallelECF.java">parallel version of ECF</a>
+which is notably faster and not at all hard to code.
+Out of curiosity – and because I wanted to settle a disagreement – I also
+implemented a
+  <a href="http://github.com/reitzig/2016_hashcode/blob/master/src/drones/PrefetchedECF.java">variant with a redistribution phase</a>
+that ensures that every order can be fulfilled from only the nearest warehouse.
+It reached a slightly lower score than than pure ECF; I used very crude heuristics
+for scheduling the redistribution phase, though.</p>
+
+<p>I also wanted to see how quickly we could have written a 
+  <a href="http://github.com/reitzig/2016_hashcode/blob/master/in2csv.rb">converter to CSV</a>
+  <label for="tidydata" class="margin-toggle"> ⊕</label><input type="checkbox" id="tidydata" class="margin-toggle" /><span class="marginnote"><a href="http://dx.doi.org/10.18637/jss.v059.i10">Tidy Data</a> by <a href="http://hadley.nz/">Hadley Wickham</a> (2014).</span>
+and ran 
+  <a href="http://github.com/reitzig/2016_hashcode/blob/master/data_analysis/generateR.rb">data analyses</a>
+on them. It is close, but I think this is the more useful route, provided you
+can use a ready-made CSV-to-objects library.</p>
+
+<p>If you have read this far, you have earned a fun anecdote.
+Due to an oversight we never initialized the drone positions correctly;
+we used the default integers, that is the origin, instead of the first 
+warehouse as starting point.
+The fixed version performed worse! Go figure.</p>
+
+
+
+
+  <hr class="slender">
+<div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2016/google-hashcode-2016-our-approach";
+      this.page.identifier = "/ramblings/2016/google-hashcode-2016-our-approach";
+      this.page.title = 'Google Hashcode 2016: Our approach';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
+
 
 
     </article>
-    <span class="print-footer"> - Raphael Reitzig</span>
+    <span class="print-footer">Google Hashcode 2016: Our approach - February 26, 2016 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -208,7 +354,7 @@ Cite as:
   </ul>
   <div class="credits">
     <span>&copy; 2016 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span class='pgp-sign-note'>This page has been <a href="/publications/WNRL2013.sig.html">signed with PGP</a>.</span><br/>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2016/google-hashcode-2016-our-approach.sig.html">signed with PGP</a>.</span><br/>
     <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>

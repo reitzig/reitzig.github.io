@@ -407,7 +407,7 @@ section {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
-ul {
+ul, ol {
   width: 55%;
   -webkit-padding-start: 5%;
   -webkit-padding-end: 5%; }
@@ -490,7 +490,7 @@ div.table-wrapper {
   pre code {
     width: 87.5%; }
 
-  ul {
+  ul, ol {
     width: 85%; }
 
   figure {
@@ -647,7 +647,10 @@ footer div.credits {
 body.full-width, .content-listing, ul.content-listing li.listing {
   width: 75%; }
 
-article li, ul {
+div.excerpt .marginnote, div.excerpt .sidenote, div.excerpt .margin-toggle, div.excerpt .footnote, div.excerpt .footnotes {
+  display: none; }
+
+article li, ul, ol {
   margin-left: 1em; }
 
 .full-width article p {
@@ -875,7 +878,8 @@ p.bibdetailhead {
     font-size: 90%; }
 
 ol.bibliography {
-  margin-left: 1em; }
+  margin-left: 1em;
+  width: 85%; }
   ol.bibliography li {
     width: 55%;
     position: relative;

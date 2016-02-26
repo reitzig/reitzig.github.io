@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="jekyll">
 
   <title>Raphael Reitzig &ndash; Open Questions</title>
   <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <meta name="author" content="Raphael Reitzig">
+  
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -85,7 +88,7 @@ It is known that all simple varieties with
 <p>There are clearly tree languages with linear average height, <span style="white-space: nowrap;">e. g.</span> the
 one defined by <span class="MathJax_Preview">S \to a(S) \mid a</span><script type="math/tex">S \to a(S) \mid a</script>.</p>
 
-<p>The question is now:<label for="cs.SE ref" class="margin-toggle"> ⊕</label><input type="checkbox" id="cs.SE ref" class="margin-toggle" /><span class="marginnote">Originally posted on <a href="http://cs.stackexchange.com/questions/16073/">cs.SE</a>. </span>
+<p>The question is now:<label for="cs.SE ref" class="margin-toggle"> ⊕</label><input type="checkbox" id="cs.SE ref" class="margin-toggle" /><span class="marginnote">Originally posted on <a href="http://cs.stackexchange.com/questions/16073/">cs.SE</a>.</span>
 Are there (infinite) regular tree languages with average height
 not in <span class="MathJax_Preview">\Theta(n) \cup \Theta(\sqrt{n})</span><script type="math/tex">\Theta(n) \cup \Theta(\sqrt{n})</script>?</p>
 
@@ -173,7 +176,7 @@ we would want to have transitions move the input marker to different places
 with certain probabilities.
 We would also require all enabled transitions to fire in each time step; otherwise,
 we would study concurrency but not parallelism.
-<label for="tie-resolving" class="margin-toggle"> ⊕</label><input type="checkbox" id="tie-resolving" class="margin-toggle" /><span class="marginnote">Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically. </span>
+<label for="tie-resolving" class="margin-toggle"> ⊕</label><input type="checkbox" id="tie-resolving" class="margin-toggle" /><span class="marginnote">Some transitions may want to let only one processor pass at a time. Such ties should be resolved non-deterministically.</span>
 If this works out, the expected runtime of the parallel algorithm would be
 given by the expected number of steps until all processor markers reach a sink place.</p>
 
@@ -224,7 +227,7 @@ However, after translation it becomes:</p>
 Well, if we have <em>conflicts</em> aka communication, <span style="white-space: nowrap;">e. g.</span> in case of a
 mutex, the probability of processors interfering is crucial for the expected
 runtime – but depends on higher moments! Consider, for instance, this net:
-<label for="notation" class="margin-toggle"> ⊕</label><input type="checkbox" id="notation" class="margin-toggle" /><span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<span class="MathJax_Preview">1,2, \dots</span><script type="math/tex">1,2, \dots</script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit. </span></p>
+<label for="notation" class="margin-toggle"> ⊕</label><input type="checkbox" id="notation" class="margin-toggle" /><span class="marginnote">Inventing notation here. Say thick edges transport processor tokens (<span class="MathJax_Preview">1,2, \dots</span><script type="math/tex">1,2, \dots</script>) and thin edges helper tokens (●). Small numbers next to places indicate a capacity limit.</span></p>
 
 <p><span class="tikz">
   <img class="tikz svg" style="height: 20ex;" src="/assets/tikz/research-open-questions-2.svg" alt="A graphic created with TikZ" /><br />

@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="jekyll">
 
   <title>Raphael Reitzig &ndash; Signing Websites</title>
   <meta name="description" content="Today  I reread some   thoughts of mineon how super-computers may engage in battle.What I wrote got me thinking in another direction:how can we, even today, ...">
+  <meta name="author" content="Raphael Reitzig">
+  <meta name="keywords" content="website,security">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
@@ -32,7 +35,9 @@
     <article class="group">
       <h1 class="title">Signing Websites</h1>
 <p class="below_title">
-  <span class="date">December 9, 2015</span>
+  <time class="post-date" datetime="2015-12-09">
+    December 9, 2015
+  </time>
   
     <span class="separator">&mdash;</span>
     <span class="tags">Security, Website</span>
@@ -55,7 +60,7 @@ How far do you trust the providers of <em>other</em> people?</p>
 
 <p><span class="newthought">It</span>  struck me that we already have technology to alleviate 
 such concerns: cryptographic signatures. 
-We<label for="crypto" class="margin-toggle"> ⊕</label><input type="checkbox" id="crypto" class="margin-toggle" /><span class="marginnote">Not enough people do, sadly. </span> already use them for
+We<label for="crypto" class="margin-toggle"> ⊕</label><input type="checkbox" id="crypto" class="margin-toggle" /><span class="marginnote">Not enough people do, sadly.</span> already use them for
 emails and the principle transfers to websites.
 Just like for emails, adoption can only happen if it is <em>easy to use</em>;
 a criterion encryption features of mail clients frequently fail to satisfy.</p>
@@ -67,7 +72,7 @@ A quickly coded
   <a href="https://github.com/reitzig/reitzig.github.io/blob/sources/_plugins/pgp-sign.rb">proof-of-concept implementation</a>
 provides a fair user experience already; no user interaction is necessary at all.
 Now, every (local) file used on this website has been signed with PGP;
-<label for="limits" class="margin-toggle"> ⊕</label><input type="checkbox" id="limits" class="margin-toggle" /><span class="marginnote">The signatures do not tell you anything unless you trust the used public key, of course. </span> 
+<label for="limits" class="margin-toggle"> ⊕</label><input type="checkbox" id="limits" class="margin-toggle" /><span class="marginnote">The signatures do not tell you anything unless you trust the used public key, of course.</span> 
 the footer links to the relevant files. For instance, find the signatures of 
 this post
   <a href="/ramblings/2015/a-researchers-jekyll.sig.html">here</a>.</p>
