@@ -11,10 +11,9 @@ and working (or procrastinating) with {% latex %},
 and I try to make the internet a 
   [better place for computer scientists](http://cs.stackexchange.com/users/98/raphael).
 
-I currently 
-  [hold](http://www.phdcomics.com/comics/archive.php?comicid=47) 
-a junior researcher position at the 
+In the past, I was a junior researcher at the 
   [University of Kaiserslautern](http://wwwagak.cs.uni-kl.de/home/staff/raphael-reitzig).
+Now, my pursuits in computer science are purely recreational.
 
 After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
 video and tabletop games. And some more [programming](https://github.com/akerbos).
