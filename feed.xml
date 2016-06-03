@@ -5,9 +5,36 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Feb 2016 20:27:47 +0100</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 20:27:47 +0100</lastBuildDate>
+    <pubDate>Fri, 03 Jun 2016 02:49:53 +0200</pubDate>
+    <lastBuildDate>Fri, 03 Jun 2016 02:49:53 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Low-Teach Audience Response with Plickers</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Last winter,&lt;/span&gt;  I tried to 
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Active_learning&quot;&gt;engage&lt;/a&gt;
+a small group of students in class by using a method of active learning: 
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Audience_response&quot;&gt;audience response&lt;/a&gt;. 
+The idea is that you ask reasonably scoped questions during your presentation or 
+discussion and have the audience respond, typically using some technology that 
+enables quick and accurate counting as well as anonymity (at least among students).&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/audience-response-with-plickers&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/audience-response-with-plickers</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/audience-response-with-plickers</guid>
+        
+        <category>Education</category>
+        
+        <category>Teaching</category>
+        
+        <category>Active Learning</category>
+        
+        
+      </item>
     
       <item>
         <title>Google Hashcode 2016: Our approach</title>
@@ -223,26 +250,6 @@ So how to convert TikZ to, say, PNG comfortably?
         <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java</guid>
         
         <category>Programming</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Barbara Liskov on the Power of Abstraction</title>
-        <description>
-          &lt;p&gt;Last week, Barbara Liskov visited Kaiserslautern and gave her talk &lt;em&gt;On the Power of Abstraction&lt;/em&gt;. I had known her from the &lt;a href=&quot;http://en.wikipedia.org/wiki/Liskov_substitution_principle&quot;&gt;substitution principle&lt;/a&gt; named after her&lt;label for=&quot;principle&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;principle&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community.&lt;/span&gt; and taught to every computer scientist and programmer, but she is far more distinguished than that: 
-Barbara Liskov is an &lt;a href=&quot;http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&quot;&gt;ACM Fellow&lt;/a&gt;, holds the &lt;a href=&quot;http://awards.acm.org/citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&amp;amp;aw=140&amp;amp;ao=AMTURING&amp;amp;yr=2008&quot;&gt;ACM Turing Award&lt;/a&gt;, the &lt;a href=&quot;http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7&quot;&gt;IEEE John von Neumann Medal&lt;/a&gt;, and a couple of other awards, telltale of her influence on the field.&lt;/p&gt;
-
-
-          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
-        </description>
-        <pubDate>Mon, 30 May 2011 00:00:00 +0200</pubDate>
-        <link>http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</link>
-        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</guid>
-        
-        <category>Programming</category>
-        
-        <category>Talk</category>
         
         
       </item>

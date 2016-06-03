@@ -477,7 +477,7 @@ li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fac
 p, footer, div.table-wrapper, div.mathblock {
   width: 55%; }
 
-ul li p {
+ul, ol li p {
   width: 100%; }
 
 div.table-wrapper {
