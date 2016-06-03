@@ -1,5 +1,5 @@
 ---
-  title: "Low-Teach Audience Response with Plickers"
+  title: "Low-Tech Audience Response with Plickers"
   tags: [Education, Teaching, Active Learning]
   mathjax: false
 ---
