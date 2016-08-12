@@ -18,9 +18,9 @@ Now, my pursuits in computer science are purely recreational.
 After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
 video and tabletop games. And some more [programming](https://github.com/akerbos).
 For a healthy balance, I usually cook my own meals, 
-work out (body-weight strength training, HIIT, running) 
-and pursue a changing mix of bouldering, ultimate frisbee, ballroom dancing and 
-team handball.
+work out (body-weight strength training and running) 
+and pursue a changing mix of ultimate frisbee and bouldering.
+I used to pursue ballroom dancing and team handball but have moved on since.
 
 When you send me an [email](mailto:{{ site.email }}), 
 please consider signing or even encrypting with PGP.
