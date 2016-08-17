@@ -1,14 +1,18 @@
 - link: mailto:reitzig[at]verrech.net
   icon: mail
-- link: //scholar.google.com/citations?user=3b2GqG0AAAAJ
-  icon: googlescholar
-- link: //www.researchgate.net/profile/Raphael_Reitzig
-  icon: researchgate
+- link: //de.linkedin.com/in/raphael-reitzig
+  icon: linkedin
+- link: //www.xing.com/profile/Raphael_Reitzig
+  icon: xing
 - link: //www.twitter.com/OmegaPolice 
   icon: twitter
 - link: //stackexchange.com/users/257842/
   icon: stackoverflow
 - link: //github.com/reitzig 
   icon: github
+- link: //scholar.google.com/citations?user=3b2GqG0AAAAJ
+  icon: googlescholar
+- link: //www.researchgate.net/profile/Raphael_Reitzig
+  icon: researchgate
 - link: /feed.xml
   icon: feed
