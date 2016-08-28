@@ -6,6 +6,6 @@
 
 {{ content }}
 
-{% if site.disqus.enable && page.comments %}
+{% if site.disqus.enable and page.comments %}
   {% include protected-disqus.html %}
 {% endif %}
