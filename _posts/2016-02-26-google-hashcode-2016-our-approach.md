@@ -14,9 +14,11 @@ We make two fundamental decisions:
  * There will be no delivery network or prefetching; every order is served 
    directly from warehouses that have the necessary products.  
    <small>This is a judgement call; we have not looked at the data.</small>
+   
  * Drones never serve more than one order at the same time.  
    <small>This is supported by data; we observe that most orders require 
    more than one drone load.</small>
+   
 
 The main algorithmic idea is, in the interest of time, *greedy*.
 We schedule orders by a earliest-completion-first (ECF) heuristic.

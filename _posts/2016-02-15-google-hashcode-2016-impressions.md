@@ -81,9 +81,11 @@ I have a new stress ball now, too.
    problem. That is, unless Google *wants* to test for solving this part in
    the given time. For us, it was an annoyance that distracted us from the
    real task.
+   
  * Input could be given in CSV format. Not only would that enable the use of
    off-the-shelf parsers, but also quick data inspection with tools like
    R or Mathematica.
+   
    
 <hr class="slender">
 

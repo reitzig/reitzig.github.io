@@ -68,6 +68,7 @@ You may add $$o$$ and $$\omega$$; they do not change the picture significantly.
      [unclear](http://cs.stackexchange.com/q/3149/98) 
    how the commonly taught definition extends to multiple variables -- despite 
    everybody and their mother using it that way!
+   
  * Constant factors matter in practice. 
  
    Without analyzing constant factors, you can not even start analyzing
@@ -75,16 +76,19 @@ You may add $$o$$ and $$\omega$$; they do not change the picture significantly.
    You also can not compare different flavors or implementations of 
    the same algorithm; for instance, what is
      [the best Quicksort](http://cs.stackexchange.com/q/11458/98)?
+     
  * Small (read: finite) input sizes matter in practice.
  
    Formally, $$O(\_)$$ does not say you *anything* for any finite input size,
    but even *really* small sizes matter; for instance, how do you choose when
    to stop recursing to Quicksort and to which algorithm to switch?
+   
  * Lower-order terms matter in practice.
  
    Even though their contribution vanishes *relatively* in the limit,
    it can be very significant in *absolute* terms for the input sizes 
    you actually encounter.
+   
  * Landau-bounds alone do not enable you to predict running times 
    (or *any* measure).
    
@@ -98,13 +102,16 @@ of algorithms in practice with any amount of precision,
 #### Cultural
 
  * Landau-bounds have become the end when they should be a means.
+ 
  * Analysis (too) often focuses on the worst case.
+ 
  * The literature is rife with abuse of notation.
  
    It starts with (ab)using the equality sign, doing arithmetics with $$O$$-terms,
    and other things that *can* be rigorously defined,
    but continues to things which
      [everybody disagrees on the meaning of](http://cs.stackexchange.com/q/48527/98).
+     
  * Laypeople use it without knowing what it means.
  
    {% marginnote "landau-vs-cases" "[No. Nonono. No!](http://cs.stackexchange.com/q/23068/98)" %}
@@ -113,8 +120,10 @@ of algorithms in practice with any amount of precision,
    appalling.
    But then, apparently even
      [published textbooks get things (horribly) wrong](http://cs.stackexchange.com/q/50993/98).
+     
  * Focus on Landau-bounds alone encourages coarse, abstract formulations 
    of algorithms that leave gaps in important places.
+   
  * Focus on Landau-bounds alone encourages sloppy, hand-wavy analysis of 
    algorithms and use of mathematics. 
    {% marginnote "sloppyproofs" "You should never have to say \"this usually works\" when doing proofs." %}
@@ -126,6 +135,7 @@ of algorithms in practice with any amount of precision,
  
    Well, Knuth can do it, but I agree that this is not a workable solution
    for most people in most situations.
+   
  * Derive more precise asymptotics.
  
    This is actually something you *can* often do with reasonable effort. 
@@ -144,9 +154,11 @@ of algorithms in practice with any amount of precision,
    Knuth&nbsp;{% cite ConcreteMathematics TAOCP --file references %} as well as 
    {% textcite SedgewickFlajolet2013 --file references %}
    can teach you how to do this.
+   
  * Alternative definitions may circumvent some of the technical problems
    (but break the literature); see {% abbr eg %} recent work by
    {% textcite Rutanen2015 --file references %}.
+   
  * Teach the limitations and more responsible use of Landau-bounds.
  
 ### Verdict
