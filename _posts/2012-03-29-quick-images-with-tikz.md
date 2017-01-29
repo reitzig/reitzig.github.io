@@ -1,7 +1,7 @@
 ---
   title: Quick Images with TikZ
   tags: LaTeX TikZ Scripting
-  categories: cs
+  categories: dev
 ---
 
 How do you create high-quality technical images for documents, your website

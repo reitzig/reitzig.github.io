@@ -2,7 +2,7 @@
   title: Signing Websites
   tags: Website Security
   mathjax: false
-  categories: cs
+  categories: dev
 ---
 
 {% newthought "Today" %} I reread some 
