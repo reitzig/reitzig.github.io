@@ -545,9 +545,9 @@ h1.title{
   font-size: 1.8rem;
 }
 
-p.below_title {
+div.below_title {
   font-size: 1rem;
-  margin-top: -0.5cm;
+  margin-top: -0.45cm;
   color: lighten($text-color,25%);
   
   span.separator {
@@ -777,6 +777,30 @@ div.signatures {
       font-size: 90%;
     }
   }
+}
+
+/* Styling for tags */
+
+ul.tags {
+  display:inline;
+  margin: 0;
+}
+
+ul.tags li {
+  display:inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tags li a {
+  margin: 0;
+}
+ul.tags li span {
+  margin: 0;
+}
+
+ul.tags li:last-child span {
+  display:none;
 }
 
 /* Icomoon exported SVG icons */

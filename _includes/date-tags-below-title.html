@@ -1,10 +1,20 @@
-<p class="below_title">
+<div class="below_title">
   <time class="post-date" datetime="{{ page.date | date: "%Y-%m-%d" }}">
     {{ page.date | date: "%B %-d, %Y" }}
   </time>
   {% if page.tags.size > 0 %}
     <span class="separator">&mdash;</span>
-    <span class="tags">{{ page.tags | sort | join: ", " }}</span>
+    <ul class="tags">
+      {% assign sorted_tags = page.tags | sort %}
+      {% for tag in sorted_tags %}
+          <li>
+            <a href="{{ site.baseurl }}/{{ site.tag_page_dir }}/{{ tag | jekyll_tagging_slug | slugify }}.html">
+              {{ tag }}
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       {% endfor %}
+    </ul>
   {% endif %}
   {% if page.comments %}{% endif %}
-</p>
+</div>

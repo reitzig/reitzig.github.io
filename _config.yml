@@ -4,7 +4,9 @@ author: "Raphael Reitzig"
 description: "Computer scientist. Teacher. Programmer. LaTeXer."
 email: reitzig[at]verrech.net
 
-gems: ['jekyll/scholar']
+gems: 
+  - 'jekyll/scholar'
+  - 'jekyll-sitemap' # add /sitemap.xml file
 exclude:    [Gemfile, Gemfile.lock, run, build]
 timezone:   "Europe/Berlin"
 encoding:   "utf-8"
@@ -41,6 +43,10 @@ defaults:
       mathjax-version:  "TeX-AMS_HTML-full"
       comments: true
       share-buttons: true
+      
+# Configuration of tagging
+tag_page_layout: tag
+tag_page_dir: tag
       
 scholar:
   style: _includes/structured-refs-web.csl
