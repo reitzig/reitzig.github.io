@@ -14,7 +14,7 @@ module Jekyll
 
     def render(context)
       @text[1] = "" if @text[1].nil?
-      "<p class=\"flairimg\"><a href=\"#{@text[0]}\"><img src=\"#{@text[0]}\" alt=\"#{@text[1]}\" title=\"#{@text[1]}\"></img></a></p>"
+      "<p class=\"flairimg\"><a href=\"#{@text[0]}\"><img src=\"#{@text[0]}\" alt=\"#{@text[1]}\" title=\"#{@text[1]}\" /></a></p>"
     end
   end
 end
