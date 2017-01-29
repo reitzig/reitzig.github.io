@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raphael Reitzig - Thinker</title>
+    <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
+    <link>http://reitzig.github.io/</link>
+    <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 29 Jan 2017 23:46:42 +0100</pubDate>
+    <lastBuildDate>Sun, 29 Jan 2017 23:46:42 +0100</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Low-Tech Audience Response with Plickers</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Last winter,&lt;/span&gt;  I tried to 
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Active_learning&quot;&gt;engage&lt;/a&gt;
+a small group of students in class by using a method of active learning: 
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Audience_response&quot;&gt;audience response&lt;/a&gt;. 
+The idea is that you ask reasonably scoped questions during your presentation or 
+discussion and have the audience respond, typically using some technology that 
+enables quick and accurate counting as well as anonymity (at least among students).&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/audience-response-with-plickers&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/audience-response-with-plickers</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/audience-response-with-plickers</guid>
+        
+        <category>Education</category>
+        
+        <category>Teaching</category>
+        
+        <category>Active Learning</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>Google Hashcode 2016: Our approach</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;In this post,&lt;/span&gt;  I briefly discuss the approach we developed 
+for &lt;a href=&quot;google-hashcode-2016-impressions&quot;&gt;Google Hashcode 2016&lt;/a&gt;.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/google-hashcode-2016-our-approach&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 26 Feb 2016 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/google-hashcode-2016-our-approach</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/google-hashcode-2016-our-approach</guid>
+        
+        <category>Programming</category>
+        
+        <category>Algorithms</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>Google Hashcode 2016: Impressions</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Last week,&lt;/span&gt;  a colleague and I participated in
+&lt;a href=&quot;https://hashcode.withgoogle.com/&quot;&gt;Google’s Hash Code&lt;/a&gt;.
+The idea of the event is simple: give small teams of programmers a hard task
+and give them too little time to solve it. See what they can come up with.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/google-hashcode-2016-impressions&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 15 Feb 2016 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/google-hashcode-2016-impressions</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/google-hashcode-2016-impressions</guid>
+        
+        <category>Programming</category>
+        
+        <category>Algorithms</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>The Agile Education Manifesto</title>
+        <description>
+          &lt;p&gt;&lt;a href=&quot;http://www.omnisophie.com&quot;&gt;Gunter Dueck&lt;/a&gt; is one of my favorite voices on
+(and off, I guess) the internet.
+&lt;label for=&quot;social_dueck&quot; class=&quot;margin-toggle&quot;&gt; ⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;social_dueck&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;Also on &lt;a href=&quot;https://twitter.com/wilddueck&quot;&gt;Twitter&lt;/a&gt; and &lt;a href=&quot;https://www.youtube.com/user/Wilddueck&quot;&gt;YouTube&lt;/a&gt;.&lt;/span&gt;
+In a 
+  &lt;a href=&quot;http://www.omnisophie.com/dd256-agile-erziehung-oder-the-agile-education-manifesto-januar-2016/&quot;&gt;recent blog article&lt;/a&gt;
+he observes that while we&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; have embraced the paradigm of 
+  &lt;a href=&quot;http://agilemanifesto.org/&quot;&gt;agile software development&lt;/a&gt;,
+we have not thought to transfer the ideas to an arguably more critical application:
+education.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Read: a non-trivial subset of the people in this area of work.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/the-agile-education-manifesto&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Wed, 27 Jan 2016 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/the-agile-education-manifesto</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/the-agile-education-manifesto</guid>
+        
+        <category>Education</category>
+        
+        <category>Philosophy</category>
+        
+        <category>Teaching</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>How useful is Landau notation?</title>
+        <description>
+          &lt;p&gt;In the context of a new answer to 
+  &lt;a href=&quot;//cs.stackexchange.com/q/3523/98&quot;&gt;an old question on Computer Science SE&lt;/a&gt;
+and a subsequent
+  &lt;a href=&quot;//chat.stackexchange.com/rooms/33862/discussion-between-raphael-and-kaveh&quot;&gt;chat&lt;/a&gt;,
+I started thinking about how useful Landau notation (also “Big-Oh”) really is.
+Since I am quite opinionated about the whole thing I thought a blog post
+would be a better place than Stack Exchange for collecting these thoughts.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 12 Jan 2016 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2016/how-useful-is-landau-notation</guid>
+        
+        <category>Algorithm Analysis</category>
+        
+        <category>Discussion</category>
+        
+        <category>Notation</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>A Researcher's Jekyll</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;There&lt;/span&gt;  are myriads of ways to build websites.
+When I decided to create a new one for my work, I evaluated my past
+experiences – mostly with Wordpress and 
+Joomla&lt;label for=&quot;joomla&quot; class=&quot;margin-toggle&quot;&gt; ⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;joomla&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;I don’t know if there &lt;em&gt;is&lt;/em&gt; a use-case for Joomla.&lt;/span&gt; – 
+and decided to go with something less bloated. That is, something that&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2015/a-researchers-jekyll&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 01 Dec 2015 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2015/a-researchers-jekyll</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2015/a-researchers-jekyll</guid>
+        
+        <category>Website</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>On Planarity of Control Flow Graphs</title>
+        <description>
+          &lt;p&gt;For our master’s project, we include visualization of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) &lt;a href=&quot;http://en.wikipedia.org/wiki/Planar_graph&quot; title=&quot;Definition of Planar Graphs&quot;&gt;planar&lt;/a&gt;? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.&lt;/p&gt;
+
+&lt;p&gt;Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as &lt;code class=&quot;highlighter-rouge&quot;&gt;goto&lt;/code&gt; is generally to be &lt;a href=&quot;http://dl.acm.org/citation.cfm?doid=362947&quot;&gt;considered harmful&lt;/a&gt;. We agreed, however, that we should rather consider &lt;a href=&quot;http://en.wikipedia.org/wiki/Basic_block&quot;&gt;basic blocks&lt;/a&gt; of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labeled &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt; just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 06 Oct 2011 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</guid>
+        
+        <category>Graphs</category>
+        
+        <category>Programming</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+      <item>
+        <title>Barbara Liskov on the Power of Abstraction</title>
+        <description>
+          &lt;p&gt;Last week, Barbara Liskov visited Kaiserslautern and gave her talk &lt;em&gt;On the Power of Abstraction&lt;/em&gt;. I had known her from the &lt;a href=&quot;http://en.wikipedia.org/wiki/Liskov_substitution_principle&quot;&gt;substitution principle&lt;/a&gt; named after her&lt;label for=&quot;principle&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;principle&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;She did not name it, of course. Apparently, she received an email in the 90’s by somebody asking her whether he got her principle right, surprising her. She had not known that the principle had borne her name for years in the community.&lt;/span&gt; and taught to every computer scientist and programmer, but she is far more distinguished than that: 
+Barbara Liskov is an &lt;a href=&quot;http://fellows.acm.org/fellow_citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&quot;&gt;ACM Fellow&lt;/a&gt;, holds the &lt;a href=&quot;http://awards.acm.org/citation.cfm?id=1108679&amp;amp;srt=alpha&amp;amp;alpha=L&amp;amp;aw=140&amp;amp;ao=AMTURING&amp;amp;yr=2008&quot;&gt;ACM Turing Award&lt;/a&gt;, the &lt;a href=&quot;http://www.ieee.org/about/awards/bios/vonneumann_recipients.html#sect7&quot;&gt;IEEE John von Neumann Medal&lt;/a&gt;, and a couple of other awards, telltale of her influence on the field.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 30 May 2011 00:00:00 +0200</pubDate>
+        <link>http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/barbara-liskov-on-the-power-of-abstraction</guid>
+        
+        <category>Programming</category>
+        
+        <category>Talk</category>
+        
+        
+        <category>cs</category>
+        
+      </item>
+    
+  </channel>
+</rss>

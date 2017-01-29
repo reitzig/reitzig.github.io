@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Jekyll v3.0.1">
+  <meta name="generator" content="Jekyll v3.4.0">
 
-  <title>Raphael Reitzig &ndash; Open Questions</title>
+  <title>
+    Raphael Reitzig &ndash; Open Questions
+    </title>
   <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
   <meta name="author" content="Raphael Reitzig">
   
@@ -27,7 +29,9 @@
   
 
   <link rel="canonical" href="http://reitzig.github.io/research/open-questions/">
-  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; All Posts" href="http://reitzig.github.io/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Thinker" href="http://reitzig.github.io/feed_cs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Tinker" href="http://reitzig.github.io/feed_dev.xml" />
 </head>
 
   <body>
@@ -36,7 +40,9 @@
     <nav class="group">
 		<a href="/"><img class="badge" src="/assets/img/badge.png" alt="Main"></a>
 		<a href="/research">Research</a>
-		<a href="/ramblings">Ramblings</a>
+		<a href="/thinker">Thinker</a>
+<!--<a href="/projects">Projects</a> -->
+		<a href="/tinker">Tinker</a>
 		<a href="/about">About</a>
 	</nav>
 </header>
@@ -53,7 +59,7 @@
   <li><a href="#average-case-analysis-of-parallel-algorithms-with-petri-nets">Average-Case Analysis of Parallel Algorithms with Petri Nets</a></li>
 </ul>
 
-<p>I am happy to receive any comments, hints or solutions via <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#114;&#101;&#105;&#116;&#122;&#105;&#103;&#091;&#097;&#116;&#093;&#118;&#101;&#114;&#114;&#101;&#099;&#104;&#046;&#110;&#101;&#116;">email</a>!</p>
+<p>I am happy to receive any comments, hints or solutions via <a href="mailto:reitzig[at]verrech.net">email</a>!</p>
 
 <hr class="slender" />
 
@@ -185,7 +191,7 @@ Abovementioned method yields only the expected value;
 higher moments are inaccessible. 
 A simple example is a plain <code class="highlighter-rouge">for</code>-loop:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4</pre></td><td class="code"><pre>  <span class="k">for</span> <span class="o">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
@@ -208,7 +214,7 @@ However, after translation it becomes:</p>
 <p>This can no longer be distinguished from other loops with the same probabilities,
 <span style="white-space: nowrap;">e. g.</span></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -247,7 +253,7 @@ If yes, what can we get out of a stochastic Petri net model?</p>
 
 <h3 id="references">References</h3>
 
-<ol class="bibliography" style="list-style: none;"><li><table class="fixedbib"><tr><td><span id="TATA" class="bibkey">[1]</span></td><td><p>H. Comon et&#8239;al.: <i>Tree Automata Techniques And Applications</i> (2007). <a href="http://tata.gforge.inria.fr/">tata.gforge.inria.fr</a>.</p></td></tr></table></li>
+<ol class="bibliography" style="list-style: none;"><li><table class="fixedbib"><tr><td><span id="TATA" class="bibkey">[1]</span></td><td><p>H. Comon et&#8239;al.: <i>Tree Automata Techniques and Applications</i> (2007). <a href="http://tata.gforge.inria.fr/">tata.gforge.inria.fr</a>.</p></td></tr></table></li>
 <li><table class="fixedbib"><tr><td><span id="AC" class="bibkey">[2]</span></td><td><p>Philippe Flajolet and Robert Sedgewick: <i>Analytic Combinatorics</i> (Cambridge University Press, 2009). ISBN: 978-0-511-80165-5, DOI: <a href="https://dx.doi.org/10.1017/CBO9780511801655">10.1017/CBO9780511801655</a>.</p></td></tr></table></li>
 <li><table class="fixedbib"><tr><td><span id="FlajoletOdlyzko1982" class="bibkey">[3]</span></td><td><p>P. Flajolet and A. Odlyzko: <i>The Average Height of Binary Trees and Other Simple Trees</i>, Journal of Computer and System Sciences 25(2) (1982): 171–213, DOI: <a href="https://dx.doi.org/10.1016/0022-0000(82)90004-6">10.1016/0022-0000(82)90004-6</a>.</p></td></tr></table></li>
 <li><table class="fixedbib"><tr><td><span id="LaubeNebel2010" class="bibkey">[4]</span></td><td><p>U. Laube and M. E. Nebel: <i>Maximum Likelihood Analysis of Algorithms and Data Structures</i>, Theoretical Computer Science 411(1) (2010): 188–212, DOI: <a href="https://dx.doi.org/10.1016/j.tcs.2009.09.025">10.1016/j.tcs.2009.09.025</a>.</p></td></tr></table></li></ol>
@@ -410,7 +416,7 @@ If yes, what can we get out of a stochastic Petri net model?</p>
       
   </ul>
   <div class="credits">
-    <span>&copy; 2016 &nbsp;&nbsp;Raphael Reitzig</span><br/>
+    <span>&copy; 2017 &nbsp;&nbsp;Raphael Reitzig</span><br/>
     <span class='pgp-sign-note'>This page has been <a href="/research/open-questions/index.sig.html">signed with PGP</a>.</span><br/>
     <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>

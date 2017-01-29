@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Jekyll v3.0.1">
+  <meta name="generator" content="Jekyll v3.4.0">
 
-  <title>Raphael Reitzig &ndash; Quick Images with TikZ</title>
+  <title>
+    Raphael Reitzig &ndash; Quick Images with TikZ
+    </title>
   <meta name="description" content="How do you create high-quality technical images for documents, your websiteor posts on Stack Exchange? I have used tools in an ad-hoc manner for a while and ...">
   <meta name="author" content="Raphael Reitzig">
   <meta name="keywords" content="latex,tikz,scripting">
@@ -18,7 +20,9 @@
   
 
   <link rel="canonical" href="http://reitzig.github.io/ramblings/2012/quick-images-with-tikz">
-  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig" href="http://reitzig.github.io/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; All Posts" href="http://reitzig.github.io/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Thinker" href="http://reitzig.github.io/feed_cs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Tinker" href="http://reitzig.github.io/feed_dev.xml" />
 </head>
 
   <body>
@@ -27,23 +31,49 @@
     <nav class="group">
 		<a href="/"><img class="badge" src="/assets/img/badge.png" alt="Main"></a>
 		<a href="/research">Research</a>
-		<a href="/ramblings">Ramblings</a>
+		<a href="/thinker">Thinker</a>
+<!--<a href="/projects">Projects</a> -->
+		<a href="/tinker">Tinker</a>
 		<a href="/about">About</a>
 	</nav>
 </header>
 
     <article class="group">
       <h1 class="title">Quick Images with TikZ</h1>
-<p class="below_title">
+<div class="below_title">
   <time class="post-date" datetime="2012-03-29">
     March 29, 2012
   </time>
   
     <span class="separator">&mdash;</span>
-    <span class="tags">LaTeX, Scripting, TikZ</span>
+    <ul class="tags">
+      
+      
+          <li>
+            <a href="/tag/latex.html">
+              LaTeX
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+          <li>
+            <a href="/tag/scripting.html">
+              Scripting
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+          <li>
+            <a href="/tag/tikz.html">
+              TikZ
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+    </ul>
   
   
-</p>
+</div>
 
 
 <p>How do you create high-quality technical images for documents, your website
@@ -58,7 +88,7 @@ So how to convert TikZ to, say, PNG comfortably?
 
 <p><span class="latex">T<sub>e</sub>X</span>-guru <a href="http://www.scharrer-online.de/">Martin Scharrer</a> comes to the rescue: he wrote the package <a href="http://ctan.org/pkg/standalone"><code class="highlighter-rouge">standalone</code></a> for exactly this use case. Based on his <a href="http://tex.stackexchange.com/a/11880/3213">explanation on tex.SE</a> I built a small bash script that does all the repetitive work for you. With one simple command, this</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-latex highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -301,7 +331,7 @@ So how to convert TikZ to, say, PNG comfortably?
       
   </ul>
   <div class="credits">
-    <span>&copy; 2016 &nbsp;&nbsp;Raphael Reitzig</span><br/>
+    <span>&copy; 2017 &nbsp;&nbsp;Raphael Reitzig</span><br/>
     <span class='pgp-sign-note'>This page has been <a href="/ramblings/2012/quick-images-with-tikz.sig.html">signed with PGP</a>.</span><br/>
     <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>

@@ -741,11 +741,11 @@ h1.title {
   letter-spacing: 0.2rem;
   font-size: 1.8rem; }
 
-p.below_title {
+div.below_title {
   font-size: 1rem;
-  margin-top: -0.5cm;
+  margin-top: -0.45cm;
   color: #515151; }
-  p.below_title span.separator {
+  div.below_title span.separator {
     margin: 0 0.5em 0 0.5em; }
 
 div.footnotes {
@@ -910,6 +910,25 @@ div.signatures table {
   margin: 3ex; }
   div.signatures table th, div.signatures table td {
     font-size: 90%; }
+
+/* Styling for tags */
+ul.tags {
+  display: inline;
+  margin: 0; }
+
+ul.tags li {
+  display: inline-block;
+  margin: 0;
+  padding: 0; }
+
+ul.tags li a {
+  margin: 0; }
+
+ul.tags li span {
+  margin: 0; }
+
+ul.tags li:last-child span {
+  display: none; }
 
 /* Icomoon exported SVG icons */
 div.icon {
