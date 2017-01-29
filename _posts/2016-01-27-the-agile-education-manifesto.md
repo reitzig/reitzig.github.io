@@ -2,6 +2,7 @@
   title: The Agile Education Manifesto
   tags: [Education, Philosophy, Teaching]
   mathjax: false
+  categories: cs
 ---
 
 [Gunter Dueck](http://www.omnisophie.com) is one of my favorite voices on

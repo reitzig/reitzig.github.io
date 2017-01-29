@@ -1,6 +1,7 @@
 ---
   title: On Planarity of Control Flow Graphs
   tags: Graphs Programming
+  categories: cs
   mathjax: true
   excerpt_separator: <!--more-->
 ---

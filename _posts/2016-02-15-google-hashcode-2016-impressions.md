@@ -2,6 +2,7 @@
   title: "Google Hashcode 2016: Impressions"
   tags: [Programming, Algorithms]
   mathjax: false
+  categories: cs
 ---
 
 {% newthought "Last week," %} a colleague and I participated in

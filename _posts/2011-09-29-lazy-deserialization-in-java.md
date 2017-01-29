@@ -1,6 +1,7 @@
 ---
   title: Lazy Deserialization in Java
   tags: Programming
+  categories: cs
 ---
 
 While coding away on our master's project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.

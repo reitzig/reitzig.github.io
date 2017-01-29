@@ -2,6 +2,7 @@
   title: "Google Hashcode 2016: Our approach"
   tags: [Programming, Algorithms]
   mathjax: true
+  categories: cs
 ---
 
 {% newthought "In this post," %} I briefly discuss the approach we developed 

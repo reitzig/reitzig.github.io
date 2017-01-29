@@ -2,6 +2,7 @@
   title: "Low-Tech Audience Response with Plickers"
   tags: [Education, Teaching, Active Learning]
   mathjax: false
+  categories: cs
 ---
 
 {% newthought "Last winter," %} I tried to 

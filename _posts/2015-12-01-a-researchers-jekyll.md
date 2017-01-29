@@ -2,6 +2,7 @@
   title: A Researcher's Jekyll
   tags: Website
   mathjax: false
+  categories: cs
 ---
 
 {% newthought There %} are myriads of ways to build websites.

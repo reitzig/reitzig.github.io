@@ -2,6 +2,7 @@
   title: How useful is Landau notation? 
   tags: [Algorithm Analysis, Discussion, Notation]
   mathjax: true
+  categories: cs
 ---
 
 In the context of a new answer to 

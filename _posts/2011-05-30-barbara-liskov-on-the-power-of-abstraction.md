@@ -1,6 +1,7 @@
 ---
   title: Barbara Liskov on the Power of Abstraction
   tags: Programming Talk
+  categories: cs
 ---
 
 Last week, Barbara Liskov visited Kaiserslautern and gave her talk <em>On the Power of Abstraction</em>. I had known her from the [substitution principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle) named after her{% sidenote "principle" "She did not name it, of course. Apparently, she received an email in the 90's by somebody asking her whether he got "her" principle right, surprising her. She had not known that the principle had borne her name for years in the community." %} and taught to every computer scientist and programmer, but she is far more distinguished than that: 
