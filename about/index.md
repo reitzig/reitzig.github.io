@@ -13,7 +13,9 @@ and I try to make the internet a
 
 In the past, I was a junior researcher at the 
   [University of Kaiserslautern](http://wwwagak.cs.uni-kl.de/home/staff/raphael-reitzig).
-Now, my pursuits in computer science are purely recreational.
+Now my pursuits in computer science are purely recreational.
+Instead I help pushing digitalization in health care by building software at
+  [Digithurst](http://www.digithurst.de)/[Telepaxx](http://www.telepaxx.de).
 
 After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
 video and tabletop games. And some more [programming](https://github.com/akerbos).
