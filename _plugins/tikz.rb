@@ -24,7 +24,7 @@ module Jekyll
       pageid = page['url'].gsub(/^\/|\/$/, "").gsub("/", "-").sub(/\.\w+$/, "")
       
       # Use context to count TikZ blocks on this page
-      if !page.has_key?("tikz-count")
+      if page["tikz-count"].nil?
         # New build! Clean up old keeps
         site.keep_files.delete_if { |f| /#{pageid}-\d+/ =~ f }
         
