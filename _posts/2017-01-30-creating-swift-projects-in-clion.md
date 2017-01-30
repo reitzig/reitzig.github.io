@@ -1,18 +1,19 @@
 ---
   title: "Creating Swift Projects in CLion"
-  tags: [Swift IDE Tools]
+  tags: [Swift, IDE, Tools]
   mathjax: false
   categories: dev
 ---
 
 {% newthought "Swift" %} is a modern language with a little teething trouble,
-but it is still worth a look. If you are like me and you do not want to work
-on a Mac if you can avoid it, your choices of development environments are
-rather limited. Here, I explain how to create a Swift project with
+but it is still worth a look. 
+If you are like me and you do not want to work on a Mac if you can avoid it, 
+your choices of development environments are rather limited at this point. 
+Here, I explain how to create a Swift project with
   [Jetbrains' CLion](https://www.jetbrains.com/clion/),
 for which Jetbrains develops a Swift plugin.
 
-*Note bene:* The need for this may go away soon;
+*Note bene:* The need for this workaround may go away soon;
 Jetbrains plans to 
   [support the Swift workflow better](https://youtrack.jetbrains.com/issue/CPP-8622).
 
