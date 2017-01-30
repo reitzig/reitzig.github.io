@@ -5,9 +5,38 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Jan 2017 23:46:42 +0100</pubDate>
-    <lastBuildDate>Sun, 29 Jan 2017 23:46:42 +0100</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2017 19:26:46 +0100</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2017 19:26:46 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Creating Swift Projects in CLion</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Swift&lt;/span&gt;  is a modern language with a little teething trouble,
+but it is still worth a look. 
+If you are like me and you do not want to work on a Mac if you can avoid it, 
+your choices of development environments are rather limited at this point. 
+Here, I explain how to create a Swift project with
+  &lt;a href=&quot;https://www.jetbrains.com/clion/&quot;&gt;Jetbrains’ CLion&lt;/a&gt;,
+for which Jetbrains develops a Swift plugin.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 30 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion</guid>
+        
+        <category>Swift</category>
+        
+        <category>IDE</category>
+        
+        <category>Tools</category>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>Low-Tech Audience Response with Plickers</title>
@@ -252,27 +281,6 @@ So how to convert TikZ to, say, PNG comfortably?
         
         
         <category>cs</category>
-        
-      </item>
-    
-      <item>
-        <title>Lazy Deserialization in Java</title>
-        <description>
-          &lt;p&gt;While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.&lt;/p&gt;
-
-
-          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
-        </description>
-        <pubDate>Thu, 29 Sep 2011 00:00:00 +0200</pubDate>
-        <link>http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java</link>
-        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/lazy-deserialization-in-java</guid>
-        
-        <category>Java</category>
-        
-        <category>Programming</category>
-        
-        
-        <category>dev</category>
         
       </item>
     

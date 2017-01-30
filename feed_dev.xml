@@ -5,9 +5,38 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Jan 2017 23:46:42 +0100</pubDate>
-    <lastBuildDate>Sun, 29 Jan 2017 23:46:42 +0100</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2017 19:26:46 +0100</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2017 19:26:46 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Creating Swift Projects in CLion</title>
+        <description>
+          &lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Swift&lt;/span&gt;  is a modern language with a little teething trouble,
+but it is still worth a look. 
+If you are like me and you do not want to work on a Mac if you can avoid it, 
+your choices of development environments are rather limited at this point. 
+Here, I explain how to create a Swift project with
+  &lt;a href=&quot;https://www.jetbrains.com/clion/&quot;&gt;Jetbrains’ CLion&lt;/a&gt;,
+for which Jetbrains develops a Swift plugin.&lt;/p&gt;
+
+
+          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 30 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion</link>
+        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion</guid>
+        
+        <category>Swift</category>
+        
+        <category>IDE</category>
+        
+        <category>Tools</category>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>Signing Websites</title>

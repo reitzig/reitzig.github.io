@@ -7,28 +7,19 @@
   <meta name="generator" content="Jekyll v3.4.0">
 
   <title>
-    Raphael Reitzig &ndash; Tinkering in the Trenches
+    Raphael Reitzig &ndash; Creating Swift Projects in CLion
     </title>
-  <meta name="description" content="Computer scientist. Teacher. Programmer. LaTeXer.">
+  <meta name="description" content="Swift  is a modern language with a little teething trouble,but it is still worth a look. If you are like me and you do not want to work on a Mac if you can a...">
   <meta name="author" content="Raphael Reitzig">
-  
+  <meta name="keywords" content="swift,ide,tools">
 
   <link rel="stylesheet" href="/css/tufte.css">	
   
   
 
   
-    
-      <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          displayAlign: "left", displayIndent: "2em", positionToHash: true
-        })
-      </script>
-    
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-  
 
-  <link rel="canonical" href="http://reitzig.github.io/tinker/">
+  <link rel="canonical" href="http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion">
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; All Posts" href="http://reitzig.github.io/feed.xml" />
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Thinker" href="http://reitzig.github.io/feed_cs.xml" />
   <link rel="alternate" type="application/rss+xml" title="Raphael Reitzig &ndash; Tinker" href="http://reitzig.github.io/feed_dev.xml" />
@@ -48,25 +39,44 @@
 </header>
 
     <article class="group">
-      <h1 class="title">Tinkering in the Trenches</h1>
-<p>This is my developer blog where I talk about issues around building software.</p>
-
-<ul class="content-listing">
+      <h1 class="title">Creating Swift Projects in CLion</h1>
+<div class="below_title">
+  <time class="post-date" datetime="2017-01-30">
+    January 30, 2017
+  </time>
   
-    <li class="listing">
-	<hr class="slender" />
-	<h3 class="contrast"><a href="/ramblings/2017/creating-swift-projects-in-clion">Creating Swift Projects in CLion</a></h3>
-	<p class="below_title" style="margin-top: 0;">
-    <time class="post-date" datetime="2017-01-30">
-      January 30, 2017
-    </time>
-    
-      <span class="separator">&mdash;</span>
-      <span class="tags">IDE, Swift, Tools</span>
-    
-  </p>
-  <div class="excerpt">
-    <p><span class="newthought">Swift</span>  is a modern language with a little teething trouble,
+    <span class="separator">&mdash;</span>
+    <ul class="tags">
+      
+      
+          <li>
+            <a href="/tag/ide.html">
+              IDE
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+          <li>
+            <a href="/tag/swift.html">
+              Swift
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+          <li>
+            <a href="/tag/tools.html">
+              Tools
+            </a>
+            <span>,&nbsp;</span>
+          </li>
+       
+    </ul>
+  
+  
+</div>
+
+
+<p><span class="newthought">Swift</span>  is a modern language with a little teething trouble,
 but it is still worth a look. 
 If you are like me and you do not want to work on a Mac if you can avoid it, 
 your choices of development environments are rather limited at this point. 
@@ -74,93 +84,222 @@ Here, I explain how to create a Swift project with
   <a href="https://www.jetbrains.com/clion/">Jetbrains’ CLion</a>,
 for which Jetbrains develops a Swift plugin.</p>
 
+<p><em>Note bene:</em> The need for this workaround may go away soon;
+Jetbrains plans to 
+  <a href="https://youtrack.jetbrains.com/issue/CPP-8622">support the Swift workflow better</a>.</p>
 
-    <span class="read-more"><a href="/ramblings/2017/creating-swift-projects-in-clion">Continue reading&hellip;</a></span>
-  </div>
-</li>
+<p>We will create an application project, <span style="white-space: nowrap;">i. e.</span> an executable,
+and version it with Git.
+You can drop all Git commands if you do not want that.</p>
 
-  
-    <li class="listing">
-	<hr class="slender" />
-	<h3 class="contrast"><a href="/ramblings/2015/signing-websites">Signing Websites</a></h3>
-	<p class="below_title" style="margin-top: 0;">
-    <time class="post-date" datetime="2015-12-09">
-      December 9, 2015
-    </time>
+<ol>
+  <li>
+    <p>Follow steps 1–4 from 
+  <a href="https://blog.jetbrains.com/clion/2015/12/swift-plugin-for-clion/">here</a>;
+that is, install Swift, CLion, and the Swift plugin for CLion.</p>
+  </li>
+  <li>
+    <p>We set up the project on the command line:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre>mkdir HelloWorld
+<span class="nb">cd </span>HelloWorld
     
-      <span class="separator">&mdash;</span>
-      <span class="tags">Security, Website</span>
+git init
+git config user.name <span class="s2">"Your Name"</span>
+git config user.email <span class="s2">"your@mail.com"</span>
     
-  </p>
-  <div class="excerpt">
-    <p><span class="newthought">Today</span>  I reread some 
-  <a href="http://worldbuilding.stackexchange.com/a/27379/3657">thoughts of mine</a>
-on how super-computers may engage in battle.
-What I wrote got me thinking in another direction:
-how can we, even today, be sure that what we read on the internet is what
-the alleged author intends us to see? Especially if our connection to the
-webserver is not encrypted, man-in-the-middle attacks are a very real possibility.</p>
-
-
-    <span class="read-more"><a href="/ramblings/2015/signing-websites">Continue reading&hellip;</a></span>
-  </div>
-</li>
-
-  
-    <li class="listing">
-	<hr class="slender" />
-	<h3 class="contrast"><a href="/ramblings/2012/quick-images-with-tikz">Quick Images with TikZ</a></h3>
-	<p class="below_title" style="margin-top: 0;">
-    <time class="post-date" datetime="2012-03-29">
-      March 29, 2012
-    </time>
+swift package init --type executable
     
-      <span class="separator">&mdash;</span>
-      <span class="tags">LaTeX, Scripting, TikZ</span>
-    
-  </p>
-  <div class="excerpt">
-    <p>How do you create high-quality technical images for documents, your website
-or posts on Stack Exchange? I have used tools in an ad-hoc manner for a while 
-and have become frustrated lately. Once you have used 
-  <a href="http://pgf.sourceforge.net/">TikZ</a>
-  <label for="tikz_refs" class="margin-toggle"> ⊕</label><input type="checkbox" id="tikz_refs" class="margin-toggle" /><span class="marginnote">Check out the awesome <a href="http://www.texample.net/tikz/examples">gallery of examples</a> and the comprehensive <a href="http://mirror.ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf">manual</a>.</span> 
-with <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> most other tools feel inferior. 
-The only problem is: TikZ is a <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> package and can not be used on its own. 
-So how to convert TikZ to, say, PNG comfortably?
-<!--more--></p>
+<span class="nb">echo</span> -e <span class="s2">"cmake-build-debug</span><span class="se">\n</span><span class="s2">.idea"</span> &gt;&gt; .gitignore
+git add <span class="k">*</span> .gitignore
+git commit -m <span class="s2">"Initial commit"</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
 
+    <p class="flairimg"><a href="/assets/posts_img/2017-01-30-clion-swift-folderinit.png"><img src="/assets/posts_img/2017-01-30-clion-swift-folderinit.png" alt="Initial folder content" title="Initial folder content" /></a></p>
 
-    <span class="read-more"><a href="/ramblings/2012/quick-images-with-tikz">Continue reading&hellip;</a></span>
-  </div>
-</li>
+    <p>You may want to familiarize yourself with the Swift package manager; 
+see
+  <a href="https://swift.org/getting-started/#using-the-package-manager">here</a>.</p>
+  </li>
+  <li>
+    <p>Start CLion and import a project from sources;
+select folder <code class="highlighter-rouge">HelloWorld</code> and mark all files as project files.</p>
+  </li>
+  <li>
+    <p>Delete all run configurations (Run &gt; Edit Configurations…).</p>
+  </li>
+  <li>
+    <p>Open <code class="highlighter-rouge">CMakeLists.txt</code> and replace the content with the following:</p>
 
-  
-    <li class="listing">
-	<hr class="slender" />
-	<h3 class="contrast"><a href="/ramblings/2011/lazy-deserialization-in-java">Lazy Deserialization in Java</a></h3>
-	<p class="below_title" style="margin-top: 0;">
-    <time class="post-date" datetime="2011-09-29">
-      September 29, 2011
-    </time>
-    
-      <span class="separator">&mdash;</span>
-      <span class="tags">Java, Programming</span>
-    
-  </p>
-  <div class="excerpt">
-    <p>While coding away on our master’s project, my team and I faced a problem. In our setting, users provide Java byte code to a client application which instruments it and passes the resulting JAR archive to remote servers via RMI. The servers execute this code in separate processes and feed it inputs values fetched from the client, again via RMI. Now, this can be a problem as users may provide their own implementations for those input values. Both client and separately started processes have, of course, access to these implementations, but servers may not.</p>
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td><td class="code"><pre><span class="nb">cmake_minimum_required</span><span class="p">(</span>VERSION 3.6<span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span>HelloWorld<span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span>CMAKE_CXX_STANDARD 11<span class="p">)</span>
 
+<span class="nb">set</span><span class="p">(</span>SOURCEDIR Sources<span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span>TESTDIR Tests<span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span>BUILDDIR .build/debug<span class="p">)</span>
 
-    <span class="read-more"><a href="/ramblings/2011/lazy-deserialization-in-java">Continue reading&hellip;</a></span>
-  </div>
-</li>
+<span class="nb">file</span><span class="p">(</span>GLOB_RECURSE SOURCE_FILES <span class="si">${</span><span class="nv">SOURCEDIR</span><span class="si">}</span>/*.swift Package.swift<span class="p">)</span>
+<span class="nb">file</span><span class="p">(</span>GLOB_RECURSE TEST_FILES <span class="si">${</span><span class="nv">TESTDIR</span><span class="si">}</span>/*.swift<span class="p">)</span>
 
-  
+<span class="nb">add_custom_target</span><span class="p">(</span>Build
+        COMMAND swift build -v
+        BYPRODUCTS .build
+        WORKING_DIRECTORY <span class="si">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="si">}</span>
+        SOURCES <span class="si">${</span><span class="nv">SOURCE_FILES</span><span class="si">}</span><span class="p">)</span>
+
+<span class="nb">add_custom_target</span><span class="p">(</span>Test
+        COMMAND swift test -v
+        WORKING_DIRECTORY <span class="si">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="si">}</span>
+        SOURCES <span class="si">${</span><span class="nv">SOURCE_FILES</span><span class="si">}</span> <span class="si">${</span><span class="nv">TEST_FILES</span><span class="si">}</span>
+        <span class="p">)</span>
+
+<span class="nb">add_custom_target</span><span class="p">(</span>Run
+        WORKING_DIRECTORY <span class="si">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="si">}</span>
+        SOURCES <span class="si">${</span><span class="nv">SOURCE_FILES</span><span class="si">}</span>
+        <span class="p">)</span> 
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+
+    <p>When the notification</p>
+
+    <blockquote>
+      <p>CMake project needs to be reloaded</p>
+    </blockquote>
+
+    <p>pops up, click “Enable Auto-Reload” to avoid confusion down the line.</p>
+  </li>
+  <li>
+    <p>On the command-line, execute:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>git add CMakeLists.txt
+git commit -m <span class="s2">"Adds CMakeLists"</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>
+    <p>Run all the build configurations. CLion will complain that they have no
+executable set; select <code class="highlighter-rouge">/bin/echo</code> or a similar no-op for <code class="highlighter-rouge">Build</code> and <code class="highlighter-rouge">Test</code>,
+and <code class="highlighter-rouge">.build/debug/HelloWorld</code> for <code class="highlighter-rouge">Run</code>.</p>
+
+    <p class="flairimg"><a href="/assets/posts_img/2017-01-30-clion-swift-runconfig.png"><img src="/assets/posts_img/2017-01-30-clion-swift-runconfig.png" alt="The Build configuration" title="The Build configuration" /></a></p>
+  </li>
+  <li>
+    <p>Via the context menu in the project view,
+mark <code class="highlighter-rouge">.build</code> as “Excluded”, 
+and <code class="highlighter-rouge">Sources</code> as “Project Sources and Headers”.</p>
+
+    <p class="flairimg"><a href="/assets/posts_img/2017-01-30-clion-swift-projectview.png"><img src="/assets/posts_img/2017-01-30-clion-swift-projectview.png" alt="The complete project" title="The complete project" /></a></p>
+  </li>
+</ol>
+
+<p>All done!
+Note that this is not perfect, though:</p>
+
+<ul>
+  <li>CLion actions do not map to these custom targets in a helpful way.</li>
+  <li>The Clean action does not clean <code class="highlighter-rouge">.build</code>.</li>
+  <li><code class="highlighter-rouge">Run</code> does not rebuild automatically.</li>
 </ul>
 
+<p>I appreciate any comments on how to improve this setup!</p>
+
+
+
+  <hr class="slender">
+<div id="disqus_thread"></div>
+
+<script>
+  /* Load Disqus; executed after user confirmation. */
+  function loadDisqus() {
+    // Remove user confirmation stuff.
+    document.getElementById('disqus_thread').innerHTML = "";
+    
+    /* Config cf https://disqus.com/admin/universalcode/#configuration-variables */
+    var disqus_config = function () {
+      this.page.url = "http://reitzig.github.io/ramblings/2017/creating-swift-projects-in-clion";
+      this.page.identifier = "/ramblings/2017/creating-swift-projects-in-clion";
+      this.page.title = 'Creating Swift Projects in CLion';
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//raphaels-ramblings.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  }
+  
+  
+  /* Create a note that allows the user to turn on comments. */
+  document.getElementById('disqus_thread').innerHTML = "<p id=\"noscript-note\">" +
+    "Please confirm: <a onclick=\"loadDisqus()\">activate comments!</a>" +
+    "<br>" +
+    "<em>Note:</em> Loads third-party scripts by " +
+      "<a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">" +
+        "Disqus" +
+      "</a>;" +
+    " allow <tt>disqus.com</tt> and <tt>disquscdn.com</tt>." +
+    "</p>";
+</script>
+<noscript>
+  <p id="noscript-note">
+    In order to read or post 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus</a>, 
+    please enable Javascript in your browser and configure any 
+    script-blocking software you use to allow scripts from <tt>http://reitzig.github.io</tt>.
+  </p>
+</noscript> 
+
+
+
     </article>
-    <span class="print-footer">Tinkering in the Trenches - Raphael Reitzig</span>
+    <span class="print-footer">Creating Swift Projects in CLion - January 30, 2017 - Raphael Reitzig</span>
     <footer>
   <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
@@ -316,7 +455,7 @@ So how to convert TikZ to, say, PNG comfortably?
   </ul>
   <div class="credits">
     <span>&copy; 2017 &nbsp;&nbsp;Raphael Reitzig</span><br/>
-    <span class='pgp-sign-note'>This page has been <a href="/tinker/index.sig.html">signed with PGP</a>.</span><br/>
+    <span class='pgp-sign-note'>This page has been <a href="/ramblings/2017/creating-swift-projects-in-clion.sig.html">signed with PGP</a>.</span><br/>
     <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
