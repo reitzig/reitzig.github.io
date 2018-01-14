@@ -150,7 +150,7 @@ of algorithms in practice with any amount of precision,
    one I can condone without hesitation. 
    For many purposes, we still need an absolute bound on the hidden terms, though.
    
-   {% marginnote "sedgewick-coursera" "Sedgewick's [Coursera course](https://www.coursera.org/course/aofa) is pretty well done as well." %}
+   {% marginnote "sedgewick-coursera" "Sedgewick's [Coursera course](https://www.coursera.org/learn/analysis-of-algorithms) is pretty well done as well." %}
    You are not alone, by the way:
    Knuth&nbsp;{% cite ConcreteMathematics TAOCP --file references %} as well as 
    {% textcite SedgewickFlajolet2013 --file references %}

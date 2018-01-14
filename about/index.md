@@ -37,7 +37,7 @@ I *am probably not the author*.
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="float:right;">
   <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
 </a>
-Unless stated otherwise, all content created by me is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
+Unless stated otherwise, all content created by me is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 This excludes attributed or externally linked material and things I have obviously not produced myself such as,
 for example, book covers. Rights for these things remain with their original owners.
