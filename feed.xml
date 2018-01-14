@@ -5,8 +5,8 @@
     <description>Computer scientist. Teacher. Programmer. LaTeXer.</description>
     <link>http://reitzig.github.io/</link>
     <atom:link href="http://reitzig.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Jan 2017 19:26:46 +0100</pubDate>
-    <lastBuildDate>Mon, 30 Jan 2017 19:26:46 +0100</lastBuildDate>
+    <pubDate>Sun, 14 Jan 2018 18:53:54 +0100</pubDate>
+    <lastBuildDate>Sun, 14 Jan 2018 18:53:54 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -258,29 +258,6 @@ So how to convert TikZ to, say, PNG comfortably?
         
         
         <category>dev</category>
-        
-      </item>
-    
-      <item>
-        <title>On Planarity of Control Flow Graphs</title>
-        <description>
-          &lt;p&gt;For our master’s project, we include visualization of control flow graphs of Java bytecode as a user interface feature. When discussing the feature, a question quickly became apparent: are control flow graphs (CFG) &lt;a href=&quot;http://en.wikipedia.org/wiki/Planar_graph&quot; title=&quot;Definition of Planar Graphs&quot;&gt;planar&lt;/a&gt;? If so, we expect drawing them to be relatively easy. If not, however, we can abandon hope for being able to always draw nice graphs.&lt;/p&gt;
-
-&lt;p&gt;Obviously, unconditional jumps can cause arbitrarily nasty CFGs; that is not surprising as &lt;code class=&quot;highlighter-rouge&quot;&gt;goto&lt;/code&gt; is generally to be &lt;a href=&quot;http://dl.acm.org/citation.cfm?doid=362947&quot;&gt;considered harmful&lt;/a&gt;. We agreed, however, that we should rather consider &lt;a href=&quot;http://en.wikipedia.org/wiki/Basic_block&quot;&gt;basic blocks&lt;/a&gt; of actual Java rather than arbitrary bytecode, as it is Java code we want to talk about. Sadly, even if we disregard labeled &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt; just to be save, Java CFGs are not planar in general. The examples we found suggest that this is true for most procedural and object oriented languages, too.&lt;/p&gt;
-
-
-          &lt;p&gt;Read more on &lt;a href=&quot;http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs&quot;&gt;reitzig.github.io&lt;/a&gt;.&lt;/p&gt;
-        </description>
-        <pubDate>Thu, 06 Oct 2011 00:00:00 +0200</pubDate>
-        <link>http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</link>
-        <guid isPermaLink="true">http://reitzig.github.io/ramblings/2011/on-planarity-of-control-flow-graphs</guid>
-        
-        <category>Graphs</category>
-        
-        <category>Programming</category>
-        
-        
-        <category>cs</category>
         
       </item>
     

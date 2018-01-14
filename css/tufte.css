@@ -638,7 +638,8 @@ body > footer ul li a {
 
 footer div.credits {
   font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
-  font-size: 0.6rem; }
+  font-size: 0.6rem;
+  margin-top: 1ex; }
   footer div.credits a {
     color: #a00000; }
   footer div.credits div {
