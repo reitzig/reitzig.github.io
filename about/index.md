@@ -17,12 +17,11 @@ Now my pursuits in computer science are purely recreational.
 Instead I help pushing digitalization in health care by building software at
   [Digithurst](http://www.digithurst.de)/[Telepaxx](http://www.telepaxx.de).
 
-After work, I engage in several nerdisms, {% abbr eg %} reading, music as well as
-video and tabletop games. And some more [programming](https://github.com/akerbos).
-For a healthy balance, I usually cook my own meals, 
-work out (body-weight strength training and running) 
-and pursue a changing mix of ultimate frisbee and bouldering.
-I used to pursue ballroom dancing and team handball but have moved on since.
+After work, I engage in several nerdisms, {% abbr eg %} reading, music, and all kinds of
+games. And some more
+    [programming](https://github.com/reitzig).
+For a healthy balance, I usually cook my own meals, cycle to work, and
+play ultimate frisbee.
 
 When you send me an [email](mailto:{{ site.email }}), 
 please consider signing or even encrypting with PGP.
@@ -64,6 +63,12 @@ Furthermore, I have been using the following services:
  * [Disqus](https://disqus.com) and
  * [Icomoon](https://icomoon.io/).
 
+
+# Data Privacy
+
+TODO
+Static --> no collection per se. No tracking.
+Included Javascript: MathJax (via Cloudflare); Disqus (opt-in)
 
 
 ### Disclaimer
