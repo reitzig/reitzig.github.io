@@ -6,3 +6,4 @@ _site/
 run
 build
 Gemfile.lock
+.idea/

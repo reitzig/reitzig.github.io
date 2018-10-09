@@ -33,7 +33,6 @@
 		<a href="/projects">Projects</a>
 		<a href="/research">Research</a>
 		<a href="/thinker">Thinker</a>
-<!--<a href="/projects">Projects</a> -->
 		<a href="/tinker">Tinker</a>
 		<a href="/about">About</a>
 	</nav>
@@ -44,28 +43,44 @@
 
 <h2 id="hobby-projects">Hobby Projects</h2>
 
-<h3 id="ongoing">Ongoing</h3>
-
-<p>Several drafts and ideas are floating around in my notes space – stay tuned!</p>
-
 <p>Most of what I do these days is on
     <a href="https://github.com/reitzig">Github</a>,
 including things too minor to list here.</p>
 
-<h3 id="on-hiatus">On Hiatus</h3>
+<p>Several drafts and ideas are floating around in my notes space – stay tuned!</p>
+
+<h3 id="current">Current</h3>
 
 <ul>
   <li>
-    <p><em><a href="https://github.com/reitzig/ltx2any">ltx2any</a></em>
+    <p><em><a href="https://github.com/reitzig/ltx2any">chew née ltx2any</a></em>
  (2012–)</p>
 
-    <p>Yet another LaTeX build wrapper, with one or two nifty features.</p>
+    <p>Yet another <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> build wrapper, with one or two nifty features.</p>
 
     <p>This long-time project used to be driven by my own needs, which
  have – sadly! – mostly gone away after leaving academia.
- My intention is to clean it up, give it a proper name, and release
- version 1.0 – I just can not say when (or if, to be honest) that 
- will happen.</p>
+ My intention is to clean it up, <label for="code-quality" class="margin-toggle"> ⊕</label><input type="checkbox" id="code-quality" class="margin-toggle" /><span class="marginnote">As is the way of all code, the more I learn the worse it all looks.</span>
+ give it a proper name, and release version 1.0. While occasional
+ bursts of progress happen, I can not say when (or if, to be honest)
+ that release will happen.</p>
+  </li>
+  <li>
+    <p><em><a href="https://github.com/reitzig/texlogparser">texlogparser</a></em>
+ (2018)</p>
+
+    <p>A big thorn in my side was the parsing of <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> logs; the
+ implementation in ltx2any was abysmal.
+ This project is a complete reimplementation, with something like
+ an architecture, tests, and CI/CD.</p>
+  </li>
+  <li>
+    <p><em><a href="https://github.com/reitzig/sdkman-for-fish">SDKMAN! for fish</a></em>
+ (2018)</p>
+
+    <p>A port of SDKMAN! to the Fish shell. There is not a lot of code here
+ since all of the heavy lifting is delegated to the Bash implementation.
+ The devil lies in the details.</p>
   </li>
 </ul>
 
@@ -93,23 +108,25 @@ Traces of those <em>are</em> still on the net; happy hunting!</p>
 
 <h2 id="work-projects">Work Projects</h2>
 
-<h3 id="ongoing-1">Ongoing</h3>
+<h3 id="ongoing">Ongoing</h3>
 
 <ul>
   <li>
-    <p><strong>Tech Talks</strong></p>
+    <p><a href="https://hdscode.de"><strong>HealthDataSpace Access Codes</strong></a>
+(2018)</p>
 
-    <p>Since November 2017, I have been organizing a roughly bi-weekly series of 
- knowledge-transfer sessions (internal).
- I also (co-)held the following sessions:</p>
+    <p>HDS Access Codes are an easy yet secure way for patients to get
+ access to medical data: simply enter the 12-digit code you got from
+ your physician.</p>
 
     <ul>
-      <li>Kotlin – A hands-on introduction (Jan 12th, 2018)</li>
-      <li>Git – Basics, demystified (Dec 1st, 2017)</li>
+      <li>I worked on backend services (Grails, Kotlin) and a library (Java)
+to access them.</li>
     </ul>
   </li>
   <li>
-    <p><a href="https://sdk.healthdataspace.org"><strong>HealthDataSpace SDK</strong></a></p>
+    <p><a href="https://sdk.healthdataspace.org"><strong>HealthDataSpace SDK</strong></a>
+(2017–2018)</p>
 
     <p>Easy access to the features of 
      <a href="https://app.healthdataspace.de">HealthDataSpace</a> 
@@ -117,6 +134,8 @@ Traces of those <em>are</em> still on the net; happy hunting!</p>
  privacy for ehealth apps.</p>
 
     <ul>
+      <li>I co-designed and -implemented the iOS/macOS SDK (Swift) and supported
+development of a matching Android/JVM SDK (Java).</li>
       <li>
         <p>I gave a talk titled <em>Secure Infrastructure for the Mobile Legion</em>
 at
@@ -125,6 +144,23 @@ at
         <p>– <a href="/assets/pdf/ehid2017.pdf">slides</a> – 
 <a href="/assets/pdf/ehid2017-notes.pdf">slides with notes</a> –</p>
       </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="on-hiatus">On Hiatus</h3>
+
+<ul>
+  <li>
+    <p><strong>Tech Talks</strong></p>
+
+    <p>From November 2017 to early 2018, I organized a roughly bi-weekly series of
+ knowledge-transfer sessions (internal).
+ I also (co-)held the following sessions:</p>
+
+    <ul>
+      <li>Kotlin – A hands-on introduction (Jan 12th, 2018)</li>
+      <li>Git – Basics, demystified (Dec 1st, 2017)</li>
     </ul>
   </li>
 </ul>
@@ -291,7 +327,7 @@ at
     <span>Created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
     <div>
       Content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International License</a> unless otherwise stated.<br/>
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="/assets/img/cc-by-sa-80x15.png" /></a>
     </div>
   </div>  
 </footer>
