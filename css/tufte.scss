@@ -17,8 +17,8 @@
 @import "../_sass/syntax-highlighting";
 
 // Global Resets
-* { 
-  margin: 0; padding: 0; 
+* {
+  margin: 0; padding: 0;
 }
 
 /* clearfix hack after Cederholm (group class name) */
@@ -67,14 +67,14 @@ p > a { @if $link-style == underline
       color: $text-color;
       text-decoration: none;
       border-bottom: 1px solid #777;
-      padding-bottom: 1px; 
+      padding-bottom: 1px;
     }
     @else
     {
       color: $contrast-color;
       text-decoration: none;
     }
-  }  
+  }
 
 body { width: 87.5%;
        margin-left: auto;
@@ -109,7 +109,7 @@ h3 { font-style: italic;
      margin-top: 2.1777777777777778rem;
      margin-bottom: 0;
      line-height: 1.08888888888889; }
-     
+
 h4 { font-weight: 600;
      margin-top: 2.1777777777777778rem;
      margin-bottom: 0;
@@ -130,16 +130,16 @@ p, li { line-height: 1.5rem;
         margin-top: 1.4rem;
         padding-right: 2rem; //removed because,  why?
         vertical-align: baseline; }
-        
+
 li { margin-top: 0.75rem; } // original value ridiculous
 
 blockquote p {  // font-size: 1.1rem;
                 line-height: 1.78181818;
                 margin-top: 1.5rem;
-                margin-bottom: 1.5rem; 
+                margin-bottom: 1.5rem;
                 width: 45%;
                 padding-left: 2.5%;
-                padding-right: 2.5%; 
+                padding-right: 2.5%;
                 color: lighten($text-color, 20%)}
 
 blockquote footer { width: 45%;
@@ -177,7 +177,7 @@ th, td{ /* font-size: 1.2rem; */ /* No, we want normal font size */
 
 .booktabs th.nocmid { border-bottom: none; }
 
-.booktabs tbody tr:first-child td,  tr:first-child td { padding-top: 0.65ex; } /* add space between thead row and tbody */ 
+.booktabs tbody tr:first-child td,  tr:first-child td { padding-top: 0.65ex; } /* add space between thead row and tbody */
 
 .booktabs td, td {  padding-left: 0.5em;
                     padding-right: 0.5em;
@@ -209,15 +209,16 @@ th, td{ /* font-size: 1.2rem; */ /* No, we want normal font size */
 /* Basic Layout stuff --*/
 
 article { position: relative;
-          padding: 1
-
-          rem 0rem 2.5rem 0rem; } // reduced top and bottom padding by 50%
+          padding: 1rem 0rem 2.5rem 0rem; } // reduced top and bottom padding by 50%
 
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
+article > ul, article > ol {
+  width: 55%;
+}
 
-ul, ol { width: 55%;
+ul, ol {
      -webkit-padding-start: 5%;
      -webkit-padding-end: 5%;
      // list-style-type: none; // Nope?!
@@ -257,7 +258,7 @@ img { max-width: 100%; }
                          line-height: 1.5; // did not understand value
                          vertical-align: baseline;
                          position: relative; }
-                         
+
 /* No, don't want that
 li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
 */
@@ -266,7 +267,7 @@ li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fac
 
 .sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
                                            font-family: et-bembo-roman-old-style;
-                                           color: $contrast-color; //added color 
+                                           color: $contrast-color; //added color
                                            position: relative;
                                            vertical-align: baseline; }
 
@@ -276,7 +277,7 @@ li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fac
                          left: 0.1rem; }
 
 .sidenote-number:after { font-size: 0.75rem; } // superscript too large
-                         
+
 
 .sidenote:before { content: counter(sidenote-counter) ".\000a0"; // this is unicode for a non-breaking space
                    color: $contrast-color;
@@ -284,7 +285,7 @@ li .sidenote, li .marginnote{ margin-right: -60%; } //added to allow for the fac
 
 p, footer, div.table-wrapper, div.mathblock { width: 55%; }
 // Yes, but *not* squash p's in li's!
-ul,ol li p { width : 100%; }
+ul > li p, ol > li p { width : 100%; }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
@@ -319,7 +320,7 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
 
 @media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; color: $contrast-color; }
                             .sidenote, .marginnote { display: none; }
-                            .margin-toggle:checked + .sidenote, 
+                            .margin-toggle:checked + .sidenote,
                             .margin-toggle:checked + .marginnote { display: block;
                                                                    float: left;
                                                                    left: 1rem;
@@ -329,7 +330,7 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                                                    vertical-align: baseline;
                                                                    position: relative; }
                             label { cursor: pointer; }
-                            pre, pre code, p code, p pre code { width: 90%; 
+                            pre, pre code, p code, p pre code { width: 90%;
                                        padding: 0; }
                             .table-caption { display: block;
                                              float: right;
@@ -353,7 +354,7 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
 .smaller { font-size: 80%;}
 //Nav and Footer styling area
 
-header > nav.group, body footer { 
+header > nav.group, body footer {
   width: 95%;
   padding-top: 2rem;
 }
@@ -414,13 +415,13 @@ body > footer ul li a{
 footer div.credits {
   font-family: $sans-font;
   font-size: 0.6rem;
-  
+
   margin-top: 1ex;
-  
+
   & a{
     color: $contrast-color;
   }
-    
+
   div {
     margin: 1ex 0 1ex 0;
   }
@@ -430,7 +431,7 @@ footer div.credits {
 
 //Full width page styling stuff
 
-body.full-width, .content-listing, ul.content-listing li.listing{ 
+body.full-width, .content-listing, ul.content-listing li.listing{
   width : 75%;
 }
 
@@ -468,9 +469,9 @@ hr.slender {
     border: 0;
     height: 1px;
     margin-bottom:2.8rem;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
 
@@ -505,9 +506,9 @@ hr.slender {
     height: 1px;
     margin-top: 1.4rem;
     margin-bottom:1.4rem;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
 // End of front listing page stuff
@@ -521,8 +522,8 @@ pre code, pre code p, code  {
   font-family: $code-font;
   color: #222;
   font-size: 1.1rem;
-  line-height: 1.25; 
-} 
+  line-height: 1.25;
+}
 pre{
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
@@ -551,7 +552,7 @@ div.below_title {
   font-size: 1rem;
   margin-top: -0.45cm;
   color: lighten($text-color,25%);
-  
+
   span.separator {
     margin: 0 0.5em 0 0.5em;
   }
@@ -559,13 +560,13 @@ div.below_title {
 
 div.footnotes{
   margin: 1rem 0 1.4rem 2em;
-  
+
   p {
     width: 52%;
     margin-top: 0;
     font-size: 85%;
   }
-  
+
   li {
     margin-top: 0;
   }
@@ -573,13 +574,13 @@ div.footnotes{
 
 
 
-span.newthought { 
+span.newthought {
   font-variant: small-caps;
-  
+
 }
 
 img.main-portrait {
-  width: 150px; 
+  width: 150px;
   float: left;
   margin: 0.25em 1em 0.5em 0;
   border: 1px solid $contrast-color;
@@ -595,7 +596,7 @@ article img {
 
 article p.flairimg {
   text-align: center;
-  
+
   img {
     margin: 1ex auto 0 auto;
     max-width: 60%;
@@ -608,7 +609,7 @@ article span.tikz {
     max-width: 120%;
     height: auto;
   }
-  
+
   sup {
     margin-left: 3em;
   }
@@ -627,7 +628,7 @@ span.read-more {
 
 .latex sub { vertical-align: -0.45ex;
              margin-left: -0.1rem;
-             margin-right: -0.1rem; 
+             margin-right: -0.1rem;
              font-size: 1rem}
 
 .latex sup { font-size: 0.65rem;
@@ -641,7 +642,7 @@ span.read-more {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; // Black prints faster:http://www.sanbeiji.com/archives/953 
+        color: #000 !important; // Black prints faster:http://www.sanbeiji.com/archives/953
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -649,10 +650,10 @@ span.read-more {
         margin: 0.75in 0.5in 0.75in 0.5in;
         orphans:4; widows:2;
     }
-    
+
     body {
         font-size:  12pt;
-          
+
     }
     html body span.print-footer{
       font-family: $sans-font;
@@ -696,7 +697,7 @@ span.read-more {
   width : 55%;
   margin-top : 2ex;
   padding-top : 2ex;
-  
+
   #noscript-note {
     width : 90%;
   }
@@ -706,11 +707,11 @@ span.read-more {
   width : 50%;
   font-size : 95%;
   text-align: left;
-  
+
   tt {
     font-size : 90%;
   }
-  
+
   a:hover {
     cursor : pointer;
   }
@@ -720,7 +721,7 @@ span.read-more {
 
 p.bibdetailhead {
   text-align: left;
-  
+
   span {
     font-size: 90%;
   }
@@ -729,35 +730,35 @@ p.bibdetailhead {
 ol.bibliography {
   margin-left: 1em;
   width: 85%;
-  
+
   li {
     width: 55%;
     position: relative;
-    
+
     /* Styling for entries created by fixbibliography.rb */
     p {
       width: 95%;
       margin: 0;
     }
-    
+
     table.fixedbib {
       width: 100%;
       text-align: left;
       margin: 0;
       border: none;
-      
+
       td {
         vertical-align: top;
         font-size: 95%;
-        
+
         span.bibkey {
           margin-left: -1rem;
           margin-right: 1rem;
-        }    
+        }
       }
     }
   }
-  
+
   a.details {
     position: absolute;
     left: 100%;
@@ -771,10 +772,10 @@ div.signatures {
   p {
     width: 35%;
   }
-  
+
   table {
     margin: 3ex;
-  
+
     th, td {
       font-size: 90%;
     }
@@ -831,4 +832,4 @@ div.icon svg {
 }
 
 
-/*-- End of Icomoon icon font section --*/            
+/*-- End of Icomoon icon font section --*/
