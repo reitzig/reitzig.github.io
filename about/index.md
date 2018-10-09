@@ -64,11 +64,29 @@ Furthermore, I have been using the following services:
  * [Icomoon](https://icomoon.io/).
 
 
-# Data Privacy
+### Data Privacy
 
-TODO
-Static --> no collection per se. No tracking.
-Included Javascript: MathJax (via Cloudflare); Disqus (opt-in)
+These sites were generated _statically_; there is no user interaction.
+As such, no visitor data is collected.
+I also do not use any tracking services.
+In summary, I do not get any data about you.
+
+Since the website is hosted on Github Pages, the corporate entity
+Github, Inc. is in principle able to collect metadata such as you
+visiting this page.
+
+Third parties may track you through Javascript included here.
+A complete listing of all services linked from these sites follows.
+
+ * MathJax via domains `cdn.mathjax.org` and `cdnjs.cloudflare.com`.  
+   Used for rendering mathematics. Probably innocuous.
+ * Disqus via domains `disqus.com` and `disquscdn.com`.  
+   Provides commenting features; opt-in. They _certainly_ track you as part of
+   the services provided, so be aware when you enable comments.
+
+I recommend using a script blocker like
+    [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
+to configure exactly which services you want to have included where.
 
 
 ### Disclaimer
